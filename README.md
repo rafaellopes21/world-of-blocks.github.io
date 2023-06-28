@@ -2,7 +2,9 @@
 Tutorial: https://github.com/RonenNess/RPGUI
 Exemplo: http://ronenness.github.io/RPGUI/
 
-Exec: https://rafaellopes21.github.io/color-blocking.github.io/index.html
+sfx games: https://www.youtube.com/watch?v=zXKcybzvj7Y&ab_channel=RoyaltyFreeArtists
+
+Executar projeto: https://rafaellopes21.github.io/color-blocking.github.io/index.html
 
 ### Como o jogo deverá funcionar
 1. O jogador deverá primero informar seu nome.

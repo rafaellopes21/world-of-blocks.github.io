@@ -1,10 +1,9 @@
 window.onload = function (){
-    enableSfxButtonClicked();
+
 }
 
 function startGaming(){
-    include('#main-content', 'views/menu/main-menu.html');
-    startSong('songs/moe-moe garden-in-the-brain.mp3');
+    include('menu/main-menu', '#main-content');
 }
 
 function enableSfxButtonClicked(){
@@ -12,8 +11,12 @@ function enableSfxButtonClicked(){
     if(document.querySelector(selector)){
         document.querySelectorAll(selector).forEach(btn => {
             btn.addEventListener("click", function (){
-                startSFX('songs/sound_fx/pop.mp3');
+                startSFX('sound_fx/pop.mp3');
             })
         })
     }
+}
+
+function loadView(viewPath){
+    include(viewPath);
 }

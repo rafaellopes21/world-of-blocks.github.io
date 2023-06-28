@@ -2,13 +2,20 @@ const AUDIO = document.getElementById('song');
 const SFX = document.getElementById('soundFx');
 
 function startSFX(songPath){
-    SFX.src = songPath;
-    SFX.play();
+    SFX.src = "songs/"+(songPath.replace("songs/", "")).replace("/songs/", "");
+    SFX.addEventListener('canplaythrough', function() {
+        SFX.play();
+    });
+    SFX.load();
 }
 
 function startSong(songPath){
-    AUDIO.src = songPath;
-    AUDIO.play();
+    console.log(AUDIO.src, songPath);
+    AUDIO.src = "songs/"+(songPath.replace("songs/", "")).replace("/songs/", "");
+    AUDIO.addEventListener('canplaythrough', function() {
+        AUDIO.play();
+    });
+    AUDIO.load();
 }
 
 function togglePlayback(e) {
