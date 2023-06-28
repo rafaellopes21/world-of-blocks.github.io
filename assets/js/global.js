@@ -2,6 +2,10 @@ window.onload = function (){
 
 }
 
+function getBaseUrl(){
+    return window.location.protocol+"//"+window.location.host+(window.location.pathname).replace("index.html", "");
+}
+
 function startGaming(){
     include('menu/main-menu', '#main-content');
 }
