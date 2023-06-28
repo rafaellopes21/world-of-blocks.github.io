@@ -1,0 +1,49 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#beginModal" id="beginModalBtn" hidden></button>
+<div class="modal fade" id="beginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="beginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered rpgui-content reset-margin-center">
+        <div class="modal-content rpgui-container framed fix-position">
+            <div class="modal-header" style="margin: 0 auto">
+                <h5 class="modal-title text-white text-center" style="text-decoration: none">Welcome Player!</h5>
+            </div>
+            <div class="modal-body rpgui-container framed-grey fix-position">
+                <div id="paragraphs">
+                    <h3>How to Play</h3>
+                    <p class="text-center">Describe here a small tutorial.</p>
+
+                    <hr class="golden mt-3">
+
+                    <h3>View the Full Tutorial</h3>
+                    <div class="text-center"><label>Tutorial</label> <a href="#">Click Here to See!</a></div>
+
+                    <hr class="golden mt-3">
+
+                    <h3>Before Start!</h3>
+                    <p class="text-center">This game uses your browser's cookies to store information about your scores during your game.</p>
+                    <label>Your Nickname:</label>
+                    <input placeholder="Type Here" class="text-white" required oninput="validateNickName(this)">
+                    <small class="text-danger" hidden id="showmsg">*Required</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="rpgui-button text-white sfx-click" type="button" data-bs-dismiss="modal"
+                        id="start-game" onclick="startGaming()" disabled>Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector("#beginModalBtn").click();
+    function validateNickName(e){
+        let startBtn = document.querySelector("#start-game");
+        let msgErr = document.querySelector("#showmsg");
+        if(!e.value || e.value == "" || e.value == " "){
+            startBtn.setAttribute("disabled", "disabled");
+            msgErr.removeAttribute("hidden");
+            return false;
+        } else {
+            startBtn.removeAttribute("disabled");
+            msgErr.setAttribute("hidden", "hidden");
+        }
+    }
+</script>

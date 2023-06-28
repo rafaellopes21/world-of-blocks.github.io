@@ -1,0 +1,23 @@
+<div class="container row rpgui-content center-in-screen reset-margin-center">
+    <div class="rpgui-container framed col-sm-9 col-md-4 col-lg-4">
+        <div class="row">
+            <button class="rpgui-button text-white sfx-click" type="button"><i class="fa-solid fa-gamepad fix-icon-btn"></i> New Game</button>
+            <button class="rpgui-button text-white sfx-click" type="button"><i class="fa-solid fa-shop fix-icon-btn"></i> Shop</button>
+            <button class="rpgui-button text-white sfx-click" type="button"><i class="fa-solid fa-ranking-star fix-icon-btn"></i> Ranking</button>
+            <hr class="golden mt-3">
+            <div class="row" style="margin: 0 auto">
+                <button class="rpgui-button text-white sfx-click col-6" type="button" onclick="togglePlayback(this)">
+                    <i class='fa-solid fa-pause fix-icon-btn'></i> Music
+                </button>
+                <button class="rpgui-button text-white sfx-click col-6" type="button">Help</button>
+                <label>Game Volume:</label>
+                <input type="range" class="gameslider" min="0" max="10" step="1" value="6"
+                       onchange="changeVolume(this.value)" style="margin: 0">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    enableSfxButtonClicked();
+</script>
