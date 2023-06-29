@@ -1,0 +1,82 @@
+.sorted-item{
+    border: 1px solid black;
+    border-radius: 7px;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#grade-game{
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.square-item{
+    border: 1px solid black;
+    padding: 2px;
+    margin: 0.1rem;
+    border-radius: 7px;
+}
+
+.square-item:hover{
+    border: 1px solid #4e8ee1;
+    cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .square-item{
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    #grade-game{
+        padding-left: 1rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .square-item{
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    #grade-game{
+        padding-left: 1rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .square-item{
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    #grade-game{
+        padding-left: 1rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .square-item{
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    #grade-game{
+        padding-left: 1rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #grade-game{
+        padding-left: 1rem;
+    }
+    .square-item{
+        width: 4rem;
+        height: 4rem;
+    }
+}

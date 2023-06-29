@@ -4,6 +4,9 @@ Exemplo: http://ronenness.github.io/RPGUI/
 
 sfx games: https://www.youtube.com/watch?v=zXKcybzvj7Y&ab_channel=RoyaltyFreeArtists
 
+media queries: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+animations css: https://webcode.tools/generators/css/keyframe-animation
+
 Executar projeto: https://rafaellopes21.github.io/color-blocking.github.io/index.html
 
 ### Como o jogo deverá funcionar
@@ -22,7 +25,7 @@ Executar projeto: https://rafaellopes21.github.io/color-blocking.github.io/index
 13. Criar um sistema de ranking local para saber qual a maior pontuação que o usuários conseguiram obter
 14. A grade de itens deverá ser atualizada de tempos em tempos ao decorrer do jogo
 15. cada grade deverá ter sua coluna e quadrado com uma imagem png super compacta e leve
-16. novo topico...
+16. Previr clicks duplicados enquanto o quadrante certo for selecionado, pois ficar clicando contabiliza varios pontos
 17. novo topico...
 
 ## Topico final

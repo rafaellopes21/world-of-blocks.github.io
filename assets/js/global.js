@@ -15,7 +15,7 @@ function enableSfxButtonClicked(){
     if(document.querySelector(selector)){
         document.querySelectorAll(selector).forEach(btn => {
             btn.addEventListener("click", function (){
-                startSFX('sound_fx/pop.mp3');
+                playSFX('pop.mp3');
             })
         })
     }
