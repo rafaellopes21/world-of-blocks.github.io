@@ -152,6 +152,72 @@ inside your html file.
   margin-right: -46px;
   margin-top: -5%; }
 
+/*Custom Buttons*/
+.rpgui-button-primary{
+  background: url("img/button-primary.png") no-repeat no-repeat !important;
+  background-clip: padding-box !important;
+  background-origin: padding-box !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+.rpgui-button-primary.hover, .rpgui-button-primary:hover {
+  background-image: url("img/button-primary-hover.png") !important;
+}
+
+.rpgui-button-success{
+  background: url("img/button-success.png") no-repeat no-repeat !important;
+  background-clip: padding-box !important;
+  background-origin: padding-box !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+.rpgui-button-success.hover, .rpgui-button-success:hover {
+  background-image: url("img/button-success-hover.png") !important;
+}
+
+.rpgui-button-warning{
+  background: url("img/button-warning.png") no-repeat no-repeat !important;
+  background-clip: padding-box !important;
+  background-origin: padding-box !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+.rpgui-button-warning.hover, .rpgui-button-warning:hover {
+  background-image: url("img/button-warning-hover.png") !important;
+}
+
+.rpgui-button-light{
+  background: url("img/button-light.png") no-repeat no-repeat !important;
+  background-clip: padding-box !important;
+  background-origin: padding-box !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+.rpgui-button-light.hover, .rpgui-button-light:hover {
+  background-image: url("img/button-light-hover.png") !important;
+}
+
+.rpgui-button-dark{
+  background: url("img/button-dark.png") no-repeat no-repeat !important;
+  background-clip: padding-box !important;
+  background-origin: padding-box !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+.rpgui-button-dark.hover, .rpgui-button-dark:hover {
+  background-image: url("img/button-dark-hover.png") !important;
+}
+
+.rpgui-button-danger{
+  background: url("img/button-danger.png") no-repeat no-repeat !important;
+  background-clip: padding-box !important;
+  background-origin: padding-box !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+.rpgui-button-danger.hover, .rpgui-button-danger:hover {
+  background-image: url("img/button-danger-hover.png") !important;
+}
 /*
 .rpgui-button.golden:hover:before {
 

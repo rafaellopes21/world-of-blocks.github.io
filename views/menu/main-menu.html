@@ -1,7 +1,8 @@
 <div class="container row rpgui-content center-in-screen reset-margin-center">
     <div class="rpgui-container framed col-sm-9 col-md-4 col-lg-3">
         <div class="row">
-            <button class="rpgui-button text-white sfx-click" type="button">
+            <button class="rpgui-button text-white sfx-click" type="button"
+                    onclick="loadView('game/index')">
                 <i class="fa-solid fa-gamepad fix-icon-btn"></i> Start Game
             </button>
             <button class="rpgui-button text-white sfx-click" type="button"
@@ -22,7 +23,7 @@
                     <i class="fa-solid fa-question fix-icon-btn"></i> Help
                 </button>
                 <label>Game Volume:</label>
-                <input type="range" class="gameslider" min="0" max="10" step="1" value="6"
+                <input type="range" id="master-volume" class="gameslider" min="0" max="10" step="1" value="6"
                        onchange="changeVolume(this.value)" style="margin: 0">
             </div>
         </div>
