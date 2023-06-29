@@ -177,6 +177,7 @@ function getResults(){
 function clearAll(){
     clearTimeout(refreshGradeTime);
     clearInterval(timerClockInterval);
+    results.value = "";
     document.querySelector("#songTwo").pause();
 }
 
