@@ -1,0 +1,24 @@
+<table class="table text-white text-center">
+    <thead>
+    <tr>
+        <th scope="col">Hits</th>
+        <th scope="col">Errors</th>
+        <th scope="col">Remaining</th>
+        <th scope="col">Score</th>
+    </tr>
+    </thead>
+    <tbody id="body-results"></tbody>
+</table>
+
+
+<h1>Mudar esta tabela para quadros, melhor visualização até no mobile</h1>
+
+
+<script>
+    let playerResults = getResults();
+    let remainingItens = playerResults['total_items'] - playerResults['hits'];
+
+    document.querySelector("#body-results").insertAdjacentHTML("afterend",
+        '<tr><td>' + playerResults['hits'] + '</td><td>' + playerResults['errors'] + '</td><td>' + remainingItens + '</td><td>' + playerResults['score'] + '</td></tr>'
+    );
+</script>
