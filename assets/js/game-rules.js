@@ -17,15 +17,15 @@ function sortItemGame(){
         '<div class="sorted-item '+itemMatch+'"></div><h2 class="text-white mb-0" style="font-size: 14px;"><span id="hits-counter">0</span>/'+totalItems+'</h2>'
     );
 }
-function populateGrade(gradeSizeItens, maxMatchItensInSession, refreshingTime){
-    //Clear all items before load the grade
+function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
+    //Clear all items before load the grid
     let randomItems = [];
-    gradeGame.innerHTML = "";
+    gridGame.innerHTML = "";
     totalItemsInSession = 0;
     playerScoreInSession = 0;
 
-    //Generate random items to add into grade
-    for (let i = 0; i < (gradeSizeItens * gradeSizeItens); i++) {
+    //Generate random items to add into grid
+    for (let i = 0; i < (gridSizeItens * gridSizeItens); i++) {
         randomItems.push(bg[Math.floor(Math.random() * bg.length)]);
     }
 
@@ -40,7 +40,7 @@ function populateGrade(gradeSizeItens, maxMatchItensInSession, refreshingTime){
         }
     }
 
-    //Then, the program will take random places to replace with maximum/minimum itemMatch in the grade
+    //Then, the program will take random places to replace with maximum/minimum itemMatch in the grid
     let max = maxMatchItensInSession;
     let min = Math.floor((totalItems / maxTime)) < max ? Math.floor((totalItems / maxTime)) : 1;
     let randomMatchs = Math.floor(Math.random() * (max - min + 1) + min)
@@ -50,26 +50,26 @@ function populateGrade(gradeSizeItens, maxMatchItensInSession, refreshingTime){
     }
 
     //After all this, we build the squares for the player
-    for (let i = 0; i < (gradeSizeItens * gradeSizeItens); i++) {
+    for (let i = 0; i < (gridSizeItens * gridSizeItens); i++) {
         if(randomItems[i] == itemMatch){
             totalItemsInSession++;
         }
 
-        gradeGame.insertAdjacentHTML("beforeend",
+        gridGame.insertAdjacentHTML("beforeend",
             '<div class="square-item entry '+randomItems[i]+'" item="'+randomItems[i]+'"></div>');
     }
 
-    gradeAction();
+    gridAction();
 
-    //Refreshes the grade game after X seconds
-    refreshGradeTime = setTimeout(function (){
+    //Refreshes the grid game after X seconds
+    refreshgridTime = setTimeout(function (){
         playSFX('zapsplat_multimedia_game_retro_musical_short_tone_003.mp3', '#soundFxTwo');
         sumSessionPoints();
-        populateGrade(gradeLength, gradeMaxMatchItems, refreshGameTime);
+        populategrid(gridLength, gridMaxMatchItems, refreshGameTime);
     }, refreshingTime * 1000);
 }
 
-function gradeAction(){
+function gridAction(){
     document.querySelectorAll(".square-item").forEach(square => {
         square.addEventListener('click', function (){
             if(!square.hasAttribute("disabled"))
@@ -85,9 +85,9 @@ function checkSessionSelectedItems(){
     } else {
         //Check if player selected all itens in session to make manual refresh
         if(totalItemsInSession == playerScoreInSession){
-            clearTimeout(refreshGradeTime);
+            clearTimeout(refreshgridTime);
             playSFX('zapsplat_multimedia_game_retro_musical_ascend_advance_correct.mp3', '#soundFxTwo');
-            populateGrade(gradeLength, gradeMaxMatchItems, refreshGameTime);
+            populategrid(gridLength, gridMaxMatchItems, refreshGameTime);
         }
     }
 }
@@ -154,7 +154,7 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
                 timer.classList.remove("text-danger");
             }
         }
-        sumScore(((totalItems / gradeMaxMatchItems) * maxTime));
+        sumScore(((totalItems / gridMaxMatchItems) * maxTime));
     }
 
     //Calculate the final points and save the results
@@ -244,7 +244,7 @@ function getResults(){
 
 function clearAll(){
     //Clear all timeouts and interval events
-    clearTimeout(refreshGradeTime);
+    clearTimeout(refreshgridTime);
     clearInterval(timerClockInterval);
 
     //Stop and clear all sounds and sfx
@@ -258,4 +258,4 @@ function clearAll(){
 |
 |*/
 sortItemGame();
-setTimeout( function (){populateGrade(gradeLength, gradeMaxMatchItems, refreshGameTime);}, 1000);
+setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);

@@ -1,18 +1,82 @@
 <div class="container row rpgui-content center-in-screen reset-margin-center">
     <div class="rpgui-container framed row fix-position">
-        <div class="row rpgui-content fix-position" id="stages-list">
-            <div class="rpgui-container framed-golden-2 fix-position col-sm-6 col-md-4">
-                <h2>Level 1</h2>
-                <p>Descriptions about the number of stars</p>
+        <div class="row rpgui-content fix-position" id="stages-list"></div>
+    </div>
+</div>
 
-                <div class="text-white">Show the stars here (obtained and not)</div>
-                <button class="rpgui-button rpgui-button-success text-white sfx-click" type="button"
-                        onclick="playStage(1)">
-                    <i class="fa-solid fa-play fix-icon-btn"></i> Play
-                </button>
+<div hidden id="copy-stage-desc">
+    <div class="rpgui-container framed-golden-2 fix-position col-sm-6 col-md-4 p-0" id="stage-level-{{stage-level}}">
+        <h2 class="mb-0" style="font-size: 18px;">Level: {{stage-level}}</h2>
+        <hr class="mt-2 mb-2 golden">
+
+        <nav class="nav nav-pills nav-justified" hidden>
+            <button class="nav-link active" id="s{{stage-level}}p1" data-bs-toggle="tab"
+                    data-bs-target="#nav-home" type="button" role="tab"
+                    aria-controls="nav-home" aria-selected="true">Home</button>
+            <button class="nav-link" id="s{{stage-level}}p2" data-bs-toggle="tab"
+                    data-bs-target="#nav-profile" type="button" role="tab"
+                    aria-controls="nav-profile" aria-selected="false">Profile</button>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="s{{stage-level}}p1">
+                <div class="mb-1">
+                    <span style="font-size: 14px;">Description</span><br><br>
+                    <span>complete in up to 00:05 with 0 mistakes and 40 hits</span>
+                </div>
+                <hr class="mt-2 mb-0">
+                <div class="text-white">
+                    <p class="mb-0 mt-0" style="margin-top: 1.5rem;">
+                        <i id="star1-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
+                        <i id="star2-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
+                        <i id="star3-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
+                        | <span id="score-stage-{{stage-level}}">Score: 0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="s{{stage-level}}p2">
+                <div class="mb-1">
+                    <span style="font-size: 14px;">Achievments</span><br><br>
+                    <span>complete in up to 00:05 with 0 mistakes and 40 hits</span>
+                </div>
             </div>
         </div>
+
+
+
+        <hr class="mt-2 mb-0">
+        <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="rpgui-button text-white sfx-click rpgui-button-warning" type="button"
+                    onclick="s{{stage-level}}p2.click();">
+                    <span class="mb-0"><i class="fa-solid fa-bullseye fix-icon-btn"></i> Goal</span>
+                </button>
+            </div>
+           <div class="d-grid gap-2 col-6 mx-auto">
+               <button class="rpgui-button rpgui-button-success text-white sfx-click" type="button"
+                       onclick="playStage('{{stage-level}}')">
+                   <span><i class="fa-solid fa-play fix-icon-btn"></i> Play</span>
+               </button>
+           </div>
+        </div>
+
     </div>
 </div>
 
 <script src="assets/js/stage-rules.js"></script>
+<script>
+    function buildLevels(){
+        let copyTemplateStage = document.querySelector("#copy-stage-desc").innerHTML;
+
+        getStageSettings().forEach(level => {
+            copyTemplateStage = copyTemplateStage.replaceAll('{{stage-level}}', level['level']);
+            /*'1 Star: '+level['achievements']['firstStarErrors'];
+            '1 Star: '+level['achievements']['firstStarHits'];
+            '1 Star: '+level['achievements']['firstStarTime'];*/
+            console.log(level['achievements']);
+            document.querySelector("#stages-list").innerHTML = copyTemplateStage;
+        });
+
+    }
+
+    buildLevels();
+</script>

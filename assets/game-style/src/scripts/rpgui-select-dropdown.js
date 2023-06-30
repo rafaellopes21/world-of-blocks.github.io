@@ -18,17 +18,17 @@ RPGUI.__create_funcs["dropdown"] = function(element)
 // init all dropdown elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_dropdown_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "dropdown");
 	}
 });
 
-// upgrade a single "select" element to the beautiful dropdown
+// upgrid a single "select" element to the beautiful dropdown
 function create_dropdown(elem)
 {
 	// prefix to add arrow down next to selection header

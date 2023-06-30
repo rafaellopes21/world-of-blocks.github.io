@@ -18,17 +18,17 @@ RPGUI.__create_funcs["list"] = function(element)
 // init all list elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_list_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "list");
 	}
 });
 
-// upgrade a single "select" element to the beautiful list
+// upgrid a single "select" element to the beautiful list
 function create_list(elem)
 {
 	// default list size is 3

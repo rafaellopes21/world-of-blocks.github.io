@@ -35,17 +35,17 @@ RPGUI.__set_funcs["progress"] = function(elem, value)
 // init all progress elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_progress_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "progress");
 	}
 });
 
-// upgrade a single "input" element to the beautiful progress class
+// upgrid a single "input" element to the beautiful progress class
 function create_progress(elem)
 {
 	// create the containing div for the new progress

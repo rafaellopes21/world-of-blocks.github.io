@@ -11,34 +11,41 @@ playSong(stage.getThemeStageSong()); //Theme song of stage
  -------------------------------------*/
 var sortedItem = document.querySelector("#sort-item");
 var itemMatch = false;
-var gradeGame = document.querySelector("#grade-game");
-var refreshGradeTime = false;
-var gradeLength = stage.getGradeLength(); //Define the size of the grade
-var gradeMaxMatchItems = stage.getMaxMatchItems(); //Define how many match itens will be present in a session
-var refreshGameTime = 5; //Define how many seconds the grade will be refreshed
-var maxTime = 30; //Time in seconds to play the current game
+var gridGame = document.querySelector("#grid-game");
+var refreshgridTime = false;
+var gridLength = stage.getgridLength(); //Define the size of the grid
+var gridMaxMatchItems = stage.getMaxMatchItems(); //Define how many match itens will be present in a session
+var refreshGameTime = stage.getRefreshGameTime(); //Define how many seconds the grid will be refreshed
+var maxTime = stage.getMaxTime(); //Time in seconds to play the current game
 var maxTimeAux = maxTime; //Aux time to help to calculate de diff between times
 var timer = document.querySelector("#clock-time");
 var timerClockInterval = setInterval(updatetimer, 1000);
-var totalItems = Math.floor((maxTime * gradeLength)/(refreshGameTime + gradeMaxMatchItems)); //Number of total selected items per match
+
+/*----------------------------------------------------------------
+            Number of total selected items per match
+    (you dont need inform this, because the code do it for you!)
+ -----------------------------------------------------------------*/
+var totalItems = stage.getTotalItems()
+    ? stage.getTotalItems()
+    : Math.floor((maxTime * gridLength)/(refreshGameTime + gridMaxMatchItems));
 
 /*-------------------------------------
      ACHIEVEMENTS AND ACCOMPLISHES
  -------------------------------------*/
-var starThree = document.querySelector("#star3");
-var firstStarTime = 5;//Seconds remaining to obtain 1 star (+ points)
-var firstStarHits = (totalItems - 6);//Points necessary to obtain 1 star (+ time)
-var firstStarErrors = false;//Errors acceptable to obtain 1 stars (+ points + time)
+var starOne = document.querySelector("#star1");
+var firstStarTime = stage.getFirstStarTime();//Seconds remaining to obtain 1 star (+ points)
+var firstStarHits = (totalItems - stage.getFirstStarHits());//Points necessary to obtain 1 star (+ time)
+var firstStarErrors = stage.getFirstStarErrors();//Errors acceptable to obtain 1 stars (+ points + time)
 
 var starTwo = document.querySelector("#star2");
-var secondStarTime = 7;//Seconds remaining to obtain 2 stars (+ points)
-var secondStarHits = (totalItems - 3);//Points necessary to obtain 2 stars (+ time)
-var secondStarErrors = 5;//Errors acceptable to obtain 2 stars (+ points + time)
+var secondStarTime = stage.getSecondStarTime();//Seconds remaining to obtain 2 stars (+ points)
+var secondStarHits = (totalItems - stage.getSecondStarHits());//Points necessary to obtain 2 stars (+ time)
+var secondStarErrors = stage.getSecondStarErrors();//Errors acceptable to obtain 2 stars (+ points + time)
 
-var starOne = document.querySelector("#star1");
-var thirdStarTime = 9;//Seconds remaining to obtain 3 stars (+ points)
-var thirdStarHits = totalItems;//Points necessary to obtain 3 stars (+ time)
-var thirdStarErrors = 1;//Errors acceptable to obtain 3 stars (+ points + time)
+var starThree = document.querySelector("#star3");
+var thirdStarTime = stage.getThirdStarTime();//Seconds remaining to obtain 3 stars (+ points)
+var thirdStarHits = (totalItems - stage.getThirdStarHits());//Points necessary to obtain 3 stars (+ time)
+var thirdStarErrors = stage.getThirdStarErrors();//Errors acceptable to obtain 3 stars (+ points + time)
 
 /*-------------------------------------
   VARS TO CONTROL THE POINTS OF PLAYER
@@ -56,7 +63,7 @@ var totalErrors = 0;
 /*-------------------------------------
   VARS TO CONTROL THE BLOCKS IN GAME
  -------------------------------------*/
-var bg = ["bg-danger", "bg-primary", "bg-dark", "bg-info", "bg-success", "bg-warning", "bg-secondary"];
+var bg = stage.getItemsToSelect();
 
 
 /*-------------------------------------

@@ -18,17 +18,17 @@ RPGUI.__create_funcs["slider"] = function(element)
 // init all slider elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_slider_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "slider");
 	}
 });
 
-// upgrade a single "input" element to the beautiful slider class
+// upgrid a single "input" element to the beautiful slider class
 function create_slider(elem)
 {
 	// check if should do it golden slider

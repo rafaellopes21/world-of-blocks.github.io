@@ -30,17 +30,17 @@ RPGUI.__get_funcs["checkbox"] = function(elem)
 // init all checkbox elements on page load
 RPGUI.on_load(function()
 {
-	// get all the input elements we need to upgrade
+	// get all the input elements we need to upgrid
 	var elems = document.getElementsByClassName(_checkbox_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "checkbox");
 	}
 });
 
-// upgrade a single "input" element to the beautiful checkbox class
+// upgrid a single "input" element to the beautiful checkbox class
 function create_checkbox(elem)
 {
 	// get next sibling, assuming its the checkbox label.

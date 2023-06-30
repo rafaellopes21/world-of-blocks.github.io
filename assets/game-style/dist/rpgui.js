@@ -163,17 +163,17 @@ RPGUI.__get_funcs["checkbox"] = function(elem)
 // init all checkbox elements on page load
 RPGUI.on_load(function()
 {
-	// get all the input elements we need to upgrade
+	// get all the input elements we need to upgrid
 	var elems = document.getElementsByClassName(_checkbox_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "checkbox");
 	}
 });
 
-// upgrade a single "input" element to the beautiful checkbox class
+// upgrid a single "input" element to the beautiful checkbox class
 function create_checkbox(elem)
 {
 	// get next sibling, assuming its the checkbox label.
@@ -340,17 +340,17 @@ RPGUI.__set_funcs["progress"] = function(elem, value)
 // init all progress elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_progress_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "progress");
 	}
 });
 
-// upgrade a single "input" element to the beautiful progress class
+// upgrid a single "input" element to the beautiful progress class
 function create_progress(elem)
 {
 	// create the containing div for the new progress
@@ -423,17 +423,17 @@ RPGUI.__get_funcs["radio"] = function(elem)
 // init all radio elements on page load
 RPGUI.on_load(function()
 {
-	// get all the input elements we need to upgrade
+	// get all the input elements we need to upgrid
 	var elems = document.getElementsByClassName(_radio_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "radio");
 	}
 });
 
-// upgrade a single "input" element to the beautiful radio class
+// upgrid a single "input" element to the beautiful radio class
 function create_radio(elem)
 {
 	// get next sibling, assuming its the radio label.
@@ -482,17 +482,17 @@ RPGUI.__create_funcs["dropdown"] = function(element)
 // init all dropdown elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_dropdown_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "dropdown");
 	}
 });
 
-// upgrade a single "select" element to the beautiful dropdown
+// upgrid a single "select" element to the beautiful dropdown
 function create_dropdown(elem)
 {
 	// prefix to add arrow down next to selection header
@@ -621,17 +621,17 @@ RPGUI.__create_funcs["list"] = function(element)
 // init all list elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_list_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "list");
 	}
 });
 
-// upgrade a single "select" element to the beautiful list
+// upgrid a single "select" element to the beautiful list
 function create_list(elem)
 {
 	// default list size is 3
@@ -747,17 +747,17 @@ RPGUI.__create_funcs["slider"] = function(element)
 // init all slider elements on page load
 RPGUI.on_load(function()
 {
-	// get all the select elements we need to upgrade
+	// get all the select elements we need to upgrid
 	var elems = document.getElementsByClassName(_slider_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "slider");
 	}
 });
 
-// upgrade a single "input" element to the beautiful slider class
+// upgrid a single "input" element to the beautiful slider class
 function create_slider(elem)
 {
 	// check if should do it golden slider

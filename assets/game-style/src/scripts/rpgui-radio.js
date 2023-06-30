@@ -30,17 +30,17 @@ RPGUI.__get_funcs["radio"] = function(elem)
 // init all radio elements on page load
 RPGUI.on_load(function()
 {
-	// get all the input elements we need to upgrade
+	// get all the input elements we need to upgrid
 	var elems = document.getElementsByClassName(_radio_class);
 
-	// iterate the selects and upgrade them
+	// iterate the selects and upgrid them
 	for (var i = 0; i < elems.length; ++i)
 	{
 		RPGUI.create(elems[i], "radio");
 	}
 });
 
-// upgrade a single "input" element to the beautiful radio class
+// upgrid a single "input" element to the beautiful radio class
 function create_radio(elem)
 {
 	// get next sibling, assuming its the radio label.
