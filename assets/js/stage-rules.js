@@ -11,7 +11,7 @@
 | assets/js/stage-settings.js
 */
 function playStage(stageNumber) {
-    let stageConfig = getStageSettings(stageNumber);
+    let stageConfig = getStageSettings(parseInt(stageNumber));
 
     stage.setLevelNumber(stageConfig['level']);
     stage.setThemeStageSong(stageConfig['stageTheme']);
@@ -68,6 +68,7 @@ function getStageSettings(stg = false) {
             //Define all itens that will show in the grid to player in this stage
             'itemsToSelect': ["bg-danger", "bg-primary", "bg-dark", "bg-info", "bg-success", "bg-warning", "bg-secondary"],
         },
-    ]
-    return stg ? stagesSettings[stg] : stagesSettings;
+    ];
+
+    return stg ? stagesSettings[stg - 1] : stagesSettings;
 }
