@@ -14,41 +14,44 @@
     <div class="col-6 text-center mb-3" style="margin: 0 auto">
         <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
             <h1>Hits</h1>
-            <p class="mb-0 text-white" id="showHits" style="font-size: 18px">-</p>
+            <p class="mb-0 text-white" id="showHits" style="font-size: 18px">--/--</p>
         </div>
     </div>
     <div class="col-6 text-center mb-3" style="margin: 0 auto">
         <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
             <h1>Errors</h1>
-            <p class="mb-0 text-white" id="showErrors" style="font-size: 18px">-</p>
+            <p class="mb-0 text-white" id="showErrors" style="font-size: 18px">--</p>
         </div>
     </div>
-    <div class="col-6 text-center mb-3" style="margin: 0 auto">
-        <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
-            <h1>Missed</h1>
-            <p class="mb-0 text-white" id="showMissed" style="font-size: 18px">-</p>
-        </div>
-    </div>
-    <div class="col-6 text-center mb-3" style="margin: 0 auto">
+    <div class="col-12 text-center mb-3" style="margin: 0 auto">
         <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
             <h1>Score</h1>
-            <p class="mb-0 text-white" id="showScore" style="font-size: 18px">-</p>
+            <p class="mb-0 text-white" id="showScore" style="font-size: 18px">-----</p>
+            <hr class="golden mt-1">
+            <p class="text-white" id="showStars" style="font-size: 18px">
+                <i class="fa-solid fa-star fa-2x"></i><i class="fa-solid fa-star fa-2x"></i><i class="fa-regular fa-star fa-2x"></i>
+            </p>
+            <p class="mb-0 text-white" style="font-size: 18px">Time: <span id="showTime">--:--</span></p>
         </div>
     </div>
 </div>
 
 
 <script>
-    //Change the color of result with errors in text
-    if(getResults()['errors'] > 0){
+    //Change the color of result with errors/success in text
+    /*if(getResults()['errors'] > 0){
         document.querySelector("#showErrors").classList.add("text-danger");
         document.querySelector("#showErrors").classList.remove("text-white");
         document.querySelector("#showErrors").previousElementSibling.classList.add("text-danger");
     }
+    if(getResults()['hits'] == getResults()['total_items']){
+        document.querySelector("#showHits").classList.add("text-success");
+        document.querySelector("#showHits").classList.remove("text-white");
+        document.querySelector("#showHits").previousElementSibling.classList.add("text-success");
+    }*/
 
     //Update all the results in screen
-    document.querySelector("#showHits").innerText = getResults()['hits'];
+    document.querySelector("#showHits").innerText = getResults()['hits']+"/"+getResults()['total_items'];
     document.querySelector("#showErrors").innerText = getResults()['errors'];
-    document.querySelector("#showMissed").innerText = (getResults()['total_items'] - getResults()['hits']);
     document.querySelector("#showScore").innerText = getResults()['score'];
 </script>
