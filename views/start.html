@@ -7,20 +7,45 @@
             </div>
             <div class="modal-body rpgui-container framed-grey fix-position">
                 <div id="paragraphs">
-                    <h3>How to Play</h3>
-                    <p class="text-center">Describe here a small tutorial.</p>
+                    <div class="mb-2">
+                        <div class="d-grid gap-2">
+                            <button class="rpgui-container framed-golden-2 fix-position text-white sfx-click" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseHowToPlay" aria-expanded="false" aria-controls="collapseHowToPlay">
+                                <span class="mb-0">How to Play</span>
+                            </button>
+                        </div>
+                        <div class="collapse" id="collapseHowToPlay">
+                            <div class="rpgui-container framed-golden fix-position text-center">
+                                <p class="mb-0">Describe here a small tutorial.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <hr class="golden mt-3">
+                    <div>
+                        <div class="d-grid gap-2">
+                            <button class="rpgui-container framed-golden-2 fix-position text-white sfx-click" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseDonate" aria-expanded="false" aria-controls="collapseDonate">
+                                <span class="mb-0">Donate</span>
+                            </button>
+                        </div>
+                        <div class="collapse" id="collapseDonate">
+                            <div class="rpgui-container framed-golden fix-position text-center">
+                                <label>If you enjoy, </label> <a href="#">Donate here!</a>
+                            </div>
+                        </div>
+                    </div>
 
-                    <h3>View the Full Tutorial</h3>
-                    <div class="text-center"><label>Tutorial</label> <a href="#">Click Here to See!</a></div>
+                    <hr class="golden mt-2 mb-2">
 
-                    <hr class="golden mt-3">
+                    <div class="text-center text-white" style="background: #716d6d;padding: 5px;border-radius: 22px;">
+                        <h3>Before Start!</h3>
+                        <p class="mb-0">This game uses your browser's cookies to store data about your gameplay.</p>
+                    </div>
+                    <hr class="mt-2 mb-2">
 
-                    <h3>Before Start!</h3>
-                    <p class="text-center">This game uses your browser's cookies to store information about your scores during your game.</p>
-                    <label>Your Nickname:</label>
-                    <input placeholder="Type Here" class="text-white" name="nickname" id="nickname" required oninput="validateNickName(this)">
+                    <p class="text-center mb-1">Player Name:</p>
+                    <input placeholder="Type Here" class="text-white text-center" name="nickname" id="nickname"
+                           required oninput="validateNickName(this)" style="font-size: 16px">
                     <small class="text-danger" hidden id="showmsg">*Required</small>
                 </div>
             </div>

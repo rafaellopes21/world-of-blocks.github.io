@@ -29,9 +29,13 @@
             <p class="mb-0 text-white" id="showScore" style="font-size: 18px">-----</p>
             <hr class="golden mt-1">
             <p class="text-white" id="showStars" style="font-size: 18px">
-                <i class="fa-solid fa-star fa-2x"></i><i class="fa-solid fa-star fa-2x"></i><i class="fa-regular fa-star fa-2x"></i>
+                <i id="star-result-1" class="fa-regular fa-star fa-2x"></i>
+                <i id="star-result-2" class="fa-regular fa-star fa-2x"></i>
+                <i id="star-result-3" class="fa-regular fa-star fa-2x"></i>
             </p>
-            <p class="mb-0 text-white" style="font-size: 18px">Time: <span id="showTime">--:--</span></p>
+            <p class="mb-0 text-white" style="font-size: 18px">
+                Time Left: <span id="showTime">--:--</span>
+            </p>
         </div>
     </div>
 </div>
@@ -54,4 +58,12 @@
     document.querySelector("#showHits").innerText = getResults()['hits']+"/"+getResults()['total_items'];
     document.querySelector("#showErrors").innerText = getResults()['errors'];
     document.querySelector("#showScore").innerText = getResults()['score'];
+    document.querySelector("#showTime").innerText = getResults()['time'];
+
+    //Update star of the objectives
+    for(let x = 0; x < getResults()['stars']; x++){
+        document.querySelector("#star-result-"+(x+1)).classList.remove("fa-regular");
+        document.querySelector("#star-result-"+(x+1)).classList.add("fa-solid");
+    }
+
 </script>

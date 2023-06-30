@@ -10,9 +10,8 @@ animations css: https://webcode.tools/generators/css/keyframe-animation
 Executar projeto: https://rafaellopes21.github.io/color-blocking.github.io/index.html
 
 ### Como o jogo deverá funcionar
-1. O jogador deverá primero informar seu nome.
-2. Ao entrar no jogo, deverá escolher novo jogo.
 3. O jogo terá sistema de fases com pontuações e cosméticos
+4. pra liberar a proxima fase, o jogador tem que ter um numero X de estrelas para desbloquear
 4. A ideia, é fazer o jogador visualizar uma grade de itens (tipo candy crush)
 5. O Jogo irá apresentar uma fruta, objeto ou algo para que o jogador encontre e clique nele.
 6. Além disso, o usuário terá um limite de tempo para completar seu jogo.
