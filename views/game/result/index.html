@@ -1,4 +1,4 @@
-<table class="table text-white text-center">
+<table class="table text-white text-center" hidden>
     <thead>
     <tr>
         <th scope="col">Hits</th>
@@ -10,15 +10,45 @@
     <tbody id="body-results"></tbody>
 </table>
 
-
-<h1>Mudar esta tabela para quadros, melhor visualização até no mobile</h1>
+<div class="row mt-3">
+    <div class="col-6 text-center mb-3" style="margin: 0 auto">
+        <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
+            <h1>Hits</h1>
+            <p class="mb-0 text-white" id="showHits" style="font-size: 18px">-</p>
+        </div>
+    </div>
+    <div class="col-6 text-center mb-3" style="margin: 0 auto">
+        <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
+            <h1>Errors</h1>
+            <p class="mb-0 text-white" id="showErrors" style="font-size: 18px">-</p>
+        </div>
+    </div>
+    <div class="col-6 text-center mb-3" style="margin: 0 auto">
+        <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
+            <h1>Missed</h1>
+            <p class="mb-0 text-white" id="showMissed" style="font-size: 18px">-</p>
+        </div>
+    </div>
+    <div class="col-6 text-center mb-3" style="margin: 0 auto">
+        <div class="rpgui-container framed-golden-2 fix-position text-center" style="padding: 12px 0">
+            <h1>Score</h1>
+            <p class="mb-0 text-white" id="showScore" style="font-size: 18px">-</p>
+        </div>
+    </div>
+</div>
 
 
 <script>
-    let playerResults = getResults();
-    let remainingItens = playerResults['total_items'] - playerResults['hits'];
+    //Change the color of result with errors in text
+    if(getResults()['errors'] > 0){
+        document.querySelector("#showErrors").classList.add("text-danger");
+        document.querySelector("#showErrors").classList.remove("text-white");
+        document.querySelector("#showErrors").previousElementSibling.classList.add("text-danger");
+    }
 
-    document.querySelector("#body-results").insertAdjacentHTML("afterend",
-        '<tr><td>' + playerResults['hits'] + '</td><td>' + playerResults['errors'] + '</td><td>' + remainingItens + '</td><td>' + playerResults['score'] + '</td></tr>'
-    );
+    //Update all the results in screen
+    document.querySelector("#showHits").innerText = getResults()['hits'];
+    document.querySelector("#showErrors").innerText = getResults()['errors'];
+    document.querySelector("#showMissed").innerText = (getResults()['total_items'] - getResults()['hits']);
+    document.querySelector("#showScore").innerText = getResults()['score'];
 </script>

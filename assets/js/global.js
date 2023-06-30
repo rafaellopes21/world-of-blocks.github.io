@@ -1,21 +1,45 @@
 window.onload = function (){
-
+    checkSavedPlayer();
 }
-
-var playerData = [];
 
 function getBaseUrl(){
     return window.location.protocol+"//"+window.location.host+(window.location.pathname).replace("index.html", "");
 }
 
-function getPlayer(){
-    return playerData;
+function savePlayerSettings(key, value){
+    let playerData = {
+        'player_name': getPlayerSettings('player_name', null),
+        'main_volume' : getPlayerSettings('main_volume', 6),
+    };
+
+    playerData[key] = value;
+
+    //Save in localStorage the information as JSON
+    localStorage.setItem("player_data", JSON.stringify(playerData));
+}
+function getPlayerSettings(keySearch = false, defaultValue = null){
+    let playerSettings = localStorage.getItem("player_data") ? JSON.parse(localStorage.getItem("player_data")) : [];
+
+    if(keySearch && defaultValue){
+        playerSettings[keySearch] = defaultValue;
+    }
+
+    return keySearch ? playerSettings[keySearch] : playerSettings;
+}
+
+function checkSavedPlayer(){
+    if(getPlayerSettings('player_name')){
+        let nickName = document.querySelector("#nickname");
+        document.querySelector("#regards").innerText = "Welcome Back!";
+        document.querySelector("#start-game").innerText = "Continue";
+        document.querySelector("#start-game").classList.add("rpgui-button-success");
+        nickName.value = getPlayerSettings('player_name');
+        validateNickName(nickName);
+    }
 }
 
 function startGaming(){
-    playerData = {
-        'player': document.querySelector("#nickname").value,
-    };
+    savePlayerSettings('player_name', document.querySelector("#nickname").value);
     include('menu/main-menu', '#main-content');
 }
 

@@ -13,19 +13,21 @@ const SFX = document.querySelector('#soundFx');
 |-------------------------------------
 |
 |*/
-var AUDIO_VOLUME = getVolume();
+var AUDIO_VOLUME = getPlayerSettings('main_volume');
 
-function playSFX(songPath){
+function playSFX(songPath, anotherElement = false){
+    let audioElement = anotherElement ? document.querySelector(anotherElement) : SFX;
+
     songPath = (songPath.replace("songs/", "")).replace("/songs/", "");
-    SFX.src = "songs/sound_fx/" + (songPath.replace("sound_fx/", "")).replace("/sound_fx/", "");
-    SFX.addEventListener('canplaythrough', function () {
-        SFX.play();
+    audioElement.src = "songs/sound_fx/" + (songPath.replace("sound_fx/", "")).replace("/sound_fx/", "");
+    audioElement.addEventListener('canplaythrough', function () {
+        audioElement.play();
     });
-    SFX.load();
+    audioElement.load();
 }
 
-function playSong(songPath, anotherId = false){
-    let audioElement = anotherId ? document.querySelector(anotherId) : AUDIO;
+function playSong(songPath, anotherElement = false){
+    let audioElement = anotherElement ? document.querySelector(anotherElement) : AUDIO;
 
     //If has song with different source from audio, then start to play
     if(getBaseUrl()+"songs/"+songPath != audioElement.src){
@@ -39,8 +41,8 @@ function playSong(songPath, anotherId = false){
     //Set Audio Volume by History
     if(document.querySelector("#master-volume")){
         let audioValue = AUDIO_VOLUME == 1 ? 10 : AUDIO_VOLUME.toString().replace("0.", "");
-        saveVolume(audioValue);
-        document.querySelector("#master-volume").value = getVolume();
+        document.querySelector("#master-volume").value = audioValue;
+        changeVolume(audioValue);
     }
 }
 
@@ -58,15 +60,5 @@ function changeVolume(volume = AUDIO_VOLUME) {
     volume = volume.toString().replace("0.", "");
     AUDIO.volume = volume == "10" ? 1 : "0."+volume;
     AUDIO_VOLUME = AUDIO.volume;
-    saveVolume(AUDIO.volume);
-}
-
-function saveVolume(volume){
-    localStorage.setItem("main_volume", volume);
-}
-
-function getVolume(){
-    let newVolume = localStorage.getItem("main_volume") ? localStorage.getItem("main_volume") : 6;
-    changeVolume(newVolume);
-    return newVolume;
+    savePlayerSettings('main_volume', AUDIO.volume);
 }
