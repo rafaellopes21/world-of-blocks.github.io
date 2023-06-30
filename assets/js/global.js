@@ -84,3 +84,11 @@ function loadModal(viewPath, modalTitle, btnName = 'Save', btnRedirect = false, 
         }
     });
 }
+
+function formatTime(timeInSeconds){
+    let minutes = Math.floor(timeInSeconds / 60);
+    let secondsLeft = timeInSeconds % 60;
+    minutes = minutes < 0 ? 0 : minutes;
+    secondsLeft = secondsLeft < 0 ? 0 : secondsLeft;
+    return `${String(minutes).padStart(2, "0")}:${String(secondsLeft).padStart(2, "0")}`;
+}

@@ -13,6 +13,10 @@ function StageSettings(){
     this.getThemeStageSong = function () {return __stageTheme;};
     this.setThemeStageSong = function (value) {__stageTheme = value;};
 
+    var __levelDescription = null;
+    this.getLevelDescription = function () {return __levelDescription;};
+    this.setLevelDescription = function (value) {__levelDescription = value;};
+
     var __gridLength = null;
     this.getgridLength = function () {return __gridLength;};
     this.setgridLength = function (value) {__gridLength = value;};

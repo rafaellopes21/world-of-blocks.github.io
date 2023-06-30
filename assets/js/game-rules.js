@@ -178,14 +178,6 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
     );
 }
 
-function formatTime(timeInSeconds){
-    let minutes = Math.floor(timeInSeconds / 60);
-    let secondsLeft = timeInSeconds % 60;
-    minutes = minutes < 0 ? 0 : minutes;
-    secondsLeft = secondsLeft < 0 ? 0 : secondsLeft;
-    return `${String(minutes).padStart(2, "0")}:${String(secondsLeft).padStart(2, "0")}`;
-}
-
 function completedObjectives(){
     //get the first star
     if(maxTime >= firstStarTime && totalHits >= firstStarHits){
