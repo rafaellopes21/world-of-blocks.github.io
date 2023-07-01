@@ -26,7 +26,7 @@
             <div class="tab-pane fade show active" id="nav-home-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p1">
                 <div class="mb-0">
                     <span style="font-size: 15px;">Description</span><br><br>
-                    <p style="font-size: 13px;margin: 1.71rem 0;">{{simple-description}}</p>
+                    <p style="font-size: 13px;margin: 0.3rem 0;">{{simple-description}}</p>
                 </div>
                 <hr class="mt-2 mb-0">
                 <div class="text-white">
@@ -36,12 +36,14 @@
                         <i id="star3-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
                         | <span style="font-size: 13px;position: relative;top: 2px;">Score: <span id="score-stage-{{stage-level}}">00000</span></span>
                     </p>
+                    <p class="mb-0 mt-0" style="padding: 2px 0;">Your Time: <span id="time-stage-{{stage-level}}">--:--</span></p>
+                    <p class="mb-0 mt-0" style="padding: 2px 0;">Hits: <span id="tot-hits-{{stage-level}}">00/00</span> | Errors: <span id="tot-err-{{stage-level}}">00/00</span></p>
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-profile-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p2">
                 <div class="mb-0">
                     <span style="font-size: 14px;">Achievments</span><br><br>
-                    <span class="text-start float-start" style="margin-bottom: 7px;">
+                    <span class="text-start float-start" style="margin-bottom: 13px;">
                         <i class="fa-solid fa-star fa-2x"></i>
                         <i class="fa-solid fa-star fa-2x"></i>
                         <i class="fa-solid fa-star fa-2x"></i>
@@ -61,7 +63,7 @@
             </div>
         </div>
 
-        <hr class="mt-2 mb-2">
+        <hr class="mt-1 mb-0">
         <div class="row">
             <div class="d-grid gap-2 col-6 mx-auto">
                 <button class="rpgui-button text-white sfx-click rpgui-button-warning" type="button"
@@ -132,6 +134,24 @@
 
             //Add all HTML level template to the stage div
             document.querySelector("#stages-list").insertAdjacentHTML("beforeend", copyTemplateStage);
+
+            //Get stage results if player has one
+            setTimeout(function (){
+                let stageResultsLevel = getStageResults(level['level']);
+
+                if(stageResultsLevel && stageResultsLevel['total_items']){
+                    for(let s = 0; s < stageResultsLevel['score']; s++){
+                        if(document.querySelector("#star"+(s+1)+"-stage-"+level['level'])){
+                            document.querySelector("#star"+(s+1)+"-stage-"+level['level']).classList.remove('fa-regular');
+                            document.querySelector("#star"+(s+1)+"-stage-"+level['level']).classList.add('fa-solid');
+                        }
+                    }
+                    document.querySelector("#score-stage-"+level['level']).innerText = stageResultsLevel['score'];
+                    document.querySelector("#time-stage-"+level['level']).innerText = stageResultsLevel['time'];
+                    document.querySelector("#tot-hits-"+level['level']).innerText = stageResultsLevel['hits']+"/"+stageResultsLevel['total_items'];
+                    document.querySelector("#tot-err-"+level['level']).innerText = stageResultsLevel['errors'];
+                }
+            }, 50);
         });
     }
 

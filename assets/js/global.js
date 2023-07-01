@@ -27,12 +27,26 @@ function getPlayerSettings(keySearch = false, defaultValue = null){
     return keySearch ? playerSettings[keySearch] : playerSettings;
 }
 
+function setStageResults(stageNumber, stageResults){
+    localStorage.setItem("stage-results-"+stageNumber, JSON.stringify(stageResults));
+}
+
+function getStageResults(stageNumber){
+    return localStorage.getItem("stage-results-"+stageNumber) ? JSON.parse(localStorage.getItem("stage-results-"+stageNumber)) : [];
+}
+
 function checkSavedPlayer(){
     if(getPlayerSettings('player_name')){
         let nickName = document.querySelector("#nickname");
-        document.querySelector("#regards").innerText = "Welcome Back!";
-        document.querySelector("#start-game").innerText = "Continue";
-        document.querySelector("#start-game").classList.add("rpgui-button-success");
+
+        if(document.querySelector("#regards")){
+            document.querySelector("#regards").innerText = "Welcome Back!";
+        }
+        if(document.querySelector("#start-game")){
+            document.querySelector("#start-game").innerText = "Continue";
+            document.querySelector("#start-game").classList.add("rpgui-button-success");
+        }
+
         nickName.value = getPlayerSettings('player_name');
         validateNickName(nickName);
     }

@@ -9,7 +9,6 @@
 | enter in the file path:
 | assets/js/stage-rules.js
 |*/
-
 function sortItemGame(){
     let randomItem = Math.floor(Math.random() * bg.length);
     itemMatch = bg[randomItem];
@@ -40,10 +39,16 @@ function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
         }
     }
 
-    //Then, the program will take random places to replace with maximum/minimum itemMatch in the grid
+    //Separate what is maximun and minimun values in the session roll
     let max = maxMatchItensInSession;
-    let min = Math.floor((totalItems / maxTime)) < max ? Math.floor((totalItems / maxTime)) : 1;
-    let randomMatchs = Math.floor(Math.random() * (max - min + 1) + min)
+    let minNum = maxTime > totalItems ? (maxTime / totalItems) : (totalItems / maxTime);
+    let min = minNum < 1 ? 1 : Math.floor(minNum);
+
+    //After separation, lets randomize the numbers and check if current roll has more items then selectable.
+    let randomMatchs = Math.floor(Math.random() * (max - min + 1)) + min;
+        randomMatchs = randomMatchs > (totalItems - totalHits) ? (totalItems - totalHits) : randomMatchs;
+
+    //Then, the program will take random places to replace with maximum/minimum itemMatch in the grid
     for (let i = 0; i < randomMatchs; i++) {
         let randomIndex = Math.floor(Math.random() * randomItems.length);
         randomItems[randomIndex] = itemMatch;
@@ -138,7 +143,7 @@ function sumSessionPoints(){
 function sumScore(addPoints = 0){
     playerScoreInSession++;
     let sumPoints = (totalHits / totalErrors) == "Infinity" ? (totalHits / 1) : (totalHits / totalErrors);
-    sumPoints = (sumPoints + addPoints);
+    sumPoints = (sumPoints + addPoints) * (comboCounter > 3 ? 3 : comboCounter); //limit combo counter points to 3
     playerScore += Math.ceil((sumPoints ? sumPoints : 0));
     score.innerText = String(playerScore).padStart(5, "0");
 }
@@ -219,7 +224,8 @@ function saveResults(){
     if(document.querySelector(".total-stars.fa-solid")){
         totalStars = document.querySelectorAll(".total-stars.fa-solid").length;
     }
-    results.value = JSON.stringify({
+
+    let resultData = {
         'total_items': totalItems,
         'hits': totalHits,
         'errors': totalErrors,
@@ -227,7 +233,42 @@ function saveResults(){
         'time': formatTime(maxTime),
         'timeResolution': formatTime((maxTimeAux - maxTime)),
         'stars': totalStars,
-    });
+        'combo': comboCounter,
+    };
+
+    results.value = JSON.stringify(resultData);
+
+    //Save stage results and compare with some status are higher then others to replace.
+    let hasResults = getStageResults(stage.getLevelNumber());
+    let auxResultData = resultData;
+    let fieldComp = '';
+    if(hasResults && hasResults['total_items']){
+        fieldComp = 'total_items';
+        auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        fieldComp = 'hits';
+        auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        fieldComp = 'errors';
+        auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, false);
+        fieldComp = 'score';
+        auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        fieldComp = 'time';
+        //auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        fieldComp = 'timeResolution';
+        //auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        fieldComp = 'stars';
+        auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        fieldComp = 'combo';
+        auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+    }
+    setStageResults(stage.getLevelNumber(), auxResultData);
+}
+
+function compareValuesInStageResults(fieldComp, resultData, hasResults, isHigher = true){
+    if(isHigher){
+        return resultData[fieldComp] > hasResults[fieldComp] ? resultData[fieldComp] : hasResults[fieldComp];
+    } else {
+        return resultData[fieldComp] < hasResults[fieldComp] ? resultData[fieldComp] : hasResults[fieldComp]
+    }
 }
 
 function getResults(){
@@ -252,3 +293,29 @@ function clearAll(){
 clearAll();
 sortItemGame();
 setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
+
+/*-------------------------------------
+  CONTROL THE COUNTER TIME LIMIT GAME
+ -------------------------------------*/
+var timer = document.querySelector("#clock-time");
+var timerClockInterval = setInterval(updatetimer, 1000);
+function updatetimer() {
+    timer.textContent = formatTime(maxTime);
+    maxTime--;
+
+    if(maxTime == 9){
+        playSong('sound_fx/zapsplat_multimedia_game_retro_musical_timer_loop_003.mp3', '#songTwo');
+    }
+
+    if(maxTime <= 9){
+        if(!timer.classList.contains("text-danger")){
+            timer.classList.add("text-danger");
+        } else {
+            timer.classList.remove("text-danger");
+        }
+    }
+
+    if (maxTime < 0) {
+        finishGame();
+    }
+}

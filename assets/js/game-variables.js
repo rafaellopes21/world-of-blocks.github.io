@@ -18,8 +18,6 @@ var gridMaxMatchItems = stage.getMaxMatchItems(); //Define how many match itens 
 var refreshGameTime = stage.getRefreshGameTime(); //Define how many seconds the grid will be refreshed
 var maxTime = stage.getMaxTime(); //Time in seconds to play the current game
 var maxTimeAux = maxTime; //Aux time to help to calculate de diff between times
-var timer = document.querySelector("#clock-time");
-var timerClockInterval = setInterval(updatetimer, 1000);
 
 /*----------------------------------------------------------------
             Number of total selected items per match
@@ -64,28 +62,3 @@ var totalErrors = 0;
   VARS TO CONTROL THE BLOCKS IN GAME
  -------------------------------------*/
 var bg = stage.getItemsToSelect();
-
-
-/*-------------------------------------
-  CONTROL THE COUNTER TIME LIMIT GAME
- -------------------------------------*/
-function updatetimer() {
-    timer.textContent = formatTime(maxTime);
-    maxTime--;
-
-    if(maxTime == 9){
-        playSong('sound_fx/zapsplat_multimedia_game_retro_musical_timer_loop_003.mp3', '#songTwo');
-    }
-
-    if(maxTime <= 9){
-        if(!timer.classList.contains("text-danger")){
-            timer.classList.add("text-danger");
-        } else {
-            timer.classList.remove("text-danger");
-        }
-    }
-
-    if (maxTime < 0) {
-        finishGame();
-    }
-}
