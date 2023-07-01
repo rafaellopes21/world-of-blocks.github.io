@@ -1,11 +1,15 @@
-<div class="container row rpgui-content center-in-screen reset-margin-center">
-    <div class="rpgui-container framed row fix-position">
+<div class="container row rpgui-content center-in-screen reset-margin-center" style="min-height: 0;">
+    <div class="rpgui-container framed row fix-position" style="padding: 0">
         <div class="row rpgui-content fix-position" id="stages-list"></div>
+
+        <button class="rpgui-button rpgui-button-danger text-white sfx-click" type="button" onclick="loadView('menu/main-menu')">
+            <i class='fa-solid fa-arrow-left fix-icon-btn'></i> Voltar
+        </button>
     </div>
 </div>
 
 <div hidden id="copy-stage-desc">
-    <div class="rpgui-container framed-golden-2 fix-position col-sm-6 col-md-4 p-0" id="stage-level-{{stage-level}}" style="min-height: 337px">
+    <div class="rpgui-container framed-golden-2 fix-position col-sm-6 col-md-4 p-0 mb-1 mt-1" id="stage-level-{{stage-level}}" style="min-height: 337px;">
         <h2 class="mb-0" style="font-size: 18px;">Level: {{stage-level}}</h2>
         <hr class="mt-2 mb-2 golden">
 
@@ -22,9 +26,9 @@
             <div class="tab-pane fade show active" id="nav-home-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p1">
                 <div class="mb-0">
                     <span style="font-size: 15px;">Description</span><br><br>
-                    <p class="mt-3" style="font-size: 12px;">{{simple-description}}</p>
+                    <p style="font-size: 13px;margin: 1.71rem 0;">{{simple-description}}</p>
                 </div>
-                <hr class="mt-4 mb-0">
+                <hr class="mt-2 mb-0">
                 <div class="text-white">
                     <p class="mb-2 mt-0" style="padding: 2px 0;">
                         <i id="star1-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
@@ -37,7 +41,7 @@
             <div class="tab-pane fade" id="nav-profile-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p2">
                 <div class="mb-0">
                     <span style="font-size: 14px;">Achievments</span><br><br>
-                    <span class="text-start float-start">
+                    <span class="text-start float-start" style="margin-bottom: 7px;">
                         <i class="fa-solid fa-star fa-2x"></i>
                         <i class="fa-solid fa-star fa-2x"></i>
                         <i class="fa-solid fa-star fa-2x"></i>
@@ -57,12 +61,12 @@
             </div>
         </div>
 
-        <hr class="mt-2 mb-3">
+        <hr class="mt-2 mb-2">
         <div class="row">
             <div class="d-grid gap-2 col-6 mx-auto">
                 <button class="rpgui-button text-white sfx-click rpgui-button-warning" type="button"
                     onclick="changeTab('#s{{stage-level}}p2', this);" stage-lvl-btn="{{stage-level}}">
-                    <span class="mb-0"><i class="fa-solid fa-bullseye fix-icon-btn"></i> Goal</span>
+                    <span class="mb-0">Goals</span>
                 </button>
             </div>
            <div class="d-grid gap-2 col-6 mx-auto">
@@ -78,6 +82,7 @@
 
 <script src="assets/js/stage-rules.js"></script>
 <script>
+    playSong('moe-moe-garden-in-the-brain.mp3');
     function changeTab(tabId, e){
         document.querySelector(tabId).click();
 
@@ -88,33 +93,46 @@
             e.innerHTML = '<span class="mb-0"><i class="fa-solid fa-arrow-left fix-icon-btn"></i> Back</span>';
         } else {
             e.setAttribute("onclick", "changeTab('#s"+e.getAttribute('stage-lvl-btn')+"p2', this)");
-            e.innerHTML = '<span class="mb-0"><i class="fa-solid fa-bullseye fix-icon-btn"></i> Goal</span>';
+            e.innerHTML = '<span class="mb-0">Goals</span>';
         }
     }
 
     function buildLevels(){
-        let copyTemplateStage = document.querySelector("#copy-stage-desc").innerHTML;
-
+        if(!document.querySelector("#copy-stage-desc")){
+            return false;
+        }
         getStageSettings().forEach(level => {
-            copyTemplateStage = copyTemplateStage.replaceAll('{{stage-level}}', level['level']);
+            //Replace itens with level number
+            let copyTemplateStage = document.querySelector("#copy-stage-desc").innerHTML.replaceAll('{{stage-level}}', level['level']);
+
+            //Replace itens with level description
+            if(!level['description']){
+                let totalItemsStage = level['totalItems'] ? level['totalItems'] : Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems']));
+                level['description'] = "Find all "+totalItemsStage+" items within "+formatTime(level['maxTime'])+" time.";
+            }
             copyTemplateStage = copyTemplateStage.replaceAll('{{simple-description}}', level['description']);
 
+            //Add the achievments about the stage level (Star 3)
+            let totalItens1 = level['achievements'][2]['thirdStarHits'] == 0 ? Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems'])) : level['achievements'][2]['thirdStarHits'];
+            let errors1 = (level['achievements'][2]['thirdStarErrors'] > 0 ? '(Max Errors: '+level['achievements'][2]['thirdStarErrors']+")" : '(Errors Acceptable)');
+            let goal1 = 'Up to '+formatTime(level['achievements'][2]['thirdStarTime'])+', '+totalItens1+' hits '+errors1;
+            copyTemplateStage = copyTemplateStage.replaceAll('{{goal_1}}', goal1);
 
-            let totalItens3 = level['achievements'][0]['firstStarHits'] == 0 ? Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems'])) : level['achievements'][0]['firstStarHits'];
-
-            console.log(totalItens3);
-            let goal3 = 'Up to '+formatTime(level['achievements'][0]['firstStarTime'])+', '+totalItens3+' hits (Errors acceptable: '+(level['achievements'][0]['firstStarErrors'] ? level['achievements'][0]['firstStarErrors'] : 0)+')';
-            copyTemplateStage = copyTemplateStage.replaceAll('{{goal_3}}', goal3);
-
-            /*let goal2 = 'Up to '+formatTime(level['achievements'][1]['secondStarTime'])+', '+level['achievements'][1]['secondStarHits']+' hits (Errors acceptable: '+(level['achievements'][1]['secondStarErrors'] ? level['achievements'][1]['secondStarErrors'] : 0)+')';
+            //Add the achievments about the stage level (Star 2)
+            let totalItens2 = level['achievements'][1]['secondStarHits'] == 0 ? Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems'])) : level['achievements'][1]['secondStarHits'];
+            let errors2 = (level['achievements'][1]['secondStarErrors'] > 0 ? '(Max Errors: '+level['achievements'][1]['secondStarErrors']+")" : '(Errors Acceptable)');
+            let goal2 = 'Up to '+formatTime(level['achievements'][1]['secondStarTime'])+', '+totalItens2+' hits '+errors2;
             copyTemplateStage = copyTemplateStage.replaceAll('{{goal_2}}', goal2);
 
-            let goal1 = 'Up to '+formatTime(level['achievements'][2]['thirdStarTime'])+', '+level['achievements'][2]['thirdStarHits']+' hits (Errors acceptable: '+(level['achievements'][2]['thirdStarErrors'] ? level['achievements'][2]['thirdStarErrors'] : 0)+')';
-            copyTemplateStage = copyTemplateStage.replaceAll('{{goal_1}}', goal1);*/
+            //Add the achievments about the stage level (Star 1)
+            let totalItens3 = level['achievements'][0]['firstStarHits'] == 0 ? Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems'])) : level['achievements'][0]['firstStarHits'];
+            let errors3 = (level['achievements'][0]['firstStarErrors'] > 0 ? '(Max Errors: '+level['achievements'][0]['firstStarErrors']+")" : '(Errors Acceptable)');
+            let goal3 = 'Up to '+formatTime(level['achievements'][0]['firstStarTime'])+', '+totalItens3+' hits '+errors3;
+            copyTemplateStage = copyTemplateStage.replaceAll('{{goal_3}}', goal3);
 
-            document.querySelector("#stages-list").innerHTML = copyTemplateStage;
+            //Add all HTML level template to the stage div
+            document.querySelector("#stages-list").insertAdjacentHTML("beforeend", copyTemplateStage);
         });
-
     }
 
     buildLevels();

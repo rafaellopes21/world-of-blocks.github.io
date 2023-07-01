@@ -41,10 +41,10 @@ function playStage(stageNumber) {
 
 function getStageSettings(stg = false) {
     let stagesSettings = [
-        {
+        {   //Level Settings
             'level': 1, //Number of the stage level
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
-            'description': 'Exibir aqui o tempo limite da tela e total de acertos existentes', //simple Description about this level
+            'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 8, //Length of squares in grid
             'gridMaxMatchItems': 3, //Number of how many match squares will be present at each roll
             'refreshGameTime': 5, //After X seconds, the game will refresh the grid

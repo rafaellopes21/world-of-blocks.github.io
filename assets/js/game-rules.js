@@ -173,7 +173,7 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
         'partials/modal/index',
         'Congratulations!',
         'OK',
-        'menu/main-menu',
+        'game/stages/index',
         'game/result/index'
     );
 }
@@ -249,5 +249,6 @@ function clearAll(){
 |-------------------------------------
 |
 |*/
+clearAll();
 sortItemGame();
 setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
