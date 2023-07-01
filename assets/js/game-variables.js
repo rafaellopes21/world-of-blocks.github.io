@@ -32,17 +32,17 @@ var totalItems = stage.getTotalItems()
  -------------------------------------*/
 var starOne = document.querySelector("#star1");
 var firstStarTime = stage.getFirstStarTime();//Seconds remaining to obtain 1 star (+ points)
-var firstStarHits = (totalItems - stage.getFirstStarHits());//Points necessary to obtain 1 star (+ time)
-var firstStarErrors = stage.getFirstStarErrors();//Errors acceptable to obtain 1 stars (+ points + time)
+var firstStarHits = stage.getFirstStarHits();//Points necessary to obtain 1 star (+ time)
+var firstStarErrors = stage.getFirstStarErrors() ? stage.getFirstStarErrors() : totalItems;//Errors acceptable to obtain 1 stars (+ points + time)
 
 var starTwo = document.querySelector("#star2");
 var secondStarTime = stage.getSecondStarTime();//Seconds remaining to obtain 2 stars (+ points)
-var secondStarHits = (totalItems - stage.getSecondStarHits());//Points necessary to obtain 2 stars (+ time)
-var secondStarErrors = stage.getSecondStarErrors();//Errors acceptable to obtain 2 stars (+ points + time)
+var secondStarHits = stage.getSecondStarHits();//Points necessary to obtain 2 stars (+ time)
+var secondStarErrors = stage.getSecondStarErrors() ? stage.getSecondStarErrors() : totalItems;//Errors acceptable to obtain 2 stars (+ points + time)
 
 var starThree = document.querySelector("#star3");
 var thirdStarTime = stage.getThirdStarTime();//Seconds remaining to obtain 3 stars (+ points)
-var thirdStarHits = (totalItems - stage.getThirdStarHits());//Points necessary to obtain 3 stars (+ time)
+var thirdStarHits = stage.getThirdStarHits() ? stage.getThirdStarHits() : totalItems;//Points necessary to obtain 3 stars (+ points + time)
 var thirdStarErrors = stage.getThirdStarErrors();//Errors acceptable to obtain 3 stars (+ points + time)
 
 /*-------------------------------------

@@ -195,7 +195,7 @@ function completedObjectives(){
 
     //get the second star
     if(maxTime >= secondStarTime && totalHits >= secondStarHits){
-        if(secondStarErrors && totalErrors <= thirdStarErrors){
+        if(secondStarErrors && totalErrors <= secondStarErrors){
             updateStar(starTwo);
         } else {
             updateStar(starTwo);

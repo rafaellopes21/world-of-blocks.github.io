@@ -114,20 +114,23 @@
             }
             copyTemplateStage = copyTemplateStage.replaceAll('{{simple-description}}', level['description']);
 
+            //Get Total itens to beat the game
+            let total = level['totalItems'] ? level['totalItems'] : Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems']))
+
             //Add the achievments about the stage level (Star 3)
-            let totalItens1 = level['achievements'][2]['thirdStarHits'] == 0 ? Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems'])) : level['achievements'][2]['thirdStarHits'];
+            let totalItens1 = level['achievements'][2]['thirdStarHits'] == 0 ? total : level['achievements'][2]['thirdStarHits'];
             let errors1 = (level['achievements'][2]['thirdStarErrors'] > 0 ? '(Max Errors: '+level['achievements'][2]['thirdStarErrors']+")" : '(Errors Acceptable)');
             let goal1 = 'Up to '+formatTime(level['achievements'][2]['thirdStarTime'])+', '+totalItens1+' hits '+errors1;
             copyTemplateStage = copyTemplateStage.replaceAll('{{goal_1}}', goal1);
 
             //Add the achievments about the stage level (Star 2)
-            let totalItens2 = level['achievements'][1]['secondStarHits'] == 0 ? Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems'])) : level['achievements'][1]['secondStarHits'];
+            let totalItens2 = level['achievements'][1]['secondStarHits'] == 0 ? total : level['achievements'][1]['secondStarHits'];
             let errors2 = (level['achievements'][1]['secondStarErrors'] > 0 ? '(Max Errors: '+level['achievements'][1]['secondStarErrors']+")" : '(Errors Acceptable)');
             let goal2 = 'Up to '+formatTime(level['achievements'][1]['secondStarTime'])+', '+totalItens2+' hits '+errors2;
             copyTemplateStage = copyTemplateStage.replaceAll('{{goal_2}}', goal2);
 
             //Add the achievments about the stage level (Star 1)
-            let totalItens3 = level['achievements'][0]['firstStarHits'] == 0 ? Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems'])) : level['achievements'][0]['firstStarHits'];
+            let totalItens3 = level['achievements'][0]['firstStarHits'] == 0 ? total : level['achievements'][0]['firstStarHits'];
             let errors3 = (level['achievements'][0]['firstStarErrors'] > 0 ? '(Max Errors: '+level['achievements'][0]['firstStarErrors']+")" : '(Errors Acceptable)');
             let goal3 = 'Up to '+formatTime(level['achievements'][0]['firstStarTime'])+', '+totalItens3+' hits '+errors3;
             copyTemplateStage = copyTemplateStage.replaceAll('{{goal_3}}', goal3);
