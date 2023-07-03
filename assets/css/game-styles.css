@@ -1,0 +1,91 @@
+/*-------------------
+    INPUT STYLES
+ -------------------*/
+.input-game {
+    border-radius: 10px;
+    outline: 2px solid var(--pink-7);
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.71);
+    outline-offset: 3px;
+    padding: 4px 1rem;
+    transition: 0.25s;
+    margin: 0.75rem 0;
+    width: 100%;
+}
+
+.input-game:focus {
+    background-color: #fff;
+    outline: 3px solid var(--pink-4);
+}
+
+/*-------------------
+    BUTTONS STYLES
+ -------------------*/
+.btn-purple {
+    background-color: rgba(151, 95, 255, 1);
+    color: white;
+    box-shadow: 0px 10px 10px rgb(210, 187, 253) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(124, 54, 255) inset;
+}
+.btn-green{
+    background-color: rgb(43 205 74);
+    color: white;
+    box-shadow: 0px 10px 10px rgb(55 213 106) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(26 159 56) inset;
+}
+
+/*-------------------
+    BUTTONS DETAILS
+ -------------------*/
+.btn-game{
+    position: relative;
+    border-radius: 45px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.675rem;
+    font-size: 18px;
+    margin: 0.20rem 0.125rem;
+    text-shadow: 2px 2px 2px var(--simple-tones-4);
+}
+.btn-game::before {
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    background-color: rgba(250, 250, 250, 0.56);
+    content: "";
+    filter: blur(1px);
+    top: 7px;
+    border-radius: 50%;
+}
+.btn-game::after {
+    width: 70%;
+    height: 2px;
+    position: absolute;
+    background-color: rgba(250, 250, 250, 0.137);
+    content: "";
+    filter: blur(1px);
+    bottom: 7px;
+    border-radius: 50%;
+}
+.btn-purple:hover {
+    text-decoration: underline 2px solid rgba(255,255,255,.5);
+    text-underline-offset: 4px;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, .5),
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+
+/*-------------------------
+    BORDER COLORS/STYLES
+ -------------------------*/
+.border-purble{
+    background: linear-gradient(rgb(255 255 255 / 93%), rgb(239 239 239 / 96%)) padding-box, linear-gradient(to top, var(--blue-4), var(--pink-7)) border-box;
+    border: 4px solid transparent;
+    padding: 0.325rem 1rem;
+}
+.border-rounded{
+    border-radius: 20px;
+}

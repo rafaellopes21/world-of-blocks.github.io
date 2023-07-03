@@ -1,60 +1,60 @@
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#beginModal" id="beginModalBtn" hidden></button>
 <div class="modal fade" id="beginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="beginModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered rpgui-content reset-margin-center">
-        <div class="modal-content rpgui-container framed fix-position">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-purble border-rounded">
             <div class="modal-header" style="margin: 0 auto">
-                <h5 class="modal-title text-white text-center" id="regards" style="text-decoration: none">Welcome Player!</h5>
+                <h1 class="modal-title text-center" id="regards">Welcome Player!</h1>
             </div>
-            <div class="modal-body rpgui-container framed-grey fix-position">
-                <div id="paragraphs">
-                    <div class="mb-2">
-                        <div class="d-grid gap-2">
-                            <button class="rpgui-container framed-golden-2 fix-position text-white sfx-click" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseHowToPlay" aria-expanded="false" aria-controls="collapseHowToPlay">
-                                <span class="mb-0">How to Play</span>
-                            </button>
-                        </div>
-                        <div class="collapse" id="collapseHowToPlay">
-                            <div class="rpgui-container framed-golden fix-position text-center">
-                                <p class="mb-0">Describe here a small tutorial.</p>
-                            </div>
+            <div class="modal-body">
+                <div class="mb-2">
+                    <div class="d-grid gap-2">
+                        <button class="btn-game btn-purple sfx-click" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseHowToPlay" aria-expanded="false" aria-controls="collapseHowToPlay">
+                            <span class="mb-0">How to Play</span>
+                        </button>
+                    </div>
+                    <div class="collapse" id="collapseHowToPlay">
+                        <div class="text-center">
+                            <p class="mb-0">Describe here a small tutorial.</p>
                         </div>
                     </div>
-
-                    <div>
-                        <div class="d-grid gap-2">
-                            <button class="rpgui-container framed-golden-2 fix-position text-white sfx-click" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseDonate" aria-expanded="false" aria-controls="collapseDonate">
-                                <span class="mb-0">Donate</span>
-                            </button>
-                        </div>
-                        <div class="collapse" id="collapseDonate">
-                            <div class="rpgui-container framed-golden fix-position text-center">
-                                <label>If you enjoy, </label> <a href="#">Donate here!</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="golden mt-2 mb-2">
-
-                    <div class="text-center text-white" style="background: #716d6d;padding: 5px;border-radius: 22px;">
-                        <h3>Before Start!</h3>
-                        <p class="mb-0">This game uses your browser's cookies to store data about your gameplay.</p>
-                    </div>
-                    <hr class="mt-2 mb-2">
-
-                    <p class="text-center mb-1">Player Name:</p>
-                    <input placeholder="Type Here" class="text-white text-center" name="nickname" id="nickname"
-                           required oninput="validateNickName(this)" style="font-size: 16px">
-                    <small class="text-danger" hidden id="showmsg">*Required</small>
                 </div>
+
+                <div class="d-grid gap-2">
+                    <button class="btn-game btn-purple sfx-click" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDonate" aria-expanded="false" aria-controls="collapseDonate">
+                        <span class="mb-0">Donate</span>
+                    </button>
+                </div>
+                <div class="collapse" id="collapseDonate">
+                    <div class="text-center">
+                        <label>If you enjoy, </label> <a href="#">Donate here!</a>
+                    </div>
+                </div>
+
+                <hr class="golden mt-2 mb-2">
+
+                <div class="text-center text-white" style="background: #716d6d;padding: 5px;border-radius: 22px;">
+                    <h3>Before Start!</h3>
+                    <p class="mb-0">This game uses your browser's cookies to store data about your gameplay.</p>
+                </div>
+                <hr class="mt-2 mb-2">
+
+                <h4 class="text-center mb-0">Player Name:</h4>
+                <input placeholder="Type Here" class="input-game text-center mb-1" name="nickname" id="nickname"
+                       required oninput="validateNickName(this)" style="font-size: 18px">
+                <div class="text-center"><small class="text-danger text-center" hidden id="showmsg">* Field Required</small></div>
+
             </div>
             <div class="modal-footer">
-                <button class="rpgui-button text-white sfx-click" type="button" data-bs-dismiss="modal"
-                        id="start-game" onclick="startGaming()" disabled>Save</button>
+                <button class="btn-game btn-purple sfx-click" type="button" data-bs-dismiss="modal"
+                        id="start-game" onclick="startGaming()" disabled>Save
+                </button>
             </div>
         </div>
     </div>
+
 </div>
 
 <script>

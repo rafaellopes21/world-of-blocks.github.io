@@ -44,7 +44,7 @@ function checkSavedPlayer(){
         }
         if(document.querySelector("#start-game")){
             document.querySelector("#start-game").innerText = "Continue";
-            document.querySelector("#start-game").classList.add("rpgui-button-success");
+            document.querySelector("#start-game").classList.add("btn-green");
         }
 
         nickName.value = getPlayerSettings('player_name');

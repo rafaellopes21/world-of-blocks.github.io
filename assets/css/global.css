@@ -1,5 +1,51 @@
+/*-------------------
+   BACKGROUND COLORS
+ -------------------*/
+:root{
+    --blue-7: rgba(0, 0, 79, 1);
+    --blue-6: rgba(13, 18, 94, 1);
+    --blue-5: rgba(0, 24, 108, 1);
+    --blue-4: rgba(0, 41, 127, 1);
+    --blue-3: rgba(129, 133, 185, 1);
+    --blue-2: rgba(158, 161, 202, 1);
+    --blue-1: rgba(191, 193, 231, 1);
+    --purple-7: rgba(61, 19, 101, 1);
+    --purple-6: rgba(69, 23, 118, 1);
+    --purple-5: rgba(60, 26, 125, 1);
+    --purple-4: rgba(83, 61, 139, 1);
+    --purple-3: rgba(133, 125, 177, 1);
+    --purple-2: rgba(193, 189, 218, 1);
+    --purple-1: rgba(230, 225, 239, 1);
+    --pink-7: rgba(151, 95, 255, 1);
+    --pink-6: rgba(158, 109, 250, 1);
+    --pink-5: rgba(171, 133, 243, 1);
+    --pink-4: rgba(187, 154, 246, 1);
+    --pink-3: rgba(203, 183, 239, 1);
+    --pink-2: rgba(219, 207, 241, 1);
+    --pink-1: rgba(240, 237, 253, 1);
+    --simple-tones-4: rgba(40, 40, 40, 1);
+    --simple-tones-3: rgba(119, 119, 119, 1);
+    --simple-tones-2: rgba(194, 194, 194, 1);
+    --simple-tones-1: rgba(255, 255, 255, 1);
+    --simple-tones-0: rgba(226, 226, 226, 1);
+}
+
+/*-------------------
+   CUSTOM FONTS
+ -------------------*/
+@font-face {
+    font-family: 'Guava Candy';
+    src: url('/assets/fonts/Guava Candy.woff') format('woff'),
+    url('/assets/fonts/Guava Candy.otf') format('opentype'),
+    url('/assets/fonts/Guava Candy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 0.05rem;
+}
+
 body{
-    background: #4e4a4e;
+    font-family: 'Guava Candy', cursive, sans-serif;
+    background: var(--simple-tones-2);
 }
 .center-in-screen {
     display: flex;
