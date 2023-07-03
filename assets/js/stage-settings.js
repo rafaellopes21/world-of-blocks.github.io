@@ -17,10 +17,6 @@ function StageSettings(){
     this.getLevelDescription = function () {return __levelDescription;};
     this.setLevelDescription = function (value) {__levelDescription = value;};
 
-    var __gridLength = null;
-    this.getgridLength = function () {return __gridLength;};
-    this.setgridLength = function (value) {__gridLength = value;};
-
     var __gridMaxMatchItems = null;
     this.getMaxMatchItems = function () {return __gridMaxMatchItems;};
     this.setMaxMatchItems = function (value) {__gridMaxMatchItems = value;};

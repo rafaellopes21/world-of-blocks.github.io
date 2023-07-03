@@ -9,6 +9,7 @@
     --blue-3: rgba(129, 133, 185, 1);
     --blue-2: rgba(158, 161, 202, 1);
     --blue-1: rgba(191, 193, 231, 1);
+    --blue-0: rgb(39, 97, 245);
     --purple-7: rgba(61, 19, 101, 1);
     --purple-6: rgba(69, 23, 118, 1);
     --purple-5: rgba(60, 26, 125, 1);
@@ -27,7 +28,7 @@
     --simple-tones-3: rgba(119, 119, 119, 1);
     --simple-tones-2: rgba(194, 194, 194, 1);
     --simple-tones-1: rgba(255, 255, 255, 1);
-    --simple-tones-0: rgba(226, 226, 226, 1);
+    --simple-tones-0: rgb(203, 203, 203);
 }
 
 /*-------------------
@@ -35,9 +36,9 @@
  -------------------*/
 @font-face {
     font-family: 'Guava Candy';
-    src: url('/assets/fonts/Guava Candy.woff') format('woff'),
-    url('/assets/fonts/Guava Candy.otf') format('opentype'),
-    url('/assets/fonts/Guava Candy.ttf') format('truetype');
+    src: url('../fonts/Guava Candy.woff') format('woff'),
+    url('../fonts/Guava Candy.otf') format('opentype'),
+    url('../fonts/Guava Candy.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     letter-spacing: 0.05rem;
@@ -47,6 +48,25 @@ body{
     font-family: 'Guava Candy', cursive, sans-serif;
     background: var(--simple-tones-2);
 }
+
+i{
+    margin-right: 5px;
+    top: -2px;
+    position: relative;
+}
+
+a{
+    color: #0da2fd;
+    text-decoration: underline;
+}
+a:hover{
+    color: #0d6efd;
+}
+
+.center-in-middle{
+    min-height: 100vh;
+}
+
 .center-in-screen {
     display: flex;
     justify-content: center;
@@ -67,75 +87,4 @@ body{
 
 .fix-position{
     position: initial
-}
-
-input.gameslider {
-    margin: auto;
-    -webkit-appearance: none;
-    position: relative;
-    overflow: hidden;
-    height: 18px;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 10px; /* iOS */
-    padding: 0;
-}
-
-::-webkit-slider-runnable-track {
-    background: #ddd;
-}
-
-::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px; /* 1 */
-    height: 40px;
-    background: #fff;
-    box-shadow: -200px 0 0 200px #d27d2c; /* 2 */
-    border: 2px solid #999; /* 1 */
-}
-
-::-moz-range-track {
-    height: 40px;
-    background: #ddd;
-}
-
-::-moz-range-thumb {
-    background: #fff;
-    height: 40px;
-    width: 20px;
-    border: 3px solid #999;
-    border-radius: 0 !important;
-    box-shadow: -200px 0 0 200px #d27d2c;
-    box-sizing: border-box;
-}
-
-::-ms-fill-lower {
-    background: #d27d2c;
-}
-
-::-ms-thumb {
-    background: #fff;
-    border: 2px solid #999;
-    height: 40px;
-    width: 20px;
-    box-sizing: border-box;
-}
-
-::-ms-ticks-after {
-    display: none;
-}
-
-::-ms-ticks-before {
-    display: none;
-}
-
-::-ms-track {
-    background: #ddd;
-    color: transparent;
-    height: 40px;
-    border: none;
-}
-
-::-ms-tooltip {
-    display: none;
 }

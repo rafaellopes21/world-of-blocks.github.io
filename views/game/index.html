@@ -1,7 +1,8 @@
 <link href="assets/css/game.css" rel="stylesheet" type="text/css">
 <link href="assets/css/animations.css" rel="stylesheet" type="text/css">
 
-<div class="container row rpgui-content center-in-screen reset-margin-center">
+
+<!--<div class="container row rpgui-content center-in-screen reset-margin-center">
     <div class="rpgui-container framed col-sm-9 col-md-6" style="max-width: 621px">
         <input hidden id="results-in-game" value="">
 
@@ -34,13 +35,64 @@
               <h1>powers and bonuses</h1>
             </div>
             <div class="col-sm-12 col-md-4">
-                <button class="rpgui-button rpgui-button-danger text-white sfx-click col-6" type="button"
+                <button class="btn-game btn-danger sfx-click" type="button"
                         onclick="clearAll(); loadView('game/stages/index');">
                     <i class='fa-solid fa-arrow-left fix-icon-btn'></i> Back
                 </button>
             </div>
         </div>
 
+    </div>
+</div>-->
+
+<div class="d-flex align-items-center justify-content-center center-in-middle">
+    <div class="row border-purble border-rounded col-sm-12 col-md-7">
+        <input hidden id="results-in-game" value="">
+
+        <div class="row text-center" style="margin: 0 auto; padding: 0">
+            <div class="col-12 bg-purple text-shadow text-white" style="padding: 7px 18px;border-radius: 25px 25px 0 0;">
+                <h2 class="mb-0 text-start">
+                    <span class="text-start float-start">Time: <span id="clock-time" class="mb-0">--:--</span></span>
+                    <span class="text-end float-end">
+                        <i id="star1" class="total-stars fa-regular fa-star"></i>
+                        <i id="star2" class="total-stars fa-regular fa-star"></i>
+                        <i id="star3" class="total-stars fa-regular fa-star"></i>
+                    </span>
+                </h2>
+            </div>
+
+            <div class="text-shadow col-12 bg-smoke row" style="margin: 0 auto; padding: 0; border-radius: 0 0 25px 25px; border: 3px solid #743eb9">
+                <div id="sort-item" class="text-center col-5 p-1"></div>
+                <div class="col-7 p-0">
+                    <h2 class="mb-0 mt-0 text-white">
+                        Score: <span id="score-numbers" class="mb-0">00000</span>
+                    </h2>
+                    <div class="row bg-purple border-rounded" style="margin: 0 auto; width: 85%;padding: 0 18px;">
+                        <h3 class="col-7 mb-0 text-start text-white" style="padding: 2px 0;"><span id="hits-counter">0</span>/<span id="max-itens-select"></span></h3>
+                        <h3 class="col-5 mb-0 text-end text-white" style="padding: 2px 0;"><span id="max-combo">0</span>x</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="golden mt-3 mb-2">
+        <div class="row d-flex align-items-center justify-content-center" id="grid-game">
+            <div class="spinner-grow" role="status" style="color: var(--purple-6)"></div>
+            <span style="font-size: 22px;">Loading...</span>
+        </div>
+
+        <hr class="golden mt-3 mb-2">
+        <div class="row">
+            <div class="col-sm-12 col-md-7">
+                <h1>powers and bonuses</h1>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <button class="btn-game btn-danger sfx-click float-end" type="button"
+                        onclick="clearAll(); loadView('game/stages/index');">
+                    <i class='fa-solid fa-arrow-left fix-icon-btn'></i> Back
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 

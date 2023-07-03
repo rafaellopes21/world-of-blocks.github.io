@@ -44,6 +44,7 @@ function checkSavedPlayer(){
         }
         if(document.querySelector("#start-game")){
             document.querySelector("#start-game").innerText = "Continue";
+            document.querySelector("#start-game").classList.remove("btn-purple");
             document.querySelector("#start-game").classList.add("btn-green");
         }
 

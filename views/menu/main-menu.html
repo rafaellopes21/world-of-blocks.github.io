@@ -1,31 +1,41 @@
-<div class="container row rpgui-content center-in-screen reset-margin-center">
-    <div class="rpgui-container framed col-sm-9 col-md-4 col-lg-3" style="min-width: 377px">
-        <div class="row">
-            <button class="rpgui-button rpgui-button-primary text-white sfx-click" type="button"
+<div class="d-flex align-items-center justify-content-center center-in-middle">
+    <div class="row border-purble border-rounded col-sm-12 col-md-6 col-lg-4">
+        <h1 class="text-center">Color Blocking!</h1>
+
+        <hr class="mb-2">
+
+        <div class="col-12" style="margin: 0 auto">
+            <button class="btn-game btn-green sfx-click col-12 mb-3" type="button"
                     onclick="loadView('game/stages/index')">
-                <i class="fa-solid fa-gamepad fix-icon-btn"></i> Start Game
+                <i class="fa-solid fa-gamepad"></i> Start Game
             </button>
-            <button class="rpgui-button text-white sfx-click" type="button"
+            <button class="btn-game btn-purple sfx-click col-12 mb-3" type="button"
                     onclick="loadView('shop/shop')">
-                <i class="fa-solid fa-shop fix-icon-btn"></i> Shop
+                <i class="fa-solid fa-shop"></i> Shop
             </button>
-            <button class="rpgui-button text-white sfx-click" type="button"
+            <button class="btn-game btn-purple sfx-click col-12 mb-3" type="button"
                     onclick="loadView('ranking/ranking')">
-                <i class="fa-solid fa-ranking-star fix-icon-btn"></i> Ranking
+                <i class="fa-solid fa-ranking-star"></i> Ranking
             </button>
-            <hr class="golden mt-3">
-            <div class="row" style="margin: 0 auto">
-                <button class="rpgui-button text-white sfx-click col-6" type="button" onclick="togglePlayback(this)">
-                    <i class='fa-solid fa-pause fix-icon-btn'></i> Music
-                </button>
-                <button class="rpgui-button text-white sfx-click col-6" type="button"
-                        onclick="loadView('help/help')">
-                    <i class="fa-solid fa-question fix-icon-btn"></i> Help
-                </button>
-                <label>Game Volume:</label>
-                <input type="range" id="master-volume" class="gameslider" min="0" max="10" step="1" value="6"
-                       onchange="changeVolume(this.value)" style="margin: 0">
-            </div>
+        </div>
+
+        <hr class="mb-2">
+
+        <div class="col-6">
+            <button class="btn-game btn-purple sfx-click col-12" type="button" onclick="togglePlayback(this)">
+                <i class='fa-solid fa-pause'></i> Music
+            </button>
+        </div>
+        <div class="col-6">
+            <button class="btn-game btn-purple sfx-click col-12" type="button"
+                    onclick="loadView('help/help')">
+                <i class="fa-regular fa-circle-question"></i> Help
+            </button>
+        </div>
+        <div class="col-12 mt-3 bg-smoke border-rounded">
+            <p class="text-center mb-1 mt-2">Game Volume:</p>
+            <input type="range" id="master-volume" class="gameslider col-12 mb-3" min="0" max="10" step="1" value="6"
+                   onchange="changeVolume(this.value)" style="margin: 0">
         </div>
     </div>
 </div>

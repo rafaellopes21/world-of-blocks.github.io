@@ -1,84 +1,90 @@
-<div class="container row rpgui-content center-in-screen reset-margin-center" style="min-height: 0;">
-    <div class="rpgui-container framed row fix-position" style="padding: 0">
-        <div class="row rpgui-content fix-position" id="stages-list"></div>
+<div class="d-flex align-items-center justify-content-center center-in-middle">
+    <div class="row border-purble border-rounded col-sm-12 col-md-10">
+        <h1 class="text-center">Color Blocking!</h1>
+        <hr class="mb-2">
 
-        <button class="rpgui-button rpgui-button-danger text-white sfx-click" type="button" onclick="loadView('menu/main-menu')">
-            <i class='fa-solid fa-arrow-left fix-icon-btn'></i> Voltar
+        <div class="row mb-2" id="stages-list"></div>
+
+        <hr class="mb-2">
+        <button class="btn-game btn-danger sfx-click" type="button"
+                onclick="loadView('menu/main-menu')">
+            <i class='fa-solid fa-arrow-left'></i> Back
         </button>
     </div>
 </div>
 
 <div hidden id="copy-stage-desc">
-    <div class="rpgui-container framed-golden-2 fix-position col-sm-6 col-md-4 p-0 mb-1 mt-1" id="stage-level-{{stage-level}}" style="min-height: 337px;">
-        <h2 class="mb-0" style="font-size: 18px;">Level: {{stage-level}}</h2>
-        <hr class="mt-2 mb-2 golden">
+    <div class="col-sm-6 col-md-4 card-game  text-shadow" id="stage-level-{{stage-level}}">
+        <div class="card-game-content">
+            <h3 class="mb-0">Level: {{stage-level}}
+               <span class="float-end" style="position: relative; top: 4px; font-size: 25px;">
+                    <i id="star1-stage-{{stage-level}}" class="fa-regular fa-star"></i>
+                    <i id="star2-stage-{{stage-level}}" class="fa-regular fa-star"></i>
+                    <i id="star3-stage-{{stage-level}}" class="fa-regular fa-star"></i>
+               </span>
+            </h3>
+            <hr class="mt-2 mb-2 golden">
 
-        <nav class="nav nav-pills nav-justified" hidden>
-            <button class="nav-link active" id="s{{stage-level}}p1" data-bs-toggle="tab"
-                    data-bs-target="#nav-home-{{stage-level}}" type="button" role="tab"
-                    aria-controls="nav-home-{{stage-level}}" aria-selected="true">Home</button>
-            <button class="nav-link" id="s{{stage-level}}p2" data-bs-toggle="tab"
-                    data-bs-target="#nav-profile-{{stage-level}}" type="button" role="tab"
-                    aria-controls="nav-profile-{{stage-level}}" aria-selected="false">Profile</button>
-        </nav>
+            <nav class="nav nav-pills nav-justified" hidden style="display: none">
+                <button class="nav-link active" id="s{{stage-level}}p1" data-bs-toggle="tab" data-bs-target="#nav-home-{{stage-level}}" type="button" role="tab" aria-controls="nav-home-{{stage-level}}" aria-selected="true"></button>
+                <button class="nav-link" id="s{{stage-level}}p2" data-bs-toggle="tab" data-bs-target="#nav-profile-{{stage-level}}" type="button" role="tab" aria-controls="nav-profile-{{stage-level}}" aria-selected="false"></button>
+            </nav>
 
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p1">
-                <div class="mb-0">
-                    <span style="font-size: 15px;">Description</span><br><br>
-                    <p style="font-size: 13px;margin: 0.3rem 0;">{{simple-description}}</p>
+            <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="nav-home-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p1">
+                    <div class="mb-2">
+                        <h5>{{simple-description}}</h5>
+                    </div>
+                    <hr class="mt-2 mb-2">
+                    <div class="text-white text-center mt-3 mb-3">
+                        <h3 id="score-stage-title-{{stage-level}}">
+                            Score: <span id="score-stage-{{stage-level}}">00000</span>
+                        </h3>
+                        <h5 class="mb-0 mt-0" style="padding: 2px 0;">Your Time: <span id="time-stage-{{stage-level}}">--:--</span></h5>
+                        <h5 class="mt-0 mb-0" style="padding: 2px 0;">Hits: <span id="tot-hits-{{stage-level}}">00/{{stage-total-hits}}</span></h5>
+                        <h5 class="mt-0 mb-0" style="padding: 2px 0;">Errors: <span id="tot-err-{{stage-level}}">0</span></h5>
+                    </div>
                 </div>
-                <hr class="mt-2 mb-0">
-                <div class="text-white">
-                    <p class="mb-2 mt-0" style="padding: 2px 0;">
-                        <i id="star1-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
-                        <i id="star2-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
-                        <i id="star3-stage-{{stage-level}}" class="fa-regular fa-star fa-2x"></i>
-                        | <span style="font-size: 13px;position: relative;top: 2px;">Score: <span id="score-stage-{{stage-level}}">00000</span></span>
-                    </p>
-                    <p class="mb-0 mt-0" style="padding: 2px 0;">Your Time: <span id="time-stage-{{stage-level}}">--:--</span></p>
-                    <p class="mb-0 mt-0" style="padding: 2px 0;">Hits: <span id="tot-hits-{{stage-level}}">00/00</span> | Errors: <span id="tot-err-{{stage-level}}">00/00</span></p>
+
+                <div class="tab-pane fade" id="nav-profile-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p2">
+                    <div class="mb-2">
+                        <span class="text-start float-start" style="font-size: 17px; padding: 14px 0;">
+                            <i class="fa-solid fa-star text-warning" style="font-size: 20px;"></i>
+                            <i class="fa-solid fa-star text-warning" style="font-size: 20px;"></i>
+                            <i class="fa-solid fa-star text-warning" style="font-size: 20px;"></i>
+                            {{goal_1}}
+                            <hr class="mt-2 mb-2">
+                            <i class="fa-solid fa-star text-warning" style="font-size: 20px;"></i>
+                            <i class="fa-solid fa-star text-warning" style="font-size: 20px;"></i>
+                            <i class="fa-regular fa-star" style="font-size: 20px;"></i>
+                            {{goal_2}}
+                            <hr class="mt-2 mb-2">
+                            <i class="fa-solid fa-star text-warning" style="font-size: 20px;"></i>
+                            <i class="fa-regular fa-star" style="font-size: 20px;"></i>
+                            <i class="fa-regular fa-star" style="font-size: 20px;"></i>
+                            {{goal_3}}
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="nav-profile-{{stage-level}}" role="tabpanel" aria-labelledby="s{{stage-level}}p2">
-                <div class="mb-0">
-                    <span style="font-size: 14px;">Achievments</span><br><br>
-                    <span class="text-start float-start" style="margin-bottom: 13px;">
-                        <i class="fa-solid fa-star fa-2x"></i>
-                        <i class="fa-solid fa-star fa-2x"></i>
-                        <i class="fa-solid fa-star fa-2x"></i>
-                        {{goal_1}}
-                        <hr class="mt-0 mb-0">
-                        <i class="fa-solid fa-star fa-2x"></i>
-                        <i class="fa-solid fa-star fa-2x"></i>
-                        <i class="fa-regular fa-star fa-2x"></i>
-                        {{goal_2}}
-                        <hr class="mt-0 mb-0">
-                        <i class="fa-solid fa-star fa-2x"></i>
-                        <i class="fa-regular fa-star fa-2x"></i>
-                        <i class="fa-regular fa-star fa-2x"></i>
-                        {{goal_3}}
-                    </span>
+
+            <hr class="mt-1 mb-0">
+            <div class="row">
+                <div class="col-5 p-1">
+                    <button class="btn-game btn-purple sfx-click col-12" type="button"
+                            onclick="changeTab('#s{{stage-level}}p2', this);" stage-lvl-btn="{{stage-level}}">
+                        <span class="mb-0">Goals</span>
+                    </button>
+                </div>
+                <div class="col-7 p-1">
+                    <button class="btn-game btn-green sfx-click col-12" type="button"
+                            onclick="playStage('{{stage-level}}')">
+                        <span><i class="fa-solid fa-play"></i>Play</span>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <hr class="mt-1 mb-0">
-        <div class="row">
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="rpgui-button text-white sfx-click rpgui-button-warning" type="button"
-                    onclick="changeTab('#s{{stage-level}}p2', this);" stage-lvl-btn="{{stage-level}}">
-                    <span class="mb-0">Goals</span>
-                </button>
-            </div>
-           <div class="d-grid gap-2 col-6 mx-auto">
-               <button class="rpgui-button rpgui-button-success text-white sfx-click" type="button"
-                       onclick="playStage('{{stage-level}}')">
-                   <span><i class="fa-solid fa-play fix-icon-btn"></i> Play</span>
-               </button>
-           </div>
-        </div>
-
     </div>
 </div>
 
@@ -92,10 +98,14 @@
 
         if(document.querySelector("#nav-home-"+e.getAttribute('stage-lvl-btn')).classList.contains("active")){
             e.setAttribute("onclick", "changeTab('#s"+e.getAttribute('stage-lvl-btn')+"p1', this)");
-            e.innerHTML = '<span class="mb-0"><i class="fa-solid fa-arrow-left fix-icon-btn"></i> Back</span>';
+            e.innerHTML = '<span class="mb-0">Back</span>';
+            e.classList.remove("btn-purple");
+            e.classList.add("btn-danger");
         } else {
             e.setAttribute("onclick", "changeTab('#s"+e.getAttribute('stage-lvl-btn')+"p2', this)");
             e.innerHTML = '<span class="mb-0">Goals</span>';
+            e.classList.remove("btn-danger");
+            e.classList.add("btn-purple");
         }
     }
 
@@ -116,6 +126,7 @@
 
             //Get Total itens to beat the game
             let total = level['totalItems'] ? level['totalItems'] : Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems']))
+            copyTemplateStage = copyTemplateStage.replaceAll('{{stage-total-hits}}', total);
 
             //Add the achievments about the stage level (Star 3)
             let totalItens1 = level['achievements'][2]['thirdStarHits'] == 0 ? total : level['achievements'][2]['thirdStarHits'];
@@ -147,8 +158,10 @@
                         if(document.querySelector("#star"+(s+1)+"-stage-"+level['level'])){
                             document.querySelector("#star"+(s+1)+"-stage-"+level['level']).classList.remove('fa-regular');
                             document.querySelector("#star"+(s+1)+"-stage-"+level['level']).classList.add('fa-solid');
+                            document.querySelector("#star"+(s+1)+"-stage-"+level['level']).classList.add('text-warning');
                         }
                     }
+                    document.querySelector("#score-stage-title-"+level['level']).classList.add("text-warning");
                     document.querySelector("#score-stage-"+level['level']).innerText = stageResultsLevel['score'];
                     document.querySelector("#time-stage-"+level['level']).innerText = stageResultsLevel['time'];
                     document.querySelector("#tot-hits-"+level['level']).innerText = stageResultsLevel['hits']+"/"+stageResultsLevel['total_items'];

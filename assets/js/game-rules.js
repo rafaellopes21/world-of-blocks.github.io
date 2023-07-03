@@ -12,10 +12,12 @@
 function sortItemGame(){
     let randomItem = Math.floor(Math.random() * bg.length);
     itemMatch = bg[randomItem];
+    document.querySelector("#max-itens-select").innerText = totalItems;
     sortedItem.insertAdjacentHTML("beforeend",
-        '<div class="sorted-item '+itemMatch+'"></div><h2 class="text-white mb-0" style="font-size: 14px;"><span id="hits-counter">0</span>/'+totalItems+'</h2>'
+        '<div class="text-center sorted-item '+itemMatch+'"></div>'
     );
 }
+
 function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
     //Clear all items before load the grid
     let randomItems = [];
@@ -69,6 +71,8 @@ function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
     //Refreshes the grid game after X seconds
     refreshgridTime = setTimeout(function (){
         playSFX('zapsplat_multimedia_game_retro_musical_short_tone_003.mp3', '#soundFxTwo');
+        comboCounter = 0;
+        maxCombo.innerText = comboCounter;
         sumSessionPoints();
         populategrid(gridLength, gridMaxMatchItems, refreshGameTime);
     }, refreshingTime * 1000);
@@ -177,7 +181,7 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
     loadModal(
         'partials/modal/index',
         'Congratulations!',
-        'OK',
+        'Continue',
         'game/stages/index',
         'game/result/index'
     );
@@ -215,6 +219,7 @@ function updateStar(starElement){
     if(starElement.classList.contains("fa-regular")){
         starElement.classList.remove("fa-regular");
         starElement.classList.add("fa-solid");
+        starElement.classList.add("text-warning");
     }
 }
 

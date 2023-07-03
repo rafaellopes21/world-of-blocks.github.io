@@ -18,6 +18,77 @@
     outline: 3px solid var(--pink-4);
 }
 
+input.gameslider {
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 18px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px; /* iOS */
+    padding: 0;
+}
+
+::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* 1 */
+    height: 40px;
+    background: #fff;
+    box-shadow: -200px 0 0 200px var(--blue-3);
+    border: 2px solid #999; /* 1 */
+}
+
+::-moz-range-track {
+    height: 40px;
+    background: #ddd;
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 40px;
+    width: 20px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -200px 0 0 200px var(--blue-3);
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower {
+    background: var(--blue-3);
+}
+
+::-ms-thumb {
+    background: #fff;
+    border: 2px solid #999;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after {
+    display: none;
+}
+
+::-ms-ticks-before {
+    display: none;
+}
+
+::-ms-track {
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip {
+    display: none;
+}
+
 /*-------------------
     BUTTONS STYLES
  -------------------*/
@@ -26,7 +97,8 @@
     color: white;
     box-shadow: 0px 10px 10px rgb(210, 187, 253) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(124, 54, 255) inset;
 }
-.btn-green{
+
+.btn-green {
     background-color: rgb(43 205 74);
     color: white;
     box-shadow: 0px 10px 10px rgb(55 213 106) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(26 159 56) inset;
@@ -35,7 +107,7 @@
 /*-------------------
     BUTTONS DETAILS
  -------------------*/
-.btn-game{
+.btn-game {
     position: relative;
     border-radius: 45px;
     border: none;
@@ -48,6 +120,7 @@
     margin: 0.20rem 0.125rem;
     text-shadow: 2px 2px 2px var(--simple-tones-4);
 }
+
 .btn-game::before {
     width: 70%;
     height: 2px;
@@ -58,6 +131,7 @@
     top: 7px;
     border-radius: 50%;
 }
+
 .btn-game::after {
     width: 70%;
     height: 2px;
@@ -68,24 +142,107 @@
     bottom: 7px;
     border-radius: 50%;
 }
-.btn-purple:hover {
-    text-decoration: underline 2px solid rgba(255,255,255,.5);
+
+.btn-game:hover {
+    text-decoration: underline 2px solid rgba(255, 255, 255, .5);
     text-underline-offset: 4px;
-    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
     -4px -4px 6px 0 rgba(116, 125, 136, .5),
-    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
-
 
 /*-------------------------
     BORDER COLORS/STYLES
  -------------------------*/
-.border-purble{
+.border-purble {
     background: linear-gradient(rgb(255 255 255 / 93%), rgb(239 239 239 / 96%)) padding-box, linear-gradient(to top, var(--blue-4), var(--pink-7)) border-box;
     border: 4px solid transparent;
     padding: 0.325rem 1rem;
 }
-.border-rounded{
+
+.border-rounded {
     border-radius: 20px;
+}
+
+/*-------------------------
+        CARD STYLES
+ -------------------------*/
+.card-game {
+    background: #07182E;
+    position: relative;
+    display: flex;
+    place-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 10px 20px;
+}
+
+.card-game > .card-game-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    width: 100%;
+}
+
+.card-game::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    width: 300%;
+    /*background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));*/
+    background-image: linear-gradient(180deg, var(--blue-0), var(--pink-7));
+    height: 300%;
+    animation: rotBGimg 7s linear infinite;
+    transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card-game::after {
+    content: '';
+    position: absolute;
+    /*background: #07182E;*/
+    background: #00000059;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+.card-game:hover:before {
+    background-image: linear-gradient(180deg, rgb(81, 255, 0), var(--purple-2));
+    animation: rotBGimg 3.5s linear infinite;
+    opacity: 0.6;
+}
+
+
+/*-------------------------
+     BACKGROUND COLORS
+ -------------------------*/
+.text-shadow {
+    text-shadow: 2px 2px 2px var(--simple-tones-4);
+}
+
+.bg-smoke {
+    background: var(--simple-tones-0);
+}
+
+.bg-orange {
+    background: #DE9759FF;
+}
+
+.bg-blue {
+    background: var(--blue-0);
+}
+
+.bg-purple{
+    background: rgb(116 62 185);;
 }
