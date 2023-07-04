@@ -44,8 +44,9 @@ function sortItemGame(){
 }
 
 function calcGridSize(gridSizeItens){
-    let sizer = (100 / gridSizeItens) - (1.2);
+    let sizer = (100 / gridSizeItens) - (1.5);
     gridGame.setAttribute("style", "grid-template-columns: repeat(auto-fit, minmax("+sizer+"%, 1fr))")
+    document.querySelector("body").style.overflow = "hidden";
 }
 
 function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
