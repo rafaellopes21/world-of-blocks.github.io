@@ -128,7 +128,7 @@ function getStageSettings(stg = false) {
         {   //Level Settings
             'level': 999, //Number of the stage level
             'world': worldNames(2), //Define the world name of the stage level
-            'stageTheme': 'provisor.mp3', //soundtrack that will be played in background
+            'stageTheme': 'hard_puzzle.mp3', //soundtrack that will be played in background
             'description': 'Do your best time and score in this mode!', //False - Let the code builed this description | simple Description about this level
             'gridLength': 10, //Length of squares in grid
             'gridMaxMatchItems': 10, //Number of how many match squares will be present at each roll
