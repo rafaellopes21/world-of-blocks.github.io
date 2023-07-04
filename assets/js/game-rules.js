@@ -45,7 +45,9 @@ function sortItemGame(){
 
 function calcGridSize(gridSizeItens){
     let sizer = (100 / gridSizeItens) - (1.5);
-    gridGame.setAttribute("style", "grid-template-columns: repeat(auto-fit, minmax("+sizer+"%, 1fr))");
+    gridGame.setAttribute("style", "grid-template-columns: repeat(auto-fit, minmax("+sizer+"%, 1fr))")
+    //document.querySelector("body").style.overflow = "hidden";
+    // after move to another page, its necessario remove this option.
 }
 
 function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
