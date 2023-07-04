@@ -201,7 +201,7 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
     //Calculate the final points and save the results
     completedObjectives();
     sumSessionPoints();
-    saveResults();
+    let newRecord = saveResults();
 
     //Finish the game clearing all items
     playSFX(endSong);
@@ -217,6 +217,12 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
         'game/stages/index',
         'game/result/index'
     );
+
+    if(newRecord){
+        setTimeout(function (){
+            document.querySelector('#new-best-title').removeAttribute("hidden");
+        }, 250);
+    }
 }
 
 function completedObjectives(){
@@ -277,24 +283,34 @@ function saveResults(){
 
     //Save stage results and compare with some status are higher then others to replace.
     let hasResults = getStageResults(stage.getLevelNumber());
+    let convertedValue = JSON.parse(results.value);
     let auxResultData = resultData;
     let fieldComp = '';
+    let newRecord = true;
+
     if(hasResults && hasResults['total_items']){
+        newRecord = false;
+
         fieldComp = 'total_items';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        newRecord = newRecord ? newRecord : convertedValue[fieldComp] > hasResults[fieldComp];
 
         fieldComp = 'hits';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        newRecord = newRecord ? newRecord : convertedValue[fieldComp] > hasResults[fieldComp];
 
         fieldComp = 'errors';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, false);
+        newRecord = newRecord ? newRecord : convertedValue[fieldComp] < hasResults[fieldComp];
 
         fieldComp = 'score';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        newRecord = newRecord ? newRecord : convertedValue[fieldComp] > hasResults[fieldComp];
 
         fieldComp = 'time';
         auxResultData[fieldComp] = parseInt(hasResults[fieldComp].replace(":", "")) >= parseInt(resultData[fieldComp].replace(":", ""))
                                 ? hasResults[fieldComp] : resultData[fieldComp];
+        newRecord = newRecord ? newRecord : parseInt(convertedValue[fieldComp].replace(":", "")) > parseInt(hasResults[fieldComp].replace(":", ""));
 
         fieldComp = 'timeResolution';
         auxResultData[fieldComp] = parseInt(hasResults[fieldComp].replace(":", "")) >= parseInt(resultData[fieldComp].replace(":", ""))
@@ -302,12 +318,14 @@ function saveResults(){
 
         fieldComp = 'stars';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        newRecord = newRecord ? newRecord : convertedValue[fieldComp] > hasResults[fieldComp];
 
         fieldComp = 'combo';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
     }
 
     setStageResults(stage.getLevelNumber(), auxResultData);
+    return newRecord;
 }
 
 function compareValuesInStageResults(fieldComp, resultData, hasResults, isHigher = true){
