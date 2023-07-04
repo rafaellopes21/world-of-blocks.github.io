@@ -44,7 +44,7 @@ function sortItemGame(){
 }
 
 function calcGridSize(gridSizeItens){
-    let sizer = (100 / gridSizeItens) - 1;
+    let sizer = (100 / gridSizeItens) - (1.2);
     gridGame.setAttribute("style", "grid-template-columns: repeat(auto-fit, minmax("+sizer+"%, 1fr))")
 }
 
