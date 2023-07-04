@@ -13,6 +13,10 @@ function StageSettings(){
     this.getThemeStageSong = function () {return __stageTheme;};
     this.setThemeStageSong = function (value) {__stageTheme = value;};
 
+    var __stageColor = null;
+    this.getStageColor = function () {return __stageColor;};
+    this.setStageColor = function (value) {__stageColor = value;};
+
     var __levelDescription = null;
     this.getLevelDescription = function () {return __levelDescription;};
     this.setLevelDescription = function (value) {__levelDescription = value;};

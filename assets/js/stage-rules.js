@@ -15,6 +15,7 @@ function playStage(stageNumber) {
 
     stage.setLevelNumber(stageConfig['level']);
     stage.setThemeStageSong(stageConfig['stageTheme']);
+    stage.setStageColor(stageConfig['levelColor']);
     stage.setLevelDescription(stageConfig['description']);
     stage.setgridLength(stageConfig['gridLength']);
     stage.setMaxMatchItems(stageConfig['gridMaxMatchItems']);
@@ -69,6 +70,7 @@ function getStageSettings(stg = false) {
             'level': 1, //Number of the stage level
             'world': worldNames(1), //Define the world name of the stage level
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
+            'levelColor': false, //False default | This is used to change the card color in level stage selection
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 4, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
@@ -99,6 +101,7 @@ function getStageSettings(stg = false) {
             'level': 2, //Number of the stage level
             'world': worldNames(1), //Define the world name of the stage level
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
+            'levelColor': false, //False default | This is used to change the card color in level stage selection
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 8, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
@@ -129,6 +132,7 @@ function getStageSettings(stg = false) {
             'level': 999, //Number of the stage level
             'world': worldNames(2), //Define the world name of the stage level
             'stageTheme': 'hard_puzzle.mp3', //soundtrack that will be played in background
+            'levelColor': 'bg-card-red', //False default | This is used to change the card color in level stage selection
             'description': 'Do your best time and score in this mode!', //False - Let the code builed this description | simple Description about this level
             'gridLength': 10, //Length of squares in grid
             'gridMaxMatchItems': 10, //Number of how many match squares will be present at each roll

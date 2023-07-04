@@ -191,21 +191,10 @@ input.gameslider {
     position: absolute;
     top: -100%;
     width: 300%;
-    /*background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));*/
     background-image: linear-gradient(180deg, var(--blue-0), var(--pink-7));
     height: 300%;
     animation: rotBGimg 7s linear infinite;
     transition: all 0.2s linear;
-}
-
-@keyframes rotBGimg {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .card-game::after {
@@ -222,6 +211,54 @@ input.gameslider {
     opacity: 0.6;
 }
 
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*-------------------------
+     CARD BG COLORS
+ -------------------------*/
+.bg-card-red {
+    background: #e85151;
+}
+.bg-card-red::before {
+    background-image: linear-gradient(180deg, rgb(245, 39, 46), rgb(255, 162, 95));
+}
+.bg-card-red:hover:before {
+    background-image: linear-gradient(180deg, rgb(255, 204, 0), rgba(193, 189, 218, 1));
+}
+.bg-card-dark {
+    background: #c9c6c6;
+}
+.bg-card-dark::before {
+    background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(37, 37, 37));
+}
+.bg-card-dark:hover:before {
+    background-image: linear-gradient(180deg, rgb(215, 213, 209), rgba(193, 189, 218, 1));
+}
+.bg-card-white {
+    background: #c9d0cc;
+}
+.bg-card-white::before {
+    background-image: linear-gradient(180deg, rgb(184, 227, 224), rgb(194, 192, 192));
+}
+.bg-card-white:hover:before {
+    background-image: linear-gradient(180deg, rgb(155, 155, 155), rgb(149, 200, 208));
+}
+.bg-card-yellow {
+    background: #ead047;
+}
+.bg-card-yellow::before {
+    background-image: linear-gradient(180deg, rgb(189, 148, 43), rgb(229, 214, 39));
+}
+.bg-card-yellow:hover:before {
+    background-image: linear-gradient(180deg, rgb(92, 204, 58), rgb(61, 120, 197));
+}
 
 /*-------------------------
      BACKGROUND COLORS

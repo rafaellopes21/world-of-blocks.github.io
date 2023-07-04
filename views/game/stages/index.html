@@ -14,7 +14,7 @@
 </div>
 
 <div hidden id="copy-stage-desc">
-    <div class="col-sm-6 col-md-4 card-game text-shadow" id="stage-level-{{stage-level}}">
+    <div class="col-sm-6 col-md-4 card-game text-shadow {{stage-level-color}}" id="stage-level-{{stage-level}}">
         <div class="card-game-content">
             <h3 class="mb-0">Level: {{stage-level}}
                <span class="float-end" style="position: relative; top: 4px; font-size: 24px;">
@@ -122,6 +122,8 @@
                 let totalItemsStage = level['totalItems'] ? level['totalItems'] : Math.floor((level['maxTime'] * level['gridLength'])/(level['refreshGameTime'] + level['gridMaxMatchItems']));
                 level['description'] = "Find all "+totalItemsStage+" items within "+formatTime(level['maxTime'])+" time.";
             }
+
+            copyTemplateStage = copyTemplateStage.replaceAll('{{stage-level-color}}', (level['levelColor'] ? level['levelColor'] : ""));
             copyTemplateStage = copyTemplateStage.replaceAll('{{simple-description}}', level['description']);
 
             //Get Total itens to beat the game
