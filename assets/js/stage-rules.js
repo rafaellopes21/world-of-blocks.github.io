@@ -138,21 +138,21 @@ function getStageSettings(stg = false) {
             'gridMaxMatchItems': 10, //Number of how many match squares will be present at each roll
             'refreshGameTime': 4, //After X seconds, the game will refresh the grid
             'maxTime': 180, //Limit time to finish the game
-            'totalItems': 250, //false - The code will calc how many items should be selected or put any integer
+            'totalItems': 200, //false - The code will calc how many items should be selected or put any integer
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
-                    'firstStarTime': 120,
+                    'firstStarTime': 90,
                     'firstStarHits': 100, //false - define that the play can't miss any square
                     'firstStarErrors': 14, //false will ignore this rule
                 },
                 {   //Star Number 2
-                    'secondStarTime': 90,
-                    'secondStarHits': 175, //false - define that the play can't miss any square
+                    'secondStarTime': 45,
+                    'secondStarHits': 150, //false - define that the play can't miss any square
                     'secondStarErrors': 7, //false - will ignore this rule
                 },
                 {   //Star Number 3
-                    'thirdStarTime': 60,
-                    'thirdStarHits': 250, //false - define that the play can't miss any square
+                    'thirdStarTime': 10,
+                    'thirdStarHits': 200, //false - define that the play can't miss any square
                     'thirdStarErrors': false, //false - will ignore this rule
                 },
             ],
