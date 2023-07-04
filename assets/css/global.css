@@ -66,25 +66,3 @@ a:hover{
 .center-in-middle{
     min-height: 100vh;
 }
-
-.center-in-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-}
-
-.reset-margin-center{
-    margin: 0 auto;
-    position: relative;
-}
-
-.fix-icon-btn{
-    position: relative;
-    top: -2px;
-}
-
-.fix-position{
-    position: initial
-}

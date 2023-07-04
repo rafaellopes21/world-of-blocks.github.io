@@ -10,7 +10,6 @@
 #grid-game {
     display: grid;
     margin: 10px 0;
-    /*grid-template-columns: repeat(auto-fit, minmax(11%, 1fr));*/
     gap: 4px; /* Espaço entre os quadros */
 }
 .square-item {
@@ -33,13 +32,6 @@
     right: 0;
     bottom: 0;
 }
-/*.square-item{
-    position: relative;
-    border: 1px solid black;
-    padding: 2px;
-    margin: 0.1rem;
-    border-radius: 7px;
-}*/
 
 .square-item:hover{
     border: 1px solid #4e8ee1;
@@ -51,58 +43,3 @@
     inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 }
-
-/* Extra small devices (phones, 600px and down) */
-/*@media only screen and (max-width: 600px) {
-    .square-item{
-        width: 2.2rem;
-        height: 2.2rem;
-    }
-    #grid-game{
-        padding-left: 1rem;
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/*@media only screen and (min-width: 600px) {
-    .square-item{
-        width: 2.2rem;
-        height: 2.2rem;
-    }
-    #grid-game{
-        padding-left: 1rem;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-/*@media only screen and (min-width: 768px) {
-    .square-item{
-        width: 2.2rem;
-        height: 2.2rem;
-    }
-    #grid-game{
-        padding-left: 1rem;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-/*@media only screen and (min-width: 992px) {
-    .square-item{
-        width: 2.2rem;
-        height: 2.2rem;
-    }
-    #grid-game{
-        padding-left: 1rem;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/*@media only screen and (min-width: 1200px) {
-    #grid-game{
-        padding-left: 1rem;
-    }
-    .square-item{
-        width: 4rem;
-        height: 4rem;
-    }
-}*/

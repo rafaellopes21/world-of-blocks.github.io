@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center justify-content-center center-in-middle">
-    <div class="row border-purble border-rounded col-sm-12 col-md-10">
+    <div class="row border-purple border-rounded col-sm-12 col-md-10">
         <h1 class="text-center">Color Blocking!</h1>
         <hr class="mb-2">
 
@@ -14,10 +14,10 @@
 </div>
 
 <div hidden id="copy-stage-desc">
-    <div class="col-sm-6 col-md-4 card-game  text-shadow" id="stage-level-{{stage-level}}">
+    <div class="col-sm-6 col-md-4 card-game text-shadow" id="stage-level-{{stage-level}}">
         <div class="card-game-content">
             <h3 class="mb-0">Level: {{stage-level}}
-               <span class="float-end" style="position: relative; top: 4px; font-size: 25px;">
+               <span class="float-end" style="position: relative; top: 4px; font-size: 24px;">
                     <i id="star1-stage-{{stage-level}}" class="fa-regular fa-star"></i>
                     <i id="star2-stage-{{stage-level}}" class="fa-regular fa-star"></i>
                     <i id="star3-stage-{{stage-level}}" class="fa-regular fa-star"></i>
@@ -110,9 +110,9 @@
     }
 
     function buildLevels(){
-        if(!document.querySelector("#copy-stage-desc")){
-            return false;
-        }
+        if(!document.querySelector("#copy-stage-desc")){ return false; }
+
+        let worldName = "";
         getStageSettings().forEach(level => {
             //Replace itens with level number
             let copyTemplateStage = document.querySelector("#copy-stage-desc").innerHTML.replaceAll('{{stage-level}}', level['level']);
@@ -146,7 +146,16 @@
             let goal3 = 'Up to '+formatTime(level['achievements'][0]['firstStarTime'])+', '+totalItens3+' hits '+errors3;
             copyTemplateStage = copyTemplateStage.replaceAll('{{goal_3}}', goal3);
 
-            //Add all HTML level template to the stage div
+            //Add all HTML level template to the stage div with world name
+            if(worldName != level['world']){
+                if(worldName != ""){
+                    document.querySelector("#stages-list").insertAdjacentHTML("beforeend",'<hr class="mt-3 mb-3">');
+                }
+                document.querySelector("#stages-list").insertAdjacentHTML("beforeend",
+                    '<div class="col-12"><h2 class="text-center"><a href="javascript:void(0);">'+level['world']+'</a></h2></div>'
+                );
+                worldName = level['world'];
+            }
             document.querySelector("#stages-list").insertAdjacentHTML("beforeend", copyTemplateStage);
 
             //Get stage results if player has one

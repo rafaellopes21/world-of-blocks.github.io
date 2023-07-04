@@ -63,3 +63,69 @@
         transform: rotate(8deg);
     }
 }
+
+.new-best {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 50px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(0 0 0);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgb(8 3 3);
+}
+
+.new-best:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+}
+
+.new-best:active {
+    transform: scale(0.97);
+}
+
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hoverEffect div {
+    background: rgb(83 255 73);
+    background: linear-gradient(90deg, rgb(137 222 0) 0%, rgb(255 167 70) 49%, rgb(223 197 120) 100%);
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+
+.new-best:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes effect {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

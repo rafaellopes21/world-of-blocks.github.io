@@ -10,15 +10,40 @@
 | assets/js/stage-rules.js
 |*/
 function sortItemGame(){
+    //Random the selectable Item
     let randomItem = Math.floor(Math.random() * bg.length);
     itemMatch = bg[randomItem];
+
+    //Add the itemSorted in the begining of the game to show for the player
     document.querySelector("#max-itens-select").innerText = totalItems;
-    sortedItem.insertAdjacentHTML("beforeend",
-        '<div class="text-center sorted-item '+itemMatch+'"></div>'
-    );
+    document.querySelector("#find-this").innerHTML = '<div class="card-game-content text-center sorted-item '+itemMatch+'" style="width: 8rem; height: 8rem; border: 3px solid white;"></div>';
+    document.querySelector("#find-total").innerHTML = '<h1 class="text-center mt-2 mb-0" style="font-size: 38px">Items: '+totalItems+'</h1>';
+    document.querySelector("#find-time").innerHTML = '<h1 class="text-center" style="font-size: 32px">Time: '+formatTime(maxTime)+'</h1>';
+
+    //Set a 5 seconds countdown to begin the game
+    let countdownTime = 4;
+    let countdown = setInterval(function (){
+        document.querySelector("#countdown").innerHTML = "0"+countdownTime;
+
+        //When the timer is in 1 second, start the game function
+        if(countdownTime == 1){ gameStart(); }
+
+        //When timer is in 0 seconds, then close the starting modal
+        if(countdownTime <= 0){
+            clearInterval(countdown);
+            document.querySelector("#BtnGameStarting").click();
+        }
+        countdownTime--;
+    }, 1000);
+
+    //Open the starting modal
+    document.querySelector("#modalStartGameBtn").click();
+
+    //Add the item in the header game
+    sortedItem.insertAdjacentHTML("beforeend", '<div class="text-center sorted-item '+itemMatch+'"></div>');
 }
 
-function caclGridSize(gridSizeItens){
+function calcGridSize(gridSizeItens){
     let sizer = (100 / gridSizeItens) - 1;
     gridGame.setAttribute("style", "grid-template-columns: repeat(auto-fit, minmax("+sizer+"%, 1fr))")
 }
@@ -255,21 +280,31 @@ function saveResults(){
     if(hasResults && hasResults['total_items']){
         fieldComp = 'total_items';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+
         fieldComp = 'hits';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+
         fieldComp = 'errors';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, false);
+
         fieldComp = 'score';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+
         fieldComp = 'time';
-        //auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        auxResultData[fieldComp] = parseInt(hasResults[fieldComp].replace(":", "")) >= parseInt(resultData[fieldComp].replace(":", ""))
+                                ? hasResults[fieldComp] : resultData[fieldComp];
+
         fieldComp = 'timeResolution';
-        //auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+        auxResultData[fieldComp] = parseInt(hasResults[fieldComp].replace(":", "")) >= parseInt(resultData[fieldComp].replace(":", ""))
+            ? hasResults[fieldComp] : resultData[fieldComp];
+
         fieldComp = 'stars';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
+
         fieldComp = 'combo';
         auxResultData[fieldComp] = compareValuesInStageResults(fieldComp, resultData, hasResults, true);
     }
+
     setStageResults(stage.getLevelNumber(), auxResultData);
 }
 
@@ -296,20 +331,10 @@ function clearAll(){
 
 /*
 |-------------------------------------
-|  Start all functions in the game
+|  Functions to start the game
 |-------------------------------------
 |
 |*/
-clearAll();
-caclGridSize(gridLength);
-sortItemGame();
-setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
-
-/*-------------------------------------
-  CONTROL THE COUNTER TIME LIMIT GAME
- -------------------------------------*/
-var timer = document.querySelector("#clock-time");
-var timerClockInterval = setInterval(updatetimer, 1000);
 function updatetimer() {
     timer.textContent = formatTime(maxTime);
     maxTime--;
@@ -330,3 +355,20 @@ function updatetimer() {
         finishGame();
     }
 }
+
+function gameStart(){
+    timer = document.querySelector("#clock-time");
+    timerClockInterval = setInterval(updatetimer, 1000);
+    setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
+}
+
+/*
+|-------------------------------------
+|Functions to exec before start game
+|-------------------------------------
+|
+|*/
+clearAll();
+calcGridSize(gridLength);
+sortItemGame();
+//setTimeout( function (){ gameStart(); }, 5000);

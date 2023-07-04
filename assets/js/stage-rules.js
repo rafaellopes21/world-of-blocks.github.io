@@ -38,14 +38,39 @@ function playStage(stageNumber) {
     loadView('game/index');
 }
 
+//Create the World names for the stage levels
+function worldNames(worldIndex = false){
+    let worlds = [ //start by array = 1, not ZERO!
+        'World of Colors',
+        'Challanges',
+    ];
+    return worldIndex ? worlds[worldIndex - 1] : worlds;
+}
+
+//Create the itens to select for the stage levels
+function getItemsToTheLevel(itemsInArray = []){
+    let items = [ //start by array = 1, not ZERO!
+        "bg-danger", "bg-primary", "bg-dark", "bg-info", "bg-success", "bg-warning", "bg-secondary",
+    ];
+
+    //make a look in the array itens to return
+    if(itemsInArray && itemsInArray.length > 0){
+        let returnArray = [];
+        itemsInArray.forEach(i => { returnArray.push(items[i - 1]) });
+        return returnArray;
+    }
+
+    return items;
+}
 
 function getStageSettings(stg = false) {
     let stagesSettings = [
         {   //Level Settings
             'level': 1, //Number of the stage level
+            'world': worldNames(1), //Define the world name of the stage level
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
             'description': false, //False - Let the code builed this description | simple Description about this level
-            'gridLength': 8, //Length of squares in grid
+            'gridLength': 4, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
             'refreshGameTime': 5, //After X seconds, the game will refresh the grid
             'maxTime': 60, //Limit time to finish the game
@@ -68,11 +93,11 @@ function getStageSettings(stg = false) {
                 },
             ],
             //Define all itens that will show in the grid to player in this stage
-            //'itemsToSelect': ["bg-danger", "bg-primary", "bg-dark", "bg-info", "bg-success", "bg-warning", "bg-secondary"],
-            'itemsToSelect': ["bg-danger", "bg-primary", "bg-success", "bg-warning",],
+            'itemsToSelect': getItemsToTheLevel([1,2,5,6]),
         },
         {   //Level Settings
             'level': 2, //Number of the stage level
+            'world': worldNames(1), //Define the world name of the stage level
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 8, //Length of squares in grid
@@ -98,9 +123,39 @@ function getStageSettings(stg = false) {
                 },
             ],
             //Define all itens that will show in the grid to player in this stage
-            'itemsToSelect': ["bg-danger", "bg-primary", "bg-dark", "bg-info", "bg-success", "bg-warning", "bg-secondary"],
+            'itemsToSelect': getItemsToTheLevel(),
+        },
+        {   //Level Settings
+            'level': 999, //Number of the stage level
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageTheme': 'provisor.mp3', //soundtrack that will be played in background
+            'description': 'Do your best time and score in this mode!', //False - Let the code builed this description | simple Description about this level
+            'gridLength': 10, //Length of squares in grid
+            'gridMaxMatchItems': 10, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 4, //After X seconds, the game will refresh the grid
+            'maxTime': 180, //Limit time to finish the game
+            'totalItems': 250, //false - The code will calc how many items should be selected or put any integer
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 120,
+                    'firstStarHits': 100, //false - define that the play can't miss any square
+                    'firstStarErrors': 14, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 90,
+                    'secondStarHits': 175, //false - define that the play can't miss any square
+                    'secondStarErrors': 7, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 60,
+                    'thirdStarHits': 250, //false - define that the play can't miss any square
+                    'thirdStarErrors': false, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel(),
         },
     ];
 
-    return stg ? stagesSettings[stg - 1] : stagesSettings;
+    return stg ? stagesSettings[stagesSettings.findIndex((stage) => stage.level === stg)] : stagesSettings;
 }

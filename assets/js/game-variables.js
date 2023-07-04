@@ -18,6 +18,8 @@ var gridMaxMatchItems = stage.getMaxMatchItems(); //Define how many match itens 
 var refreshGameTime = stage.getRefreshGameTime(); //Define how many seconds the grid will be refreshed
 var maxTime = stage.getMaxTime(); //Time in seconds to play the current game
 var maxTimeAux = maxTime; //Aux time to help to calculate de diff between times
+var timer = false; //This control the time in the game in the function gameStart()
+var timerClockInterval = 0; //This control the time interval in the game in the function gameStart()
 
 /*----------------------------------------------------------------
             Number of total selected items per match
@@ -61,5 +63,5 @@ var totalErrors = 0;
 /*-------------------------------------
   VARS TO CONTROL THE BLOCKS IN GAME
  -------------------------------------*/
-var squareSizes = '';
+var squareSizes = ''; //This build an auto CSS based on gridsquare number in the fn: calcGridSize()
 var bg = stage.getItemsToSelect();
