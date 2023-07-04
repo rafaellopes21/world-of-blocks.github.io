@@ -16,6 +16,7 @@ function playStage(stageNumber) {
     stage.setLevelNumber(stageConfig['level']);
     stage.setThemeStageSong(stageConfig['stageTheme']);
     stage.setLevelDescription(stageConfig['description']);
+    stage.setgridLength(stageConfig['gridLength']);
     stage.setMaxMatchItems(stageConfig['gridMaxMatchItems']);
     stage.setRefreshGameTime(stageConfig['refreshGameTime']);
     stage.setMaxTime(stageConfig['maxTime']);
@@ -44,9 +45,10 @@ function getStageSettings(stg = false) {
             'level': 1, //Number of the stage level
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
             'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 8, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
-            'refreshGameTime': 500, //After X seconds, the game will refresh the grid
-            'maxTime': 600, //Limit time to finish the game
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 60, //Limit time to finish the game
             'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
@@ -73,6 +75,7 @@ function getStageSettings(stg = false) {
             'level': 2, //Number of the stage level
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
             'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 8, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
             'refreshGameTime': 5, //After X seconds, the game will refresh the grid
             'maxTime': 60, //Limit time to finish the game

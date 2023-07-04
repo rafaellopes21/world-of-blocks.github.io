@@ -10,7 +10,7 @@
 #grid-game {
     display: grid;
     margin: 10px 0;
-    grid-template-columns: repeat(auto-fit, minmax(11%, 1fr));
+    /*grid-template-columns: repeat(auto-fit, minmax(11%, 1fr));*/
     gap: 4px; /* Espaço entre os quadros */
 }
 .square-item {

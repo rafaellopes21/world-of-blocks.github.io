@@ -18,9 +18,9 @@ function sortItemGame(){
     );
 }
 
-function calcSquareSizes(gridSizeItens){
+function caclGridSize(gridSizeItens){
     let sizer = (100 / gridSizeItens) - 1;
-    //squareSizes = 'width: '+sizer+'%; height: '+sizer+'%';
+    gridGame.setAttribute("style", "grid-template-columns: repeat(auto-fit, minmax("+sizer+"%, 1fr))")
 }
 
 function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
@@ -301,7 +301,7 @@ function clearAll(){
 |
 |*/
 clearAll();
-calcSquareSizes(gridLength);
+caclGridSize(gridLength);
 sortItemGame();
 setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
 
