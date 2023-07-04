@@ -45,8 +45,8 @@ function getStageSettings(stg = false) {
             'stageTheme': 'memo.mp3', //soundtrack that will be played in background
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
-            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
-            'maxTime': 60, //Limit time to finish the game
+            'refreshGameTime': 500, //After X seconds, the game will refresh the grid
+            'maxTime': 600, //Limit time to finish the game
             'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1

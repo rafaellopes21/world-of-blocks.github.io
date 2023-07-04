@@ -61,4 +61,5 @@ var totalErrors = 0;
 /*-------------------------------------
   VARS TO CONTROL THE BLOCKS IN GAME
  -------------------------------------*/
+var squareSizes = '';
 var bg = stage.getItemsToSelect();

@@ -18,6 +18,11 @@ function sortItemGame(){
     );
 }
 
+function calcSquareSizes(gridSizeItens){
+    let sizer = (100 / gridSizeItens) - 1;
+    //squareSizes = 'width: '+sizer+'%; height: '+sizer+'%';
+}
+
 function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
     //Clear all items before load the grid
     let randomItems = [];
@@ -63,7 +68,7 @@ function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
         }
 
         gridGame.insertAdjacentHTML("beforeend",
-            '<div class="square-item entry '+randomItems[i]+'" item="'+randomItems[i]+'"></div>');
+            '<div class="square-item entry '+randomItems[i]+'" item="'+randomItems[i]+'" style="'+squareSizes+'"></div>');
     }
 
     gridAction();
@@ -296,6 +301,7 @@ function clearAll(){
 |
 |*/
 clearAll();
+calcSquareSizes(gridLength);
 sortItemGame();
 setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
 
