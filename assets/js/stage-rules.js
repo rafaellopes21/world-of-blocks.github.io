@@ -69,6 +69,8 @@ function stageSongs(songIndex = false){
     let songs = [ //start by array = 1, not ZERO!
         'memo.mp3',
         'hard_puzzle.mp3',
+        'paradise.mp3',
+        'boba-date.mp3',
     ];
     return songIndex ? songs[songIndex - 1] : songs;
 }
@@ -120,7 +122,7 @@ function getStageSettings(stg = false) {
         {   //Level Settings
             'level': 2, //Number of the stage level
             'world': worldNames(1), //Define the world name of the stage level
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'stageTheme': stageSongs(3), //soundtrack that will be played in background
             'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 8, //Length of squares in grid
