@@ -37,12 +37,13 @@
 
                 <div class="text-center text-white border-rounded bg-orange text-shadow">
                     <h3>Before Start!</h3>
-                    <p class="mb-0" style="font-size: 18px">This game uses your browser's cookies to store data about your gameplay.</p>
+                    <p class="mb-0" style="font-size: 18px">This game uses your browser's cookies and local storage to store data about your gameplay.</p>
                 </div>
                 <hr class="mt-2 mb-2">
 
                 <h5 class="text-center mb-0">Player's Name:</h5>
                 <input placeholder="Type Here" class="input-game text-center mb-1" name="nickname" id="nickname"
+                       maxlength="11"
                        required oninput="validateNickName(this)" style="font-size: 20px">
                 <div class="text-center"><small class="text-danger text-center" hidden id="showmsg">* Field Required</small></div>
 

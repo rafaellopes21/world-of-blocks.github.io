@@ -20,6 +20,9 @@ function include(viewPath, elementToPut = '#main-content'){
         }
         if(statusTxt == "success"){
             enableSfxButtonClicked();
+            setTimeout(function (){
+                if(PLAYER.getPauseMainVolume() == 1){ AUDIO.pause(); }
+            }, 200);
         }
     });
 }

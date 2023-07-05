@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-purple fixed-top text-shadow" id="header-nav" style="border-radius: 0 0 25px 25px;">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="javascript:void(0);">
+            <i class="fa-solid fa-circle-user" style="position: relative;top: 1px;font-size: 33px;"></i>
+            <span id="player-name" style="font-size: 22px;position: relative;top: -2px;"></span>
+        </a>
+        <a class="navbar-brand text-white" href="javascript:void(0);">
+            <i class="fa-solid fa-coins text-warning" style="position: relative;top: 1px;font-size: 33px;"></i>
+            <span id="player-coins" style="font-size: 22px;position: relative;top: -2px;">0000</span>
+        </a>
+    </div>
+</nav>
+
+<script>
+    document.querySelector("#player-name").innerText = PLAYER.getName();
+</script>

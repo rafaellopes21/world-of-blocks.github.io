@@ -1,15 +1,11 @@
+<link href="assets/css/header-to-pages.css" rel="stylesheet" type="text/css">
+
 <div class="d-flex align-items-center justify-content-center center-in-middle">
     <div class="row border-purple border-rounded col-sm-12 col-md-10">
         <h1 class="text-center">Color Blocking!</h1>
         <hr class="mb-2">
 
         <div class="row mb-2" id="stages-list"></div>
-
-        <hr class="mb-2">
-        <button class="btn-game btn-danger sfx-click" type="button"
-                onclick="loadView('menu/main-menu')">
-            <i class='fa-solid fa-arrow-left'></i> Back
-        </button>
     </div>
 </div>
 
@@ -87,6 +83,17 @@
         </div>
     </div>
 </div>
+
+<nav class="navbar navbar-expand-lg bg-purple fixed-bottom text-shadow" style="border-radius: 25px 25px 0 0;">
+    <div class="container-fluid row">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn-game btn-danger sfx-click" type="button"
+                    onclick="loadView('menu/main-menu')">
+                <i class='fa-solid fa-arrow-left'></i> Back
+            </button>
+        </div>
+    </div>
+</nav>
 
 <script src="assets/js/stage-rules.js"></script>
 <script>

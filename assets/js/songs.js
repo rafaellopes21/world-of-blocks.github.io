@@ -7,14 +7,6 @@
 const AUDIO = document.querySelector('#song');
 const SFX = document.querySelector('#soundFx');
 
-/*
-|-------------------------------------
-|   GLOBAL VARS TO CONTROL AUDIOS
-|-------------------------------------
-|
-|*/
-var AUDIO_VOLUME = getPlayerSettings('main_volume');
-
 function playSFX(songPath, anotherElement = false){
     let audioElement = anotherElement ? document.querySelector(anotherElement) : SFX;
 
@@ -38,14 +30,8 @@ function playSong(songPath, anotherElement = false){
         audioElement.load();
     }
 
-    //Set Audio Volume by History
-    /*if(document.querySelector("#master-volume")){
-        let audioValue = AUDIO_VOLUME == 1 ? 10 : AUDIO_VOLUME.toString().replace("0.", "");
-        document.querySelector("#master-volume").value = audioValue;
-        changeVolume(audioValue);
-    }*/
-    let audioValue = AUDIO_VOLUME == 1 ? 10 : AUDIO_VOLUME.toString().replace("0.", "");
-    changeVolume(audioValue);
+    changeMasterVolume(PLAYER.getMainVolume());
+    changeFxVolume(PLAYER.getFxVolume());
 }
 
 function stopStartSong(anotherElement = false){
@@ -65,20 +51,30 @@ function togglePlayback(e, anotherElement = false) {
             e.children[0].classList.remove('fa-play');
             e.children[0].classList.add('fa-pause');
             audioElement.play();
+            PLAYER.setPauseMainVolume(0);
         } else {
             e.children[0].classList.add('fa-play');
             e.children[0].classList.remove('fa-pause');
             audioElement.pause();
+            PLAYER.setPauseMainVolume(1);
         }
     }
 }
 
-function changeVolume(volume = AUDIO_VOLUME, anotherElement = false) {
+function changeMasterVolume(volume, anotherElement = false) {
     let audioElement = anotherElement ? document.querySelector(anotherElement) : AUDIO;
 
     volume = volume.toString().replace("0.", "");
     audioElement.volume = volume == "10" ? 1 : "0."+volume;
 
-    AUDIO_VOLUME = audioElement.volume;
-    savePlayerSettings('main_volume', audioElement.volume);
+    PLAYER.setMainVolume(volume);
+}
+
+function changeFxVolume(volume, anotherElement = false) {
+    let audioElement = anotherElement ? document.querySelector(anotherElement) : SFX;
+
+    volume = volume.toString().replace("0.", "");
+    audioElement.volume = volume == "10" ? 1 : "0." + volume;
+
+    PLAYER.setFxVolume(volume);
 }

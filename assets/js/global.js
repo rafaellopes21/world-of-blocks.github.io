@@ -6,27 +6,6 @@ function getBaseUrl(){
     return window.location.protocol+"//"+window.location.host+(window.location.pathname).replace("index.html", "");
 }
 
-function savePlayerSettings(key, value){
-    let playerData = {
-        'player_name': getPlayerSettings('player_name', null),
-        'main_volume' : getPlayerSettings('main_volume', 6),
-    };
-
-    playerData[key] = value;
-
-    //Save in localStorage the information as JSON
-    localStorage.setItem("player_data", JSON.stringify(playerData));
-}
-function getPlayerSettings(keySearch = false, defaultValue = null){
-    let playerSettings = localStorage.getItem("player_data") ? JSON.parse(localStorage.getItem("player_data")) : [];
-
-    if(keySearch && defaultValue){
-        playerSettings[keySearch] = defaultValue;
-    }
-
-    return keySearch ? playerSettings[keySearch] : playerSettings;
-}
-
 function setStageResults(stageNumber, stageResults){
     localStorage.setItem("stage-results-"+stageNumber, JSON.stringify(stageResults));
 }
@@ -36,7 +15,7 @@ function getStageResults(stageNumber){
 }
 
 function checkSavedPlayer(){
-    if(getPlayerSettings('player_name')){
+    if(PLAYER.getName()){
         let nickName = document.querySelector("#nickname");
 
         if(document.querySelector("#regards")){
@@ -48,13 +27,13 @@ function checkSavedPlayer(){
             document.querySelector("#start-game").classList.add("btn-green");
         }
 
-        nickName.value = getPlayerSettings('player_name');
+        nickName.value = PLAYER.getName();
         validateNickName(nickName);
     }
 }
 
 function startGaming(){
-    savePlayerSettings('player_name', document.querySelector("#nickname").value);
+    PLAYER.setName(document.querySelector("#nickname").value);
     include('menu/main-menu', '#main-content');
 }
 
@@ -109,16 +88,25 @@ function formatTime(timeInSeconds){
 }
 
 function openMenu(){
-    loadModal('partials/modal/index', 'Game Settings', 'Save', false, 'menu/settings');
+    loadModal('partials/modal/index', 'Game Settings', 'OK', false, 'menu/settings');
 
     //Set definitions by history
     setTimeout(function (){
-
         //Set audio settings
         if(document.querySelector("#master-volume")){
-            let audioValue = AUDIO_VOLUME == 1 ? 10 : AUDIO_VOLUME.toString().replace("0.", "");
+            let audioValue = PLAYER.getMainVolume().toString().replace("0.", "");
             document.querySelector("#master-volume").value = audioValue;
-            changeVolume(audioValue);
+            changeMasterVolume(PLAYER.getMainVolume());
+        }
+        if(document.querySelector("#fx-volume")){
+            let audioValue = PLAYER.getFxVolume().toString().replace("0.", "");
+            document.querySelector("#fx-volume").value = audioValue;
+            changeFxVolume(PLAYER.getFxVolume());
+        }
+
+        if(document.querySelector("#icon-music-stop") && PLAYER.getPauseMainVolume() == "1"){
+            document.querySelector("#icon-music-stop").classList.remove('fa-pause');
+            document.querySelector("#icon-music-stop").classList.add('fa-play');
         }
     },250);
 }
