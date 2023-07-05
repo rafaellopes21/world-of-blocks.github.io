@@ -35,6 +35,10 @@
                 <div id="settings-menu"></div>
             </div>
             <div class="modal-footer p-0" style="margin: 0 auto">
+                <button class="btn-game btn-danger sfx-click float-end" type="button" data-bs-dismiss="modal"
+                        onclick="clearAll(); loadView('game/stages/index');">
+                    <i class='fa-solid fa-arrow-left fix-icon-btn'></i> Exit
+                </button>
                 <button class="btn-game btn-purple sfx-click" type="button" data-bs-dismiss="modal"
                         onclick="gamePaused(document.querySelector('#pauseModalbtnGm'))">
                     <i class="fa-solid fa-play"></i> Play
@@ -95,14 +99,8 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-md-7">
-                <h1>powers and bonuses</h1>
-            </div>
-            <div class="col-sm-12 col-md-5">
-                <button class="btn-game btn-danger sfx-click float-end" type="button"
-                        onclick="clearAll(); loadView('game/stages/index');">
-                    <i class='fa-solid fa-arrow-left fix-icon-btn'></i> Back
-                </button>
+            <div class="col-sm-12">
+                <h3 class="text-center">powers and bonuses</h3>
             </div>
         </div>
     </div>

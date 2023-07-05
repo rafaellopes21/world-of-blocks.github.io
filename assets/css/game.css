@@ -1,6 +1,7 @@
-.clear-all-data{
+#header-nav, #game-footer, #pause-music, .clear-all-data{
     display: none !important;
 }
+
 .sorted-item{
     border: 1px solid black;
     border-radius: 7px;

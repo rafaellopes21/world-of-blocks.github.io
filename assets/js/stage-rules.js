@@ -151,7 +151,7 @@ function getStageSettings(stg = false) {
         {   //Level Settings
             'level': 999, //Number of the stage level
             'world': worldNames(2), //Define the world name of the stage level
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
             'levelColor': stageColors(1), //False default | This is used to change the card color in level stage selection
             'description': 'Do your best time and score in this mode!', //False - Let the code builed this description | simple Description about this level
             'gridLength': 10, //Length of squares in grid

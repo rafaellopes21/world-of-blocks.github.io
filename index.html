@@ -43,6 +43,10 @@
     <div id="main-content" class="container"></div>
 
     <!---------------------
+        HEADER OF GAME
+    ---------------------->
+    <div id="game-footer"></div>
+    <!---------------------
         Songs and SFX
     ---------------------->
     <audio id="song" loop hidden></audio>
@@ -71,6 +75,7 @@
          Custom Scripts
     ---------------------->
     <script>
+        include('menu/header', '#game-header');
         include('start', '#main-content');
         //loadModal('partials/modal/index','Congratulations '+getPlayerSettings()['player_name']+'!','Continue', 'menu/main-menu', 'game/result/index');
     </script>
