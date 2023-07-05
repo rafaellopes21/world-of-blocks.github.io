@@ -101,6 +101,10 @@ function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
     gridAction();
 
     //Refreshes the grid game after X seconds
+    refreshGrid(refreshingTime);
+}
+
+function refreshGrid(refreshingTime){
     refreshgridTime = setTimeout(function (){
         playSFX('zapsplat_multimedia_game_retro_musical_short_tone_003.mp3', '#soundFxTwo');
         comboCounter = 0;
@@ -204,6 +208,7 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
     let newRecord = saveResults();
 
     //Finish the game clearing all items
+    stopStartSong();
     playSFX(endSong);
     clearAll();
 
@@ -373,6 +378,23 @@ function updatetimer() {
 
     if (maxTime < 0) {
         finishGame();
+    }
+}
+
+function gamePaused(e){
+    if(e.getAttribute('paused') == 'false'){
+        e.setAttribute('paused', 'true');
+        stopStartSong();
+
+        clearTimeout(refreshgridTime);
+        clearInterval(timerClockInterval);
+    } else {
+        e.setAttribute('paused', 'false');
+        stopStartSong();
+
+        timerClockInterval = setInterval(updatetimer, 1000);
+        let remainingTime = refreshGameTime - (refreshGameTime - ((maxTime + 1) % refreshGameTime));
+        refreshGrid(remainingTime);
     }
 }
 

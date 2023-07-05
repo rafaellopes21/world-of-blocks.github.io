@@ -25,20 +25,54 @@
     </div>
 </div>
 
+<div class="modal fade" id="pauseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="pauseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-purple border-rounded">
+            <div class="modal-header p-0 mb-2" style="margin: 0 auto">
+                <h1 class="modal-title text-center" id="pauseModalTitle" style="text-decoration: none">Paused</h1>
+            </div>
+            <div class="modal-body p-0 mb-2" id="pauseModalContent">
+                <div id="settings-menu"></div>
+            </div>
+            <div class="modal-footer p-0" style="margin: 0 auto">
+                <button class="btn-game btn-purple sfx-click" type="button" data-bs-dismiss="modal"
+                        onclick="gamePaused(document.querySelector('#pauseModalbtnGm'))">
+                    <i class="fa-solid fa-play"></i> Play
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="d-flex align-items-center justify-content-center center-in-middle">
     <div class="row border-purple border-rounded p-0 col-sm-12 col-md-7 col-lg-5">
         <input hidden id="results-in-game" value="">
 
         <div class="row text-center" style="margin: 0 auto; padding: 0">
             <div class="col-12 bg-purple text-shadow text-white" style="padding: 0 16px;border-radius: 15px 15px 0 0;">
-                <h4 class="mb-0 text-start">
-                    <span class="text-start float-start" style="position: relative;top: 2px;">Time: <span id="clock-time" class="mb-0">--:--</span></span>
-                    <span class="text-end float-end" style="position: relative;top: 3px;">
-                        <i id="star1" class="total-stars fa-regular fa-star"></i>
-                        <i id="star2" class="total-stars fa-regular fa-star"></i>
-                        <i id="star3" class="total-stars fa-regular fa-star"></i>
-                    </span>
-                </h4>
+                <div class="row">
+                    <div class="col-5 p-0">
+                        <h4 class="text-left float-start" style="position: relative;top: 8px;left: 8px;">
+                            <span class="text-start float-start">
+                                Time: <span id="clock-time" class="mb-0">--:--</span>
+                            </span>
+                        </h4>
+                    </div>
+                    <div class="col-2 p-0">
+                        <button type="button" class="btn-game btn-green sfx-click text-center" data-bs-toggle="modal"
+                                onclick="gamePaused(this)" data-bs-target="#pauseModal" paused="false" id="pauseModalbtnGm"
+                                style="text-decoration: none; margin: 0 auto; padding: 6px 17px; position: relative; top: 3px;">
+                            <i class="fa-solid fa-circle-pause" style="margin-right: 0;"></i>
+                        </button>
+                    </div>
+                    <div class="col-5 p-0">
+                        <span class="text-end float-end" style="position: relative;top: 8px;font-size: 19px;right: 8px;">
+                            <i id="star1" class="total-stars fa-regular fa-star"></i>
+                            <i id="star2" class="total-stars fa-regular fa-star"></i>
+                            <i id="star3" class="total-stars fa-regular fa-star"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <div class="text-shadow col-12 bg-smoke row" style="margin: 0 auto; padding: 0; border-radius: 0 0 25px 25px; border: 3px solid #743eb9">
@@ -74,5 +108,6 @@
     </div>
 </div>
 
+<script>include('menu/settings', '#settings-menu')</script>
 <script src="assets/js/game-variables.js"></script>
 <script src="assets/js/game-rules.js"></script>

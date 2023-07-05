@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="d-grid gap-2 d-md-flex justify-content-center mb-3">
+        <button class="btn-game btn-purple sfx-click" type="button" onclick="togglePlayback(this)">
+            <i class='fa-solid fa-pause'></i> Music
+        </button>
+
+        <button class="btn-game btn-purple sfx-click" type="button" onclick="togglePlayback(this, '#soundFx')">
+            <i class='fa-solid fa-pause'></i> Sound Fx
+        </button>
+    </div>
+    <div class="col-12 bg-smoke border-rounded text-center">
+        <p class="text-center mb-1 mt-2">Music Volume:</p>
+        <input type="range" id="master-volume" class="gameslider col-6" min="0" max="10" step="1" value="6"
+               onchange="changeVolume(this.value)">
+
+        <p class="text-center mb-1 mt-2">Sound FX Volume:</p>
+        <input type="range" id="fx-volume" class="gameslider col-6" min="0" max="10" step="1" value="10"
+               onchange="changeVolume(this.value, '#soundFx')">
+    </div>
+    <div class="text-center mt-3 clear-all-data bg-dark border-rounded">
+        <h5 class="text-white mb-1 mt-2">The button below will erase ALL STORAGE DATA from your device!</h5>
+        <button class="btn-game btn-danger sfx-click mb-2" type="button" style="margin: 0 auto"
+                onclick="clearDevice()">
+            <i class="fa-solid fa-circle-exclamation"></i> Clear All Data
+        </button>
+        <div class="alert alert-success border-rounded" id="data-deleted" hidden>
+            All data deleted with successful!
+        </div>
+    </div>
+</div>

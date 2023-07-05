@@ -22,20 +22,16 @@
         <hr class="mb-2">
 
         <div class="col-6">
-            <button class="btn-game btn-purple sfx-click col-12" type="button" onclick="togglePlayback(this)">
-                <i class='fa-solid fa-pause'></i> Music
-            </button>
-        </div>
-        <div class="col-6">
             <button class="btn-game btn-purple sfx-click col-12" type="button"
                     onclick="loadView('help/help')">
                 <i class="fa-regular fa-circle-question"></i> Help
             </button>
         </div>
-        <div class="col-12 mt-3 bg-smoke border-rounded">
-            <p class="text-center mb-1 mt-2">Game Volume:</p>
-            <input type="range" id="master-volume" class="gameslider col-12 mb-3" min="0" max="10" step="1" value="6"
-                   onchange="changeVolume(this.value)" style="margin: 0">
+        <div class="col-6">
+            <button class="btn-game btn-purple sfx-click col-12" type="button"
+                    onclick="openMenu()">
+                <i class="fa-solid fa-gear"></i> Settings
+            </button>
         </div>
     </div>
 </div>

@@ -64,13 +64,33 @@ function getItemsToTheLevel(itemsInArray = []){
     return items;
 }
 
+//Create the stage songs for the stage levels
+function stageSongs(songIndex = false){
+    let songs = [ //start by array = 1, not ZERO!
+        'memo.mp3',
+        'hard_puzzle.mp3',
+    ];
+    return songIndex ? songs[songIndex - 1] : songs;
+}
+
+//Create the stage colors for the stage levels
+function stageColors(colorIndex = false){
+    let colors = [ //start by array = 1, not ZERO!
+        'bg-card-red',
+        'bg-card-yellow',
+        'bg-card-dark',
+        'bg-card-white',
+    ];
+    return colorIndex ? colors[colorIndex - 1] : false;
+}
+
 function getStageSettings(stg = false) {
     let stagesSettings = [
         {   //Level Settings
             'level': 1, //Number of the stage level
             'world': worldNames(1), //Define the world name of the stage level
-            'stageTheme': 'memo.mp3', //soundtrack that will be played in background
-            'levelColor': false, //False default | This is used to change the card color in level stage selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 4, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
@@ -100,8 +120,8 @@ function getStageSettings(stg = false) {
         {   //Level Settings
             'level': 2, //Number of the stage level
             'world': worldNames(1), //Define the world name of the stage level
-            'stageTheme': 'memo.mp3', //soundtrack that will be played in background
-            'levelColor': false, //False default | This is used to change the card color in level stage selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 8, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
@@ -131,8 +151,8 @@ function getStageSettings(stg = false) {
         {   //Level Settings
             'level': 999, //Number of the stage level
             'world': worldNames(2), //Define the world name of the stage level
-            'stageTheme': 'hard_puzzle.mp3', //soundtrack that will be played in background
-            'levelColor': 'bg-card-red', //False default | This is used to change the card color in level stage selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(1), //False default | This is used to change the card color in level stage selection
             'description': 'Do your best time and score in this mode!', //False - Let the code builed this description | simple Description about this level
             'gridLength': 10, //Length of squares in grid
             'gridMaxMatchItems': 10, //Number of how many match squares will be present at each roll

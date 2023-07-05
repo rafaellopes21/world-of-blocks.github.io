@@ -107,3 +107,18 @@ function formatTime(timeInSeconds){
     secondsLeft = secondsLeft < 0 ? 0 : secondsLeft;
     return `${String(minutes).padStart(2, "0")}:${String(secondsLeft).padStart(2, "0")}`;
 }
+
+function openMenu(){
+    loadModal('partials/modal/index', 'Game Settings', 'Save', false, 'menu/settings');
+
+    //Set definitions by history
+    setTimeout(function (){
+
+        //Set audio settings
+        if(document.querySelector("#master-volume")){
+            let audioValue = AUDIO_VOLUME == 1 ? 10 : AUDIO_VOLUME.toString().replace("0.", "");
+            document.querySelector("#master-volume").value = audioValue;
+            changeVolume(audioValue);
+        }
+    },250);
+}

@@ -39,26 +39,46 @@ function playSong(songPath, anotherElement = false){
     }
 
     //Set Audio Volume by History
-    if(document.querySelector("#master-volume")){
+    /*if(document.querySelector("#master-volume")){
         let audioValue = AUDIO_VOLUME == 1 ? 10 : AUDIO_VOLUME.toString().replace("0.", "");
         document.querySelector("#master-volume").value = audioValue;
         changeVolume(audioValue);
-    }
+    }*/
+    let audioValue = AUDIO_VOLUME == 1 ? 10 : AUDIO_VOLUME.toString().replace("0.", "");
+    changeVolume(audioValue);
 }
 
-function togglePlayback(e) {
-    if (AUDIO.paused) {
-        e.innerHTML = "<i class='fa-solid fa-pause fix-icon-btn'></i> Music";
-        AUDIO.play();
+function stopStartSong(anotherElement = false){
+    let audioElement = anotherElement ? document.querySelector(anotherElement) : AUDIO;
+
+    if (audioElement.paused) {
+        audioElement.play();
     } else {
-        e.innerHTML = "<i class='fa-solid fa-play fix-icon-btn'></i> Music";
-        AUDIO.pause();
+        audioElement.pause();
     }
 }
 
-function changeVolume(volume = AUDIO_VOLUME) {
+function togglePlayback(e, anotherElement = false) {
+    let audioElement = anotherElement ? document.querySelector(anotherElement) : AUDIO;
+    if(audioElement){
+        if (audioElement.paused) {
+            e.children[0].classList.remove('fa-play');
+            e.children[0].classList.add('fa-pause');
+            audioElement.play();
+        } else {
+            e.children[0].classList.add('fa-play');
+            e.children[0].classList.remove('fa-pause');
+            audioElement.pause();
+        }
+    }
+}
+
+function changeVolume(volume = AUDIO_VOLUME, anotherElement = false) {
+    let audioElement = anotherElement ? document.querySelector(anotherElement) : AUDIO;
+
     volume = volume.toString().replace("0.", "");
-    AUDIO.volume = volume == "10" ? 1 : "0."+volume;
-    AUDIO_VOLUME = AUDIO.volume;
-    savePlayerSettings('main_volume', AUDIO.volume);
+    audioElement.volume = volume == "10" ? 1 : "0."+volume;
+
+    AUDIO_VOLUME = audioElement.volume;
+    savePlayerSettings('main_volume', audioElement.volume);
 }

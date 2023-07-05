@@ -24,7 +24,6 @@ input.gameslider {
     position: relative;
     overflow: hidden;
     height: 18px;
-    width: 100%;
     cursor: pointer;
     border-radius: 10px; /* iOS */
     padding: 0;

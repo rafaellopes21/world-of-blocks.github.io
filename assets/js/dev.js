@@ -34,3 +34,17 @@ function showErrorInConsole(errMsg){
     console.warn(errMsg);
     alert(errMsg);
 }
+
+/*
+|-------------------------------------
+|   Clear all storage from device
+|-------------------------------------
+|
+|*/
+function clearDevice(){
+    localStorage.clear();
+    document.querySelector("#data-deleted").removeAttribute("hidden");
+    setTimeout(function (){
+        document.querySelector("#data-deleted").setAttribute("hidden", "hidden");
+    }, 5000);
+}
