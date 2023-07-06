@@ -63,6 +63,7 @@ function translateTo(lang = 'en'){
             translateTextContent('time.', '');
             translateTextContent('score', 'Placar');
             translateTextContent('hits', 'acertos');
+            translateTextContent('max errors: ', 'Máx erros: ');
             translateTextContent('errors', 'erros');
             translateTextContent('acceptable', 'aceitos');
             translateTextContent('congratulations', 'Parabens');
