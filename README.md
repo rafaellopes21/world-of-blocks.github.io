@@ -4,7 +4,7 @@
 - sfx games: https://www.youtube.com/watch?v=zXKcybzvj7Y&ab_channel=RoyaltyFreeArtists
 - media queries: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
 - animations css: https://webcode.tools/generators/css/keyframe-animation
-- Executar projeto: https://rafaellopes21.github.io/color-blocking.github.io/index.html
+- Executar projeto: https://rafaellopes21.github.io/world-of-blocks.github.io/index.html
 
 ### Como o jogo deverá funcionar
 - O jogo terá sistema de fases com pontuações e cosméticos
@@ -16,14 +16,8 @@
 - novo topico...
 - (após concluir todo jogo, opcional) Criar sistema de nivel, fazendo com que o usuário possa ter alguns beneficios durante suas jogatinas.
 
-## Topico final
-- Mudar o nome do jogo para algo oficial
 
-
-
-
-
-# COLOR BLOCKING (mudar depois o nome)
+# World of Blocks
 
 ## English
 
@@ -141,6 +135,7 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](http
 [#divertido](#divertido)
 [#desenvolvedor](#desenvolvedor)
 [#colorblocking](#colorblocking)
+[#worldofblocks](#worldofblocks)
 [#colorgames](#colorgames)
 [#jogocolorido](#jogocolorido)
 [#jogodecores](#jogodecores)
