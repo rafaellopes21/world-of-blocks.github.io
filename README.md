@@ -41,7 +41,7 @@ If you enjoyed the game and want to support the developer who created this proje
 ## Installation
 1. Clone this repository
 ```
-git clone https://github.com/rafaellopes21/color-blocking.github.io.git
+git clone https://github.com/rafaellopes21/world-of-blocks.github.io.git
 ```
 2. Start a server in the `index.html` file in your browser.
 3. Have fun playing!
@@ -50,7 +50,7 @@ git clone https://github.com/rafaellopes21/color-blocking.github.io.git
 This game uses your browser's cookies and local storage to store data about your gameplay.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/rafaellopes21/color-blocking.github.io/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/rafaellopes21/world-of-blocks.github.io/blob/main/LICENSE) file for details.
 
 ---
 
@@ -76,7 +76,7 @@ Se você gostou do jogo e deseja apoiar o desenvolvedor que criou este projeto, 
 ## Instalação
 1. Clone este repositório.
 ```
-git clone https://github.com/rafaellopes21/color-blocking.github.io.git
+git clone https://github.com/rafaellopes21/world-of-blocks.github.io.git
 ```
 2. Inicie um servidor através do arquivo `index.html` em seu navegador.
 3. Divirta-se jogando!
@@ -85,7 +85,7 @@ git clone https://github.com/rafaellopes21/color-blocking.github.io.git
 Este jogo usa os cookies do seu navegador e armazenamento local para armazenar dados sobre o seu jogo.
 
 ## Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/rafaellopes21/color-blocking.github.io/blob/main/LICENSE) para mais detalhes.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/rafaellopes21/world-of-blocks.github.io/blob/main/LICENSE) para mais detalhes.
 
 ---
 
