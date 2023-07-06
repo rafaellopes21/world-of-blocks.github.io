@@ -4,7 +4,7 @@
 - sfx games: https://www.youtube.com/watch?v=zXKcybzvj7Y&ab_channel=RoyaltyFreeArtists
 - media queries: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
 - animations css: https://webcode.tools/generators/css/keyframe-animation
-- Executar projeto: https://rafaellopes21.github.io/world-of-blocks.github.io/index.html
+- Executar projeto: https://rafaellopes21.github.io/world-of-blocks.github.io
 
 ### Como o jogo deverá funcionar
 - O jogo terá sistema de fases com pontuações e cosméticos
@@ -13,7 +13,9 @@
 - O dinheiro ajudará o jogador a comprar itens que o ajudem durante as fases.
 - Criar um sistema de "bomba", pois caso o usuário clicar nesta bomba, o tempo é decrementado em X segundos.
 - cada grid deverá ter sua coluna e quadrado com uma imagem png super compacta e leve
-- novo topico...
+- Inserir sistema de nivel
+- cada nivel upado, o jogador vai ganhar um premio (cosmetivo/consumivel) para jogar
+- criar sistema de loja, onde terá os itens fixos e os itens que serão diarios e promocionais aleatorios
 - (após concluir todo jogo, opcional) Criar sistema de nivel, fazendo com que o usuário possa ter alguns beneficios durante suas jogatinas.
 
 
