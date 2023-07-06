@@ -106,3 +106,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](http
 ## Screenshots | Capturas de Tela
 ![Screenshot 1](screenshot1.png)
 ![Screenshot 2](screenshot2.png)
+
+## Tags
+#games #opensource #freegames #html #css #javascript #webdevelopment #webdevelopment #gamedev #programming #gamedesign #fun #projects #codigolivre #communitytech #learning #creativity #challenge #fun #developer #github #jogos #opensource #jogosgratis #html #css #javascript #desenvolvimentoweb #webdevelopment #gamedev #programação #gamedesign #diversão #projetos #codigolivre #comunidadetech #aprendizado #criatividade #desafio #divertido #desenvolvedor #github
