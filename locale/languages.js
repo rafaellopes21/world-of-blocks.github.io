@@ -66,6 +66,7 @@ function translateTo(lang = 'en'){
             translateTextContent('errors', 'erros');
             translateTextContent('acceptable', 'aceitos');
             translateTextContent('congratulations', 'Parabens');
+            translateTextContent('Select a World Stage', 'Selecione um Mundo');
             translateTextContent('needed', 'Faltam');
             translateTextContent('goals', 'Missões');
             translateTextContent('starting in: ', 'Começa em: ');
