@@ -49,7 +49,7 @@ If you enjoyed the game and want to support the developer who created this proje
 ```
 git clone https://github.com/rafaellopes21/color-blocking.github.io.git
 ```
-2. Open the `index.html` file in your browser.
+2. Start a server in the `index.html` file in your browser.
 3. Have fun playing!
 
 ## ATTENTION!
@@ -84,7 +84,7 @@ Se você gostou do jogo e deseja apoiar o desenvolvedor que criou este projeto, 
 ```
 git clone https://github.com/rafaellopes21/color-blocking.github.io.git
 ```
-2. Abra o arquivo `index.html` em seu navegador.
+2. Inicie um servidor através do arquivo `index.html` em seu navegador.
 3. Divirta-se jogando!
 
 ## ATENÇÃO!
