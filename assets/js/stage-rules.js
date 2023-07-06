@@ -43,7 +43,7 @@ function playStage(stageNumber) {
 function worldNames(worldIndex = false){
     let worlds = [ //start by array = 1, not ZERO!
         'World of Colors',
-        'Challanges',
+        'Challenges',
     ];
     return worldIndex ? worlds[worldIndex - 1] : worlds;
 }
@@ -71,6 +71,7 @@ function stageSongs(songIndex = false){
         'hard_puzzle.mp3',
         'paradise.mp3',
         'boba-date.mp3',
+        'funny.mp3',
     ];
     return songIndex ? songs[songIndex - 1] : songs;
 }
@@ -86,32 +87,43 @@ function stageColors(colorIndex = false){
     return colorIndex ? colors[colorIndex - 1] : false;
 }
 
-function getStageSettings(stg = false) {
+//Create the stage icons for the stage levels
+function stageIcons(iconsIndex = false){
+    let icons = [ //start by array = 1, not ZERO!
+        'fa-solid fa-palette',
+        'fa-solid fa-trophy',
+    ];
+    return iconsIndex ? icons[iconsIndex - 1] : '';
+}
+
+function getStageSettings(stageNumber = false, stageIndex = 'level') {
     let stagesSettings = [
         {   //Level Settings
             'level': 1, //Number of the stage level
+            'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
             'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(1), //soundtrack that will be played in background
             'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
             'description': false, //False - Let the code builed this description | simple Description about this level
             'gridLength': 4, //Length of squares in grid
             'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
             'refreshGameTime': 5, //After X seconds, the game will refresh the grid
-            'maxTime': 60, //Limit time to finish the game
+            'maxTime': 45, //Limit time to finish the game
             'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
-                    'firstStarTime': 10,
+                    'firstStarTime': 20,
                     'firstStarHits': 10, //false - define that the play can't miss any square
                     'firstStarErrors': false, //false will ignore this rule
                 },
                 {   //Star Number 2
-                    'secondStarTime': 15,
+                    'secondStarTime': 25,
                     'secondStarHits': 12, //false - define that the play can't miss any square
                     'secondStarErrors': false, //false - will ignore this rule
                 },
                 {   //Star Number 3
-                    'thirdStarTime': 20,
+                    'thirdStarTime': 30,
                     'thirdStarHits': 15, //false - define that the play can't miss any square
                     'thirdStarErrors': false, //false - will ignore this rule
                 },
@@ -121,7 +133,9 @@ function getStageSettings(stg = false) {
         },
         {   //Level Settings
             'level': 2, //Number of the stage level
+            'unlockWith': 2, //Define how many stars is needed to open the stage (0 is free)
             'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(3), //soundtrack that will be played in background
             'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
             'description': false, //False - Let the code builed this description | simple Description about this level
@@ -132,18 +146,18 @@ function getStageSettings(stg = false) {
             'totalItems': false, //false - The code will calc how many items should be selected or put any integer
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
-                    'firstStarTime': 15,
-                    'firstStarHits': 10, //false - define that the play can't miss any square
+                    'firstStarTime': 50,
+                    'firstStarHits': 20, //false - define that the play can't miss any square
                     'firstStarErrors': false, //false will ignore this rule
                 },
                 {   //Star Number 2
-                    'secondStarTime': 18,
-                    'secondStarHits': 12, //false - define that the play can't miss any square
+                    'secondStarTime': 45,
+                    'secondStarHits': 35, //false - define that the play can't miss any square
                     'secondStarErrors': false, //false - will ignore this rule
                 },
                 {   //Star Number 3
-                    'thirdStarTime': 20,
-                    'thirdStarHits': 15, //false - define that the play can't miss any square
+                    'thirdStarTime': 30,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
                     'thirdStarErrors': false, //false - will ignore this rule
                 },
             ],
@@ -152,7 +166,9 @@ function getStageSettings(stg = false) {
         },
         {   //Level Settings
             'level': 999, //Number of the stage level
+            'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
             'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(2), //soundtrack that will be played in background
             'levelColor': stageColors(1), //False default | This is used to change the card color in level stage selection
             'description': 'Do your best time and score in this mode!', //False - Let the code builed this description | simple Description about this level
@@ -183,5 +199,5 @@ function getStageSettings(stg = false) {
         },
     ];
 
-    return stg ? stagesSettings[stagesSettings.findIndex((stage) => stage.level === stg)] : stagesSettings;
+    return stageNumber ? stagesSettings[stagesSettings.findIndex((stage) => stage[stageIndex] === stageNumber)] : stagesSettings;
 }

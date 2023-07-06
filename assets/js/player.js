@@ -15,12 +15,36 @@ function Player() {
     this.getFxVolume = function () { return localStorage.getItem(fxVolume) ? localStorage.getItem(fxVolume) : "10"; };
     this.setFxVolume = function (value) { localStorage.setItem(fxVolume, value); };
 
+    var totalStars = "total_stars";
+    this.getTotalStars = function () { return localStorage.getItem(totalStars) ? localStorage.getItem(totalStars) : 0; };
+    this.setTotalStars = function (value) { localStorage.setItem(totalStars, value); };
+
+    var playerCoin = "player_coin";
+    this.getPlayerCoin = function () { return localStorage.getItem(playerCoin) ? localStorage.getItem(playerCoin) : 0; };
+    this.setPlayerCoin = function (value) { localStorage.setItem(playerCoin, value); };
+
+    var languageGame = "language_game";
+    this.getLanguageGame = function () { return localStorage.getItem(languageGame) ? localStorage.getItem(languageGame) : 'en'; };
+    this.setLanguageGame = function (value) { localStorage.setItem(languageGame, value); };
+
+    this.getStagesResults = function () {
+        var stageArray = [];
+        getStageSettings().forEach(stage => {
+            if(localStorage.getItem('stage-results-'+stage['level'])){
+                stageArray.push(JSON.parse(localStorage.getItem('stage-results-'+stage['level'])))
+            }
+        });
+        return stageArray;
+    };
+
     this.getData = function (){
         return {
+            'language_game': this.getLanguageGame(),
             'player_name': this.getName(),
             'main_volume' : this.getMainVolume(),
             'pause_main_volume' : this.getPauseMainVolume(),
             'fx_volume' : this.getFxVolume(),
+            'stages_results' : this.getStagesResults(),
         }
     }
 }

@@ -59,6 +59,7 @@ var playerScoreInSession = 0;
 var totalItemsInSession = 0;
 var totalHits = 0;
 var totalErrors = 0;
+var coinsObtained = 0;
 
 /*-------------------------------------
   VARS TO CONTROL THE BLOCKS IN GAME

@@ -20,9 +20,10 @@ function include(viewPath, elementToPut = '#main-content'){
         }
         if(statusTxt == "success"){
             enableSfxButtonClicked();
+            translateGame();
             setTimeout(function (){
                 if(PLAYER.getPauseMainVolume() == 1){ AUDIO.pause(); }
-            }, 200);
+            }, 150);
         }
     });
 }
@@ -37,7 +38,6 @@ function includeFooter(returnToViewPage, removeFooterAfterBack = false){
             document.querySelector("#return-button").setAttribute(
                 "onclick", "loadView('"+returnToViewPage+"');");
         }
-
     }, 250);
 }
 
@@ -68,4 +68,5 @@ function clearDevice(){
     setTimeout(function (){
         document.querySelector("#data-deleted").setAttribute("hidden", "hidden");
     }, 5000);
+    headerUpdateDate();
 }

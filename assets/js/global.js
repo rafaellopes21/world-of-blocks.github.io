@@ -15,7 +15,7 @@ function getStageResults(stageNumber){
 }
 
 function checkSavedPlayer(){
-    if(PLAYER.getName()){
+    if(PLAYER.getData() && PLAYER.getName()){
         let nickName = document.querySelector("#nickname");
 
         if(document.querySelector("#regards")){
@@ -27,7 +27,7 @@ function checkSavedPlayer(){
             document.querySelector("#start-game").classList.add("btn-green");
         }
 
-        nickName.value = PLAYER.getName();
+        nickName.value = PLAYER.getName() ? PLAYER.getName() : null;
         validateNickName(nickName);
     }
 }
@@ -109,4 +109,27 @@ function openMenu(){
             document.querySelector("#icon-music-stop").classList.add('fa-play');
         }
     },250);
+}
+
+function headerUpdateDate(){
+    //Show how many stars exists in the game to collect
+    if(document.querySelector("#star-count")){
+        document.querySelector("#star-count").innerText =
+            PLAYER.getTotalStars().toString().padStart(2, "0")+"/"+(getStageSettings().length * 3).toString().padStart(2, "0");
+    }
+
+    //Show how many coins the player has
+    if(document.querySelector("#player-coins")){
+        document.querySelector("#player-coins").innerText = PLAYER.getPlayerCoin().toString();
+    }
+}
+
+function closeOtherCollapses(isHome = false){
+    if(document.querySelector(".btn-stages-collapses.show")){
+        if(isHome){
+            document.querySelector(".btn-stages-collapses.show").previousElementSibling.children[0].click();
+        } else {
+            document.querySelector(".btn-stages-collapses.show").previousElementSibling.click();
+        }
+    }
 }

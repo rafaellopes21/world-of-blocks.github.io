@@ -1,3 +1,4 @@
+<style>#header-nav{display: none}</style>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#beginModal" id="beginModalBtn" hidden></button>
 <div class="modal fade" id="beginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="beginModalLabel" aria-hidden="true">
 
@@ -10,43 +11,52 @@
                 <div class="mb-2">
                     <div class="d-grid gap-2">
                         <button class="btn-game btn-purple sfx-click" type="button" data-bs-toggle="collapse"
+                                onclick="closeOtherCollapses(true)"
                                 data-bs-target="#collapseHowToPlay" aria-expanded="false" aria-controls="collapseHowToPlay">
                             <span class="mb-0">How to Play</span>
                         </button>
                     </div>
-                    <div class="collapse" id="collapseHowToPlay">
-                        <div class="text-center bg-smoke border-rounded">
-                            Describe here a small tutorial.
+                    <div class="collapse btn-stages-collapses" id="collapseHowToPlay">
+                        <div class="text-center bg-white border-rounded" style="padding: 7px 7px">
+                            <p>The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.</p>
+                            <p>Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.</p>
+                            <p>Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.</p>
+                            <p>The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you. in the challenges you will encounter!</p>
+                            <p>For more details, access the "Help" option in the game's main menu and have a good game!</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="d-grid gap-2">
                     <button class="btn-game btn-purple sfx-click" type="button" data-bs-toggle="collapse"
+                            onclick="closeOtherCollapses(true)"
                             data-bs-target="#collapseDonate" aria-expanded="false" aria-controls="collapseDonate">
                         <span class="mb-0">Donate</span>
                     </button>
                 </div>
-                <div class="collapse" id="collapseDonate">
-                    <div class="text-center bg-smoke border-rounded">
-                        <label>If you enjoy, </label> <a href="#">Donate here!</a>
+                <div class="collapse btn-stages-collapses" id="collapseDonate">
+                    <div class="text-center bg-smoke border-rounded" style="padding: 7px 7px">
+                        <p>This game was created just for fun, therefore it is not intended for profit or commercialization, it is literally a game made with love and dedication!</p>
+                        <label>But if you liked the game and want to help the developer who created this project, you can donate <a target="_blank" href="https://nubank.com.br/pagar/5th42/1efRKgR2V8">by clicking here!</a></label>
                     </div>
                 </div>
 
-                <hr class="golden mt-2 mb-2">
-
-                <div class="text-center text-white border-rounded bg-orange text-shadow">
+                <div class="text-center text-white border-rounded bg-orange text-shadow mt-3">
                     <h3>Before Start!</h3>
                     <p class="mb-0" style="font-size: 18px">This game uses your browser's cookies and local storage to store data about your gameplay.</p>
                 </div>
-                <hr class="mt-2 mb-2">
+                <hr class="mt-3 mb-3">
 
-                <h5 class="text-center mb-0">Player's Name:</h5>
-                <input placeholder="Type Here" class="input-game text-center mb-1" name="nickname" id="nickname"
-                       maxlength="11"
-                       required oninput="validateNickName(this)" style="font-size: 20px">
-                <div class="text-center"><small class="text-danger text-center" hidden id="showmsg">* Field Required</small></div>
-
+               <div class="row">
+                   <div class="col-sm-12 col-md-4 mb-1" id="select-lang"></div>
+                  <div class="col-sm-12 col-md-8">
+                      <h5 class="text-center mb-0">Player's Name:</h5>
+                      <input placeholder="Type Here" class="input-game text-center" name="nickname" id="nickname"
+                             maxlength="11"
+                             required oninput="validateNickName(this)" style="font-size: 20px">
+                      <div class="text-center"><small class="text-danger text-center" hidden id="showmsg">* Field Required</small></div>
+                  </div>
+               </div>
             </div>
             <div class="modal-footer">
                 <button class="btn-game btn-purple sfx-click" type="button" data-bs-dismiss="modal"
@@ -55,7 +65,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <script>
@@ -72,4 +81,7 @@
             msgErr.setAttribute("hidden", "hidden");
         }
     }
+    $(document).ready(function(){
+        include('partials/languages/index', '#select-lang')
+    });
 </script>

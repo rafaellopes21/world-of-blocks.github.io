@@ -12,7 +12,10 @@
         <p class="text-center mb-1 mt-2">Sound FX Volume:</p>
         <input type="range" id="fx-volume" class="gameslider col-6" min="0" max="10" step="1" value="10"
                onchange="changeFxVolume(this.value)">
+
+        <div class="col-sm-12 col-md-6 mt-1 clear-all-data" id="select-lang" style="margin: 0 auto"></div>
     </div>
+
     <div class="text-center mt-3 clear-all-data bg-dark border-rounded">
         <h5 class="text-white mb-1 mt-2">The button below will erase ALL STORAGE DATA from your device!</h5>
         <button class="btn-game btn-danger sfx-click mb-2" type="button" style="margin: 0 auto"
@@ -24,3 +27,7 @@
         </div>
     </div>
 </div>
+
+<script>
+    include('partials/languages/index', '#select-lang')
+</script>

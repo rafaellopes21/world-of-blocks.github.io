@@ -1,4 +1,5 @@
-<div class="row mt-3">
+<style>  .modal-body{ padding: 0; } </style>
+<div class="row">
     <div class="col-6 text-center mb-3" style="margin: 0 auto">
         <div class="text-center bg-blue border-rounded text-shadow" style="padding: 12px 0">
             <h1 class="text-white">Hits</h1>
@@ -43,11 +44,6 @@
         document.querySelector("#showErrors").parentElement.classList.add("bg-danger");
         document.querySelector("#showErrors").parentElement.classList.add("text-shadow");
     }
-    /*if(getResults()['hits'] == getResults()['total_items']){
-        document.querySelector("#showHits").classList.add("text-success");
-        document.querySelector("#showHits").classList.remove("text-white");
-        document.querySelector("#showHits").previousElementSibling.classList.add("text-success");
-    }*/
 
     //Update all the results in screen
     document.querySelector("#showHits").innerText = getResults()['hits']+"/"+getResults()['total_items'];
@@ -61,5 +57,4 @@
         document.querySelector("#star-result-"+(x+1)).classList.add("fa-solid");
         document.querySelector("#star-result-"+(x+1)).classList.add("text-warning");
     }
-
 </script>

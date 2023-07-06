@@ -5,12 +5,12 @@
         <h1 class="text-center">Color Blocking!</h1>
         <hr class="mb-2">
 
-        <div class="row mb-2" id="stages-list"></div>
+        <div class="row mb-2 p-0" id="stages-list" style="margin: 0 auto;"></div>
     </div>
 </div>
 
 <div hidden id="copy-stage-desc">
-    <div class="col-sm-6 col-md-4 card-game text-shadow {{stage-level-color}}" id="stage-level-{{stage-level}}">
+    <div class="card-stage-fix col-sm-6 col-md-4 card-game text-shadow {{stage-level-color}}" id="stage-level-{{stage-level}}">
         <div class="card-game-content">
             <h3 class="mb-0">Level: {{stage-level}}
                <span class="float-end" style="position: relative; top: 4px; font-size: 24px;">
@@ -68,6 +68,10 @@
             <hr class="mt-1 mb-0">
             <div class="row">
                 <div class="col-5 p-1">
+                    <div hidden="">
+                        <span id="goals-name">Goals</span>
+                        <span id="back-name">Back</span>
+                    </div>
                     <button class="btn-game btn-purple sfx-click col-12" type="button"
                             onclick="changeTab('#s{{stage-level}}p2', this);" stage-lvl-btn="{{stage-level}}">
                         <span class="mb-0">Goals</span>
@@ -76,7 +80,7 @@
                 <div class="col-7 p-1">
                     <button class="btn-game btn-green sfx-click col-12" type="button"
                             onclick="playStage('{{stage-level}}')">
-                        <span><i class="fa-solid fa-play"></i>Play</span>
+                        <span><i class="fa-solid fa-play"></i>Start</span>
                     </button>
                 </div>
             </div>
@@ -84,7 +88,20 @@
     </div>
 </div>
 
-<script src="assets/js/stage-rules.js"></script>
+<div hidden id="copy-block-stage-desc">
+    <div class="card-stage-fix col-sm-6 col-md-4 card-game bg-card-dark text-shadow">
+        <div class="card-game-content row">
+            <div class="col-12 text-center"></div>
+            <div class="col-12 text-center">
+                <h3 class="mt-2 mb-2">
+                    <i class="fa-solid fa-lock fa-2x"></i><hr>
+                    Needed: <span>{{star-needed}}</span> <i class="fa-solid fa-star"></i>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     playSong('moe-moe-garden-in-the-brain.mp3');
     includeFooter('menu/main-menu', true);
@@ -96,12 +113,12 @@
 
         if(document.querySelector("#nav-home-"+e.getAttribute('stage-lvl-btn')).classList.contains("active")){
             e.setAttribute("onclick", "changeTab('#s"+e.getAttribute('stage-lvl-btn')+"p1', this)");
-            e.innerHTML = '<span class="mb-0">Back</span>';
+            e.innerHTML = '<span class="mb-0">'+document.querySelector("#back-name").innerText+'</span>';
             e.classList.remove("btn-purple");
             e.classList.add("btn-danger");
         } else {
             e.setAttribute("onclick", "changeTab('#s"+e.getAttribute('stage-lvl-btn')+"p2', this)");
-            e.innerHTML = '<span class="mb-0">Goals</span>';
+            e.innerHTML = '<span class="mb-0">'+document.querySelector("#goals-name").innerText+'</span>';
             e.classList.remove("btn-danger");
             e.classList.add("btn-purple");
         }
@@ -111,6 +128,8 @@
         if(!document.querySelector("#copy-stage-desc")){ return false; }
 
         let worldName = "";
+        let worldNum = 0;
+        let nameCol = "";
         getStageSettings().forEach(level => {
             //Replace itens with level number
             let copyTemplateStage = document.querySelector("#copy-stage-desc").innerHTML.replaceAll('{{stage-level}}', level['level']);
@@ -149,21 +168,37 @@
             //Add all HTML level template to the stage div with world name
             if(worldName != level['world']){
                 if(worldName != ""){
-                    document.querySelector("#stages-list").insertAdjacentHTML("beforeend",'<hr class="mt-3 mb-3">');
+                    worldNum++;
                 }
-                document.querySelector("#stages-list").insertAdjacentHTML("beforeend",
-                    '<div class="col-12"><h2 class="text-center"><a href="javascript:void(0);">'+level['world']+'</a></h2></div>'
-                );
                 worldName = level['world'];
+                nameCol = 'col-world-'+worldNum;
+
+                if(!document.querySelector('#'+nameCol)){
+                    let defineSpace = worldNum > 0 ? "mt-2" : "";
+                    let defineColor = worldName == "Challenges" ? "bg-orange text-white" : "btn-purple";
+                    document.querySelector("#stages-list").insertAdjacentHTML("beforeend",
+                        '<button class="btn-game '+defineColor+' sfx-click '+defineSpace+'" type="button" data-bs-toggle="collapse" data-bs-target="#'+nameCol+'" aria-expanded="false" aria-controls="'+nameCol+'" onclick="closeOtherCollapses()"><i class="'+level['stageIcon']+'"></i>'+worldName+'</button>' +
+                        '<div class="collapse row content-'+nameCol+' btn-stages-collapses border-rounded bg-smoke" id="'+nameCol+'" style="margin: 0 auto;padding: 5px 0 8px 0;"></div>'
+                    );
+                }
             }
-            document.querySelector("#stages-list").insertAdjacentHTML("beforeend", copyTemplateStage);
+
+            //Check if the player has the unlockable start to play the current stage
+            if(level['unlockWith'] > 0 && PLAYER.getTotalStars() <= level['unlockWith']){
+                let levelBlocked = document.querySelector("#copy-block-stage-desc").innerHTML
+                    .replaceAll("{{star-needed}}", PLAYER.getTotalStars()+"/"+level['unlockWith']);
+                document.querySelector(".content-"+nameCol).insertAdjacentHTML("beforeend", levelBlocked);
+            } else {
+                document.querySelector(".content-"+nameCol).insertAdjacentHTML("beforeend", copyTemplateStage);
+            }
+
 
             //Get stage results if player has one
             setTimeout(function (){
                 let stageResultsLevel = getStageResults(level['level']);
 
                 if(stageResultsLevel && stageResultsLevel['total_items']){
-                    for(let s = 0; s < stageResultsLevel['score']; s++){
+                    for(let s = 0; s < stageResultsLevel['stars']; s++){
                         if(document.querySelector("#star"+(s+1)+"-stage-"+level['level'])){
                             document.querySelector("#star"+(s+1)+"-stage-"+level['level']).classList.remove('fa-regular');
                             document.querySelector("#star"+(s+1)+"-stage-"+level['level']).classList.add('fa-solid');
@@ -179,6 +214,5 @@
             }, 50);
         });
     }
-
     buildLevels();
 </script>

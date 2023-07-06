@@ -223,11 +223,16 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
         'game/result/index'
     );
 
-    if(newRecord){
-        setTimeout(function (){
+    setTimeout(function (){
+        if(newRecord){
             document.querySelector('#new-best-title').removeAttribute("hidden");
-        }, 250);
-    }
+        }
+        document.querySelector('#modalTemplateSave').insertAdjacentHTML("beforebegin",
+            '<div class="alert bg-purple border-rounded text-white text-shadow" style="padding: 5px 15px;font-size: 22px;"><i class="fa-solid fa-coins text-warning" style="margin-right: 8px;position: relative;top: 0px;"></i>'+coinsObtained+'</div>'
+        );
+    }, 150);
+
+    headerUpdateDate();
 }
 
 function completedObjectives(){
@@ -263,6 +268,7 @@ function updateStar(starElement){
         starElement.classList.remove("fa-regular");
         starElement.classList.add("fa-solid");
         starElement.classList.add("text-warning");
+        playSFX('zapsplat_multimedia_game_retro_musical_short_tone_001.mp3', '#soundFxTwo');
     }
 }
 
@@ -274,6 +280,7 @@ function saveResults(){
     }
 
     let resultData = {
+        'level': stage.getLevelNumber(),
         'total_items': totalItems,
         'hits': totalHits,
         'errors': totalErrors,
@@ -283,6 +290,22 @@ function saveResults(){
         'stars': totalStars,
         'combo': comboCounter,
     };
+
+    //Store how many coins the player got
+    coinsObtained = Math.floor(((parseInt(playerScore) * 0.01) * 0.5) + (maxTime * 0.01) + (totalErrors * 0.3));
+    PLAYER.setPlayerCoin(parseInt(PLAYER.getPlayerCoin()) + parseInt(coinsObtained));
+
+    //Count stars of the player
+    let currentStarsInStage = getStageResults(stage.getLevelNumber())['stars'];
+    if(currentStarsInStage){
+        if(totalStars > currentStarsInStage){
+            PLAYER.setTotalStars((parseInt(PLAYER.getTotalStars()) + (parseInt(totalStars) - parseInt(currentStarsInStage))));
+        } else {
+            PLAYER.setTotalStars(parseInt(PLAYER.getTotalStars()));
+        }
+    } else {
+        PLAYER.setTotalStars(parseInt(totalStars));
+    }
 
     results.value = JSON.stringify(resultData);
 
