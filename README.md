@@ -7,10 +7,8 @@
 - Executar projeto: https://rafaellopes21.github.io/world-of-blocks.github.io
 
 ### Como o jogo deverá funcionar
-- O jogo terá sistema de fases com pontuações e cosméticos
+- Colocar uma regra para bloquear o uso de poderes logo no inicio do jogo, liberar os poderes apenas após 10 segundos que o jogo começou
 - O Jogo irá apresentar uma fruta, objeto ou algo para que o jogador encontre e clique nele para cada tipo de mundo.
-- O dinheiro poderá ser usado na loja para comprar cosméticos.
-- O dinheiro ajudará o jogador a comprar itens que o ajudem durante as fases.
 - Criar um sistema de "bomba", pois caso o usuário clicar nesta bomba, o tempo é decrementado em X segundos.
 - cada grid deverá ter sua coluna e quadrado com uma imagem png super compacta e leve
 - Inserir sistema de nivel

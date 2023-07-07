@@ -14,14 +14,22 @@
 | option id='lang-game'!
 |
 |*/
-function translateTo(lang = 'en'){
-    switch (lang){
+function translateTo(lang = 'en') {
+    switch (lang) {
         /*case 'example':
            translateTextContent('ORIGINAL_TEXT', 'TRANSLATED_TEXT');
            ....
            ....
            break;*/ //That's it! Simple Like That!
         case 'pt':
+            //powers translations
+            translateTextContent('Add more time to your game.', 'Adiciona tempo extra ao seu jogo.');
+            translateTextContent('Freeze the time to obtain more squares and points.', 'Congele o tempo para conseguir mais quadros e pontos.');
+            translateTextContent('Double your score points and money!', 'Dobre sua pontuação e dinheiro!');
+            translateTextContent('If the match is hard, use this to auto select all the squares.', 'Se estiver difícil, ative para selecionar todos os quadros automaticamente.');
+            translateTextContent('Cooldown', 'Recarga');
+            translateTextContent('Effect', 'Efeito');
+            translateTextContent('Buy', 'Comprar');
             //tutorial home page translate
             translateTextContent('The game is based on challenging the player in increasingly difficult Nívels, focusing on speed and precision.', 'O jogo baseia-se em desafiar o jogador em níveis cada vez mais dificeis, focando na velocidade e precisão.');
             translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Seu objetivo, é encontrar todos os quadros/objetos que serão sorteados aleatoriamentes em cada nível dentro de um limite de tempo estipulado.');
@@ -38,6 +46,10 @@ function translateTo(lang = 'en'){
             translateTextContent('Before Start', 'Antes de Começar');
             translateTextContent('This game uses your browser\'s cookies and local storage to store data about your gameplay', 'Este jogo usa os cookies do seu navegador e armazenamento local para armazenar dados sobre o seu jogo');
             translateTextContent('Player\'s Name', 'Nome de Jogador');
+            translateTextContent('More Time', 'Tempo Extra');
+            translateTextContent('Time Freeze', 'Congela Tempo');
+            translateTextContent('Double Points', 'Pontos Dobrados');
+            translateTextContent('Perfect Roll', 'Rodada Perfeita');
             translateTextContent('Save', 'Salvar');
             translateTextContent('Back', 'Voltar');
             translateTextContent('Continue', 'Continuar');
@@ -55,6 +67,7 @@ function translateTo(lang = 'en'){
             translateTextContent('World of Colors', 'Mundo das Cores');
             translateTextContent('Challenges', 'Desafios');
             translateTextContent('level', 'Nível');
+            translateTextContent('page', 'página');
             translateTextContent('Find all', 'Encontre os');
             translateTextContent('Items', 'Itens');
             translateTextContent(' Itens within ', ' itens no tempo de ');
@@ -70,13 +83,14 @@ function translateTo(lang = 'en'){
             translateTextContent('Select a World Stage', 'Selecione um Mundo');
             translateTextContent('needed', 'Faltam');
             translateTextContent('goals', 'Missões');
-            translateTextContent('starting in: ', 'Começa em: ');
+            translateTextContent('starting in: ', 'Iniciando: ');
             translateTextContent('start', 'Jogar');
             translateTextContent('Up to ', 'Acima de ');
             translateTextContent('Left: ', 'Restante: ');
             translateTextContent('New Best', 'Recorde');
             break;
-        default: return true;
+        default:
+            return true;
     }
 }
 
@@ -86,19 +100,17 @@ function translateTo(lang = 'en'){
 |-------------------------------------
 | You will not change nothing here!
 |*/
-function translateGame(){
-    setTimeout(function (){
-        let langOpt = document.querySelector("#lang-game");
-        if(langOpt && PLAYER.getLanguageGame() && PLAYER.getLanguageGame() != "en"){
-            for (let i = 0; i < langOpt.options.length; i++) {
-                if (langOpt.options[i].value == PLAYER.getLanguageGame()) {
-                    langOpt.value = PLAYER.getLanguageGame();
-                    langOpt.options[i].selected = true;
-                    $('.selectpicker').selectpicker('refresh');
-                    break;
-                }
+function translateGame() {
+    let langOpt = document.querySelector("#lang-game");
+    if (langOpt && PLAYER.getLanguageGame() && PLAYER.getLanguageGame() != "en") {
+        for (let i = 0; i < langOpt.options.length; i++) {
+            if (langOpt.options[i].value == PLAYER.getLanguageGame()) {
+                langOpt.value = PLAYER.getLanguageGame();
+                langOpt.options[i].selected = true;
+                $('.selectpicker').selectpicker('refresh');
+                break;
             }
         }
-        translateTo(PLAYER.getLanguageGame());
-    }, 100);
+    }
+    translateTo(PLAYER.getLanguageGame());
 }

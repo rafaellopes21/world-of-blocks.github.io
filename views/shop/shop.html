@@ -1,10 +1,54 @@
 <div class="d-flex align-items-center justify-content-center center-in-middle">
-    <div class="row border-purple border-rounded col-sm-12 col-md-6">
-        <h1 class="text-center">Shopping Page</h1>
+    <div class="row border-purple border-rounded p-1 col-sm-12 col-md-8 d-flex align-items-center justify-content-center"
+         style="margin-top: 3.7rem;margin-bottom: 4.7rem;">
+        <h1 class="text-center">Shopping</h1>
+        <hr class="mt-2 mb-2">
+        <div class="row p-0" id="powers-grid" style="margin: 0 auto"></div>
     </div>
 </div>
 
+<script src="assets/js/powers.js"></script>
 <script>
     playSong('boba-date.mp3');
     includeFooter('menu/main-menu', true);
+
+    powers.getPowers().forEach(p => {
+        let blockBuy = parseInt(PLAYER.getPlayerCoin()) >= p['price'];
+        let classBlock = blockBuy ? 'btn-green' : 'btn-danger';
+        let totItens = 0;
+        document.querySelector("#powers-grid").insertAdjacentHTML("beforeend",
+            '<div class="col-sm-12 col-md-6 bg-orange border-rounded" style="padding: 7px;border: 3px solid #f7f3ff;">\n' +
+            '     <h3 class="text-center text-white text-shadow" style="text-decoration: underline">'+p['name']+'</h3><div class="row">\n' +
+            '         <div class="col-4">\n' +
+            '             <button class="powerups text-center" type="button" style="width: 80px;height: 80px;background: ' + p['bg-color'] + '">\n' +
+            '                 <img src="' + p['icon'] + '">\n' +
+            '             </button>\n' +
+            '         </div>\n' +
+            '         <div class="col-8 bg-smoke border-rounded" style="width: 63%;">\n' +
+            '             <p class="mb-0 mt-2">' + p['description'] + '</p>\n' +
+            '         </div>\n' +
+            '     </div>\n' +
+            '     <div class="bg-primary text-center text-shadow text-white mt-2 mb-2 border-rounded" style="font-size: 18px">Cooldown: ' + p['cooldown'] + 's | Effect: ' + p['effect'] + 's</div>\n' +
+            '     <div class="row">' +
+            '       <div class="col-3 d-grid gap-2 d-md-flex justify-content-end">\n' +
+            '         <button class="btn-game btn-purple text-white text-shadow text-center" style="position: relative; left: 10px;" type="button">' + totItens + '</button>' +
+            '       </div>' +
+            '         <div class="col-9 d-grid gap-2 d-md-flex justify-content-end">' +
+            '           <button '+(blockBuy ? '' : 'disabled')+' class="btn-game '+classBlock+' text-white text-shadow text-center" type="button" onclick="buyItem(this, ' + p['id'] + ')" style="'+(blockBuy ? "" : "filter: grayscale(4.2);")+'">\n' +
+            '             <i class="fa-solid fa-coins"></i> Buy ' + p['price'] + '\n' +
+            '         </button>' +
+            '      </div>' +
+            '      </div>\n' +
+            '     </div>\n' +
+            '</div>'
+        );
+    });
+
+    function buyItem(e, powerId) {
+        let power = POWER_UPS.find(item => item.id === powerId);
+        let currentMoney = parseInt(PLAYER.getPlayerCoin());
+        playSFX('coins.mp3');
+
+        console.log(power, currentMoney);
+    }
 </script>

@@ -26,7 +26,11 @@ function sortItemGame(){
         document.querySelector("#countdown").innerHTML = "0"+countdownTime;
 
         //When the timer is in 1 second, start the game function
-        if(countdownTime == 1){ gameStart(); }
+        if(countdownTime == 1){
+            gameStart();
+            document.querySelector("#game-table").removeAttribute("style");
+            document.querySelector("#game-powers").removeAttribute("style");
+        }
 
         //When timer is in 0 seconds, then close the starting modal
         if(countdownTime <= 0){
@@ -46,8 +50,6 @@ function sortItemGame(){
 function calcGridSize(gridSizeItens){
     let sizer = (100 / gridSizeItens) - (1.5);
     gridGame.setAttribute("style", "grid-template-columns: repeat(auto-fit, minmax("+sizer+"%, 1fr))")
-    //document.querySelector("body").style.overflow = "hidden";
-    // after move to another page, its necessario remove this option.
 }
 
 function populategrid(gridSizeItens, maxMatchItensInSession, refreshingTime){
@@ -293,6 +295,7 @@ function saveResults(){
 
     //Store how many coins the player got
     coinsObtained = Math.floor(((parseInt(playerScore) * 0.01) * 0.5) + (maxTime * 0.01) + (totalErrors * 0.3));
+    coinsObtained = coinsObtained < 0 ? 0 : coinsObtained;
     PLAYER.setPlayerCoin(parseInt(PLAYER.getPlayerCoin()) + parseInt(coinsObtained));
 
     //Count stars of the player
@@ -384,10 +387,20 @@ function clearAll(){
 |
 |*/
 function updatetimer() {
+    let finalSong = document.querySelector("#songTwo");
     timer.textContent = formatTime(maxTime);
     maxTime--;
 
+    if(maxTime > 9){
+        if (!finalSong.paused) {
+            finalSong.pause();
+        }
+    }
+
     if(maxTime == 9){
+        if (finalSong.paused) {
+            finalSong.play();
+        }
         playSong('sound_fx/zapsplat_multimedia_game_retro_musical_timer_loop_003.mp3', '#songTwo');
     }
 

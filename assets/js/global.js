@@ -15,21 +15,23 @@ function getStageResults(stageNumber){
 }
 
 function checkSavedPlayer(){
-    if(PLAYER.getData() && PLAYER.getName()){
-        let nickName = document.querySelector("#nickname");
+    setTimeout(function (){
+        if(PLAYER.getData() && PLAYER.getName() && document.querySelector("#nickname")){
+            let nickName = document.querySelector("#nickname");
 
-        if(document.querySelector("#regards")){
-            document.querySelector("#regards").innerText = "Welcome Back!";
-        }
-        if(document.querySelector("#start-game")){
-            document.querySelector("#start-game").innerText = "Continue";
-            document.querySelector("#start-game").classList.remove("btn-purple");
-            document.querySelector("#start-game").classList.add("btn-green");
-        }
+            if(document.querySelector("#regards")){
+                document.querySelector("#regards").innerText = document.querySelector("#regards-back").innerText;
+            }
+            if(document.querySelector("#start-game")){
+                document.querySelector("#start-game").innerText = document.querySelector("#start-game-continue").innerText;
+                document.querySelector("#start-game").classList.remove("btn-purple");
+                document.querySelector("#start-game").classList.add("btn-green");
+            }
 
-        nickName.value = PLAYER.getName() ? PLAYER.getName() : null;
-        validateNickName(nickName);
-    }
+            nickName.value = PLAYER.getName() ? PLAYER.getName() : null;
+            validateNickName(nickName);
+        }
+    }, 150);
 }
 
 function startGaming(){

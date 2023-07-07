@@ -49,7 +49,7 @@
 </div>
 
 <div class="d-flex align-items-center justify-content-center center-in-middle">
-    <div class="row border-purple border-rounded p-0 col-sm-12 col-md-7 col-lg-5">
+    <div class="row border-purple border-rounded p-0 col-sm-12 col-md-7 col-lg-5" id="game-table" style="display: none !important;">
         <input hidden id="results-in-game" value="">
 
         <div class="row text-center" style="margin: 0 auto; padding: 0">
@@ -93,19 +93,40 @@
             </div>
         </div>
 
-        <div class="" id="grid-game">
-            <div class="spinner-grow" role="status" style="color: var(--purple-6)"></div>
-            <span style="font-size: 22px;">Loading...</span>
-        </div>
+        <div class="" id="grid-game"></div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <h3 class="text-center">powers and bonuses</h3>
-            </div>
-        </div>
+        <hr class="mt-0 mb-1">
+
+        <div class="row d-flex align-items-center justify-content-center" id="game-powers" style="display: none !important;"></div>
     </div>
 </div>
 
 <script>include('menu/settings', '#settings-menu')</script>
 <script src="assets/js/game-variables.js"></script>
 <script src="assets/js/game-rules.js"></script>
+<script src="assets/js/powers.js"></script>
+<script>
+    function loadPowers(){
+        let load = new Powers();
+        load.getPowers().forEach(power => {
+            let remainingPowers = 1;
+            let classblocked = remainingPowers <= 0 ? 'power-blocked' : '';
+            let btnblocked = remainingPowers <= 0 ? 'disabled' : '';
+            document.querySelector("#game-powers").insertAdjacentHTML("beforeend",
+                '  <div class="col-2 fix-power-space">' +
+                '     <button class="powerups text-center '+classblocked+'" type="button" '+btnblocked+'' +
+                '             onclick="applyPower(this, '+power['id']+')" style="background: '+power['bg-color']+'">\n' +
+                '         <h3 class="countdown-power text-shadow text-warning" style="display: none"></h3>\n' +
+                '         <span class="position-absolute power-count translate-middle badge rounded-pill bg-danger">'+remainingPowers+'</span>\n' +
+                '         <img src="../../'+power['icon']+'">\n' +
+                '      </button>' +
+                '      <div class="progress" hidden style="position: relative;top: -3px;left: 1px;height: 0.4rem;width: 3.4rem;">\n' +
+                '            <div class="progress-bar" role="progressbar" style="width: 0%;background: '+power['bg-color']+'" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>\n' +
+                '      </div>' +
+                '   </div>'
+            );
+        });
+    }
+
+    loadPowers();
+</script>

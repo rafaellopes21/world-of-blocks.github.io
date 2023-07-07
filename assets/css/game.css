@@ -39,7 +39,7 @@
 
 .square-item:hover{
     border: 1px solid #4e8ee1;
-    cursor: pointer;
+    cursor: url('https://cur.cursors-4u.net/games/gam-10/gam987.png'), pointer !important;
     text-decoration: underline 2px solid rgba(255, 255, 255, .5);
     text-underline-offset: 4px;
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
