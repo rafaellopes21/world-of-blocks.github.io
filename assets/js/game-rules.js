@@ -30,6 +30,9 @@ function sortItemGame(){
             gameStart();
             document.querySelector("#game-table").removeAttribute("style");
             document.querySelector("#game-powers").removeAttribute("style");
+            document.querySelectorAll(".power-divs").forEach(p => {
+               p.style.display = "none";
+            });
         }
 
         //When timer is in 0 seconds, then close the starting modal
@@ -229,10 +232,12 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
         if(newRecord){
             document.querySelector('#new-best-title').removeAttribute("hidden");
         }
-        document.querySelector('#modalTemplateSave').insertAdjacentHTML("beforebegin",
-            '<div class="alert bg-purple border-rounded text-white text-shadow" style="padding: 5px 15px;font-size: 22px;"><i class="fa-solid fa-coins text-warning" style="margin-right: 8px;position: relative;top: 0px;"></i>'+coinsObtained+'</div>'
-        );
-    }, 150);
+        if(document.querySelector('#modalTemplateSave')){
+            document.querySelector('#modalTemplateSave').insertAdjacentHTML("beforebegin",
+                '<div class="alert bg-purple border-rounded text-white text-shadow" style="padding: 5px 15px;font-size: 22px;"><i class="fa-solid fa-coins text-warning" style="margin-right: 8px;position: relative;top: 0px;"></i>'+coinsObtained+'</div>'
+            );
+        }
+    }, 250);
 
     headerUpdateData();
 }
@@ -434,9 +439,30 @@ function gamePaused(e){
     }
 }
 
+function startingPowers(){
+    //then, put a countdown to show the powers
+    let powerCountTime = 10;
+    let timercountPower = powerCountTime;
+
+    let intervalPower = setInterval(function (){
+        document.querySelector("#time-to-power").innerText =
+            timercountPower > 9 ? timercountPower.toString() : "0"+timercountPower.toString();
+        timercountPower--;
+    },1000);
+
+    setTimeout(function (){
+        clearInterval(intervalPower);
+        document.querySelector("#time-to-power").parentElement.parentElement.style.display = "none";
+        document.querySelectorAll(".power-divs").forEach(p => {
+            p.style.display = "block";
+        });
+    }, (powerCountTime + 1) * 1000);
+}
+
 function gameStart(){
     timer = document.querySelector("#clock-time");
     timerClockInterval = setInterval(updatetimer, 1000);
+    startingPowers();
     setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
 }
 

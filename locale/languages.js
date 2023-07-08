@@ -50,6 +50,7 @@ function translateTo(lang = 'en') {
             translateTextContent('Time Freeze', 'Congela Tempo');
             translateTextContent('Double Points', 'Pontos Dobrados');
             translateTextContent('Perfect Roll', 'Rodada Perfeita');
+            translateTextContent('Activating powers in: ', 'Ativando poderes em: ');
             translateTextContent('Save', 'Salvar');
             translateTextContent('Back', 'Voltar');
             translateTextContent('Exit', 'Sair');

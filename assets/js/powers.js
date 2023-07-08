@@ -42,9 +42,9 @@ var POWER_UPS = [
         'name': 'Perfect Roll', //Power's name
         'bg-color': 'rgb(225 112 28)', //Background color of the powerup in game
         'icon': 'images/powers/perfect-roll.png', //Icon to display the power
-        'cooldown': 20, //Time to reload the power and use again
-        'price': 500, //How many it will cost in the shop
-        'effect': 3, //What is the effect of this power (in this case the power will work in seconds in game)
+        'cooldown': 50, //Time to reload the power and use again
+        'price': 600, //How many it will cost in the shop
+        'effect': 2, //What is the effect of this power (in this case the power will work in seconds in game)
         'sfx': 'zapsplat_multimedia_game_retro_musical_alert_001.mp3', //Sound FX to be played when the button is clicked in game
         'description': 'If the match is hard, use this to auto select all the squares.' //Description of the power
     },
@@ -80,16 +80,18 @@ function applyPower(e, powerId){
     //remove 1 item from the current power and update on the screen
     let allPlayerPowers = PLAYER.getPowerItens();
     PLAYER.clearPowerItens();
-    let currentQtd = 0;
+    let actualQtd = 0;
     allPlayerPowers.forEach(oldPower => {
+        let currentQtd = -1;
         if(oldPower['id'] == powerId){
             currentQtd = oldPower['quantity'] - 1;
             e.children[1].innerText = currentQtd;
+            actualQtd = currentQtd;
         }
         PLAYER.setPowerItens({
             'id': oldPower['id'],
             'name': oldPower['name'],
-            'quantity': currentQtd,
+            'quantity': currentQtd < 0 ? oldPower['quantity'] : currentQtd,
         });
     });
 
@@ -111,9 +113,15 @@ function applyPower(e, powerId){
     //Release the power to use again
     setTimeout(function (){
         clearInterval(counting);
-        e.classList.remove("power-blocked");
+
+        //If power is more than zero, then release the use
+        if(actualQtd > 0){
+            e.classList.remove("power-blocked");
+            e.toggleAttribute("disabled");
+        }
+
         e.children[0].style.display = "none";
-        e.toggleAttribute("disabled");
+        if(!document.querySelector("#pauseModalbtnGm")){ return false; }
         document.querySelector("#pauseModalbtnGm").toggleAttribute("disabled");
         document.querySelector("#pauseModalbtnGm").children[0].toggleAttribute("hidden");
     }, power['cooldown'] * 1000);
@@ -148,14 +156,14 @@ function powerAction(powerGet){
     if(powerGet['id'] == ID_DOUBLE_POINTS){
         score.classList.add("text-warning");
 
-        let releaseTimer = setInterval(function (){
-            playerScore = parseInt(score.innerText) * 2;
-        }, 100);
+        setTimeout(function (){
+            playerScore = parseInt(playerScore) * 2;
+            sumScore(0);
+        }, parseInt(powerGet['effect']) * 1000);
 
         setTimeout(function (){
             score.classList.remove("text-warning");
-            clearInterval(releaseTimer);
-        }, parseInt(powerGet['effect']) * 1000);
+        }, parseInt(powerGet['effect'] + 1) * 1000);
     }
 
     if(powerGet['id'] == ID_PERFECT_ROLL){

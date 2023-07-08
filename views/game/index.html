@@ -97,7 +97,11 @@
 
         <hr class="mt-0 mb-1">
 
-        <div class="row d-flex align-items-center justify-content-center" id="game-powers" style="display: none !important;"></div>
+        <div class="row d-flex align-items-center justify-content-center align-to-center" id="game-powers" style="display: none !important;">
+            <div class="alert bg-orange text-center mb-2 border-rounded" style="padding: 6px;">
+                <h3 class="mb-0 mt-0 text-shadow text-white">Activating powers in: <span id="time-to-power"></span></h3>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -117,7 +121,7 @@
 
             //Populate the power items
             document.querySelector("#game-powers").insertAdjacentHTML("beforeend",
-            '  <div class="col-2 fix-power-space">' +
+            '  <div class="col-2 fix-power-space power-divs">' +
             '     <button class="powerups text-center '+classblocked+'" type="button" '+btnblocked+'' +
             '             onclick="applyPower(this, '+power['id']+')" style="background: '+power['bg-color']+'">\n' +
             '         <h3 class="countdown-power text-shadow text-warning" style="display: none"></h3>\n' +

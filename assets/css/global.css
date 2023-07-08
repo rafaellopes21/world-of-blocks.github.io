@@ -71,6 +71,9 @@ a:hover{
 .center-in-middle{
     min-height: 100vh;
 }
+.align-to-center{
+    margin: 0 auto;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
