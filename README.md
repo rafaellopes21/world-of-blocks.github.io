@@ -7,6 +7,7 @@
 - Executar projeto: https://rafaellopes21.github.io/world-of-blocks.github.io
 
 ### Como o jogo deverá funcionar
+- Corrigir poder de multiplicador de pontos, pois está bugando e multiplicando muito os pontos!
 - Colocar uma regra para bloquear o uso de poderes logo no inicio do jogo, liberar os poderes apenas após 10 segundos que o jogo começou
 - O Jogo irá apresentar uma fruta, objeto ou algo para que o jogador encontre e clique nele para cada tipo de mundo.
 - Criar um sistema de "bomba", pois caso o usuário clicar nesta bomba, o tempo é decrementado em X segundos.

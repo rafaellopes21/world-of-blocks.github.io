@@ -15,7 +15,10 @@
     powers.getPowers().forEach(p => {
         let blockBuy = parseInt(PLAYER.getPlayerCoin()) >= p['price'];
         let classBlock = blockBuy ? 'btn-green' : 'btn-danger';
-        let totItens = 0;
+        let currentItens = PLAYER.getPowerItens().find(item => item.id === p['id']);
+        let totItens = currentItens && currentItens['quantity'] ? currentItens['quantity'] : 0;
+
+        //Populate the grid power
         document.querySelector("#powers-grid").insertAdjacentHTML("beforeend",
             '<div class="col-sm-12 col-md-6 bg-orange border-rounded" style="padding: 7px;border: 3px solid #f7f3ff;">\n' +
             '     <h3 class="text-center text-white text-shadow" style="text-decoration: underline">'+p['name']+'</h3><div class="row">\n' +
@@ -45,10 +48,46 @@
     });
 
     function buyItem(e, powerId) {
+        //Find the item that user want
         let power = POWER_UPS.find(item => item.id === powerId);
-        let currentMoney = parseInt(PLAYER.getPlayerCoin());
+
+        //Get the powers of the player
+        let allPlayerPowers = PLAYER.getPowerItens();
+        let currentPowers = allPlayerPowers ? allPlayerPowers.find(item => item.id === powerId) : null;
         playSFX('coins.mp3');
 
-        console.log(power, currentMoney);
+        //Update the coin amount of the player
+        let currentMoney = parseInt(PLAYER.getPlayerCoin()) - parseInt(power['price']);
+        PLAYER.setPlayerCoin(currentMoney);
+        headerUpdateData();
+
+        //Update the current qtd of power of the user
+        if(currentPowers){
+            //Clear the powers to refresh them
+            let index = allPlayerPowers.findIndex(found => found.id === powerId);
+            delete allPlayerPowers[index];
+            PLAYER.clearPowerItens();
+
+            //Update array of power with the old items
+            allPlayerPowers.forEach(oldPower => {
+                PLAYER.setPowerItens({
+                    'id': oldPower['id'],
+                    'name': oldPower['name'],
+                    'quantity': oldPower['quantity'],
+                });
+            });
+        }
+
+        let qtd = currentPowers ? currentPowers['quantity'] + 1 : 1;
+
+        //Insert a new power or a new item bought
+        PLAYER.setPowerItens({
+            'id': powerId,
+            'name': power['name'],
+            'quantity': qtd,
+        });
+
+        //Update total itens in screen shop
+        e.parentElement.previousElementSibling.children[0].innerText = qtd;
     }
 </script>

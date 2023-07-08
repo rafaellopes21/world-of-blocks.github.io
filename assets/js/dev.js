@@ -68,5 +68,5 @@ function clearDevice(){
     setTimeout(function (){
         document.querySelector("#data-deleted").setAttribute("hidden", "hidden");
     }, 5000);
-    headerUpdateDate();
+    headerUpdateData();
 }

@@ -109,21 +109,25 @@
     function loadPowers(){
         let load = new Powers();
         load.getPowers().forEach(power => {
-            let remainingPowers = 1;
+            //Define the player quantity and status of power
+            let currentItens = PLAYER.getPowerItens().find(item => item.id === power['id']);
+            let remainingPowers = currentItens && currentItens['quantity'] ? currentItens['quantity'] : 0;
             let classblocked = remainingPowers <= 0 ? 'power-blocked' : '';
             let btnblocked = remainingPowers <= 0 ? 'disabled' : '';
+
+            //Populate the power items
             document.querySelector("#game-powers").insertAdjacentHTML("beforeend",
-                '  <div class="col-2 fix-power-space">' +
-                '     <button class="powerups text-center '+classblocked+'" type="button" '+btnblocked+'' +
-                '             onclick="applyPower(this, '+power['id']+')" style="background: '+power['bg-color']+'">\n' +
-                '         <h3 class="countdown-power text-shadow text-warning" style="display: none"></h3>\n' +
-                '         <span class="position-absolute power-count translate-middle badge rounded-pill bg-danger">'+remainingPowers+'</span>\n' +
-                '         <img src="'+power['icon']+'">\n' +
-                '      </button>' +
-                '      <div class="progress" hidden style="position: relative;top: -3px;left: 1px;height: 0.4rem;width: 3.4rem;">\n' +
-                '            <div class="progress-bar" role="progressbar" style="width: 0%;background: '+power['bg-color']+'" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>\n' +
-                '      </div>' +
-                '   </div>'
+            '  <div class="col-2 fix-power-space">' +
+            '     <button class="powerups text-center '+classblocked+'" type="button" '+btnblocked+'' +
+            '             onclick="applyPower(this, '+power['id']+')" style="background: '+power['bg-color']+'">\n' +
+            '         <h3 class="countdown-power text-shadow text-warning" style="display: none"></h3>\n' +
+            '         <span class="position-absolute power-count translate-middle badge rounded-pill bg-danger">'+remainingPowers+'</span>\n' +
+            '         <img src="'+power['icon']+'">\n' +
+            '      </button>' +
+            '      <div class="progress" hidden style="position: relative;top: -3px;left: 1px;height: 0.4rem;width: 3.4rem;">\n' +
+            '            <div class="progress-bar" role="progressbar" style="width: 0%;background: '+power['bg-color']+'" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>\n' +
+            '      </div>' +
+            '   </div>'
             );
         });
     }

@@ -113,7 +113,7 @@ function openMenu(){
     },250);
 }
 
-function headerUpdateDate(){
+function headerUpdateData(){
     //Show how many stars exists in the game to collect
     if(document.querySelector("#star-count")){
         document.querySelector("#star-count").innerText =

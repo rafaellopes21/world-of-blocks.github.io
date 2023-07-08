@@ -52,6 +52,8 @@ function translateTo(lang = 'en') {
             translateTextContent('Perfect Roll', 'Rodada Perfeita');
             translateTextContent('Save', 'Salvar');
             translateTextContent('Back', 'Voltar');
+            translateTextContent('Exit', 'Sair');
+            translateTextContent('Play', 'Jogar');
             translateTextContent('Continue', 'Continuar');
             translateTextContent('Language', 'Idioma');
             translateTextContent('Start Game', 'Inicar Jogo');

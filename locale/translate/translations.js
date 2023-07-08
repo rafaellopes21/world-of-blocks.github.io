@@ -1,5 +1,5 @@
 function translateTextContent(searchWord, replacementWord) {
-    const unwantedTags = ['script', 'link', 'title', 'meta', 'style'];
+    const unwantedTags = ['script', 'link', 'title', 'meta', 'style', 'i'];
     Array.from(document.querySelectorAll('*')).forEach(element => {
         if(element.tagName && !unwantedTags.includes(element.tagName.toLowerCase())){
             traverseAndReplaceTextNodes(element, searchWord, replacementWord);

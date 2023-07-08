@@ -68,6 +68,7 @@ function Powers() {
 function applyPower(e, powerId){
     let power = POWER_UPS.find(item => item.id === powerId);
     if(!power){ return false; }
+    if(!document.querySelector("#pauseModalbtnGm")){ return false; }
 
     //block the power button
     e.classList.add("power-blocked");
@@ -75,6 +76,22 @@ function applyPower(e, powerId){
     e.toggleAttribute("disabled");
     document.querySelector("#pauseModalbtnGm").toggleAttribute("disabled");
     document.querySelector("#pauseModalbtnGm").children[0].toggleAttribute("hidden");
+
+    //remove 1 item from the current power and update on the screen
+    let allPlayerPowers = PLAYER.getPowerItens();
+    PLAYER.clearPowerItens();
+    let currentQtd = 0;
+    allPlayerPowers.forEach(oldPower => {
+        if(oldPower['id'] == powerId){
+            currentQtd = oldPower['quantity'] - 1;
+            e.children[1].innerText = currentQtd;
+        }
+        PLAYER.setPowerItens({
+            'id': oldPower['id'],
+            'name': oldPower['name'],
+            'quantity': currentQtd,
+        });
+    });
 
     //execute the power action and sound fx
     fillProgressBar(power['effect'], e.nextElementSibling.children[0]);

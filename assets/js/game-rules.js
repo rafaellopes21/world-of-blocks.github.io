@@ -234,7 +234,7 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
         );
     }, 150);
 
-    headerUpdateDate();
+    headerUpdateData();
 }
 
 function completedObjectives(){

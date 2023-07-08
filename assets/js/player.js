@@ -27,6 +27,15 @@ function Player() {
     this.getLanguageGame = function () { return localStorage.getItem(languageGame) ? localStorage.getItem(languageGame) : 'en'; };
     this.setLanguageGame = function (value) { localStorage.setItem(languageGame, value); };
 
+    var powerItens = "power_items";
+    this.clearPowerItens = function () { localStorage.getItem(powerItens) ? localStorage.removeItem(powerItens) : false; };
+    this.getPowerItens = function () { return localStorage.getItem(powerItens) ? JSON.parse(localStorage.getItem(powerItens)) : []; };
+    this.setPowerItens = function (value) {
+        let currentItens = this.getPowerItens();
+        currentItens.push(value);
+        localStorage.setItem(powerItens, JSON.stringify(currentItens));
+    };
+
     this.getStagesResults = function () {
         var stageArray = [];
         getStageSettings().forEach(stage => {
@@ -45,6 +54,7 @@ function Player() {
             'pause_main_volume' : this.getPauseMainVolume(),
             'fx_volume' : this.getFxVolume(),
             'stages_results' : this.getStagesResults(),
+            'power_items' : this.getPowerItens(),
         }
     }
 }
