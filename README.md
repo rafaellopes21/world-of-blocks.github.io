@@ -97,6 +97,7 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](http
 - Boostrap 5
 - SelectPicker
 - JQUERY
+- Font Awesome
 
 ## Screenshots | Capturas de Tela
 ![Screenshot 1](screenshot1.png)

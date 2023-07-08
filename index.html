@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <title>World of Blocks</title>
-
+    <link rel="manifest" href="manifest.json">
     <!---------------------
            Meta Tags
     ---------------------->
@@ -83,6 +83,17 @@
     <script src="locale/translate/translations.js"></script>
     <script src="locale/languages.js"></script>
     <script>
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registrado com sucesso:', registration);
+                })
+                .catch(error => {
+                    console.log('Falha ao registrar o Service Worker:', error);
+                });
+        }
+
         include('menu/header', '#game-header');
         include('start', '#main-content');
         //loadModal('partials/modal/index','Congratulations','Continue', 'menu/main-menu', 'game/result/index');
