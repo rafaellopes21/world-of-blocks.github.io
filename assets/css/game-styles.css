@@ -318,6 +318,8 @@ input.gameslider {
 
 .fix-power-space{
     margin: 0 4px;
+    left: -4px;
+    position: relative;
 }
 
 .countdown-power{
@@ -332,4 +334,12 @@ input.gameslider {
 }
 .power-blocked > img {
     opacity: 0.20 !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .fix-power-space{
+        margin: 0 4px;
+        left: -7px;
+        position: relative;
+    }
 }
