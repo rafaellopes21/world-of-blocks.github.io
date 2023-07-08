@@ -312,7 +312,7 @@ function saveResults(){
             PLAYER.setTotalStars(parseInt(PLAYER.getTotalStars()));
         }
     } else {
-        PLAYER.setTotalStars(parseInt(totalStars));
+        PLAYER.setTotalStars((parseInt(totalStars) + parseInt(PLAYER.getTotalStars())));
     }
 
     results.value = JSON.stringify(resultData);
@@ -445,17 +445,22 @@ function startingPowers(){
     let timercountPower = powerCountTime;
 
     let intervalPower = setInterval(function (){
-        document.querySelector("#time-to-power").innerText =
-            timercountPower > 9 ? timercountPower.toString() : "0"+timercountPower.toString();
+        if(document.querySelector("#time-to-power")){
+            document.querySelector("#time-to-power").innerText =
+                timercountPower > 9 ? timercountPower.toString() : "0"+timercountPower.toString();
+        }
+
         timercountPower--;
     },1000);
 
     setTimeout(function (){
         clearInterval(intervalPower);
-        document.querySelector("#time-to-power").parentElement.parentElement.style.display = "none";
-        document.querySelectorAll(".power-divs").forEach(p => {
-            p.style.display = "block";
-        });
+        if(document.querySelector("#time-to-power")){
+            document.querySelector("#time-to-power").parentElement.parentElement.style.display = "none";
+            document.querySelectorAll(".power-divs").forEach(p => {
+                p.style.display = "block";
+            });
+        }
     }, (powerCountTime + 1) * 1000);
 }
 
