@@ -1,7 +1,7 @@
 {
   "name": "World of Blocks",
   "short_name": "Blocks",
-  "start_url": "/",
+  "start_url": "/world-of-blocks.github.io/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
