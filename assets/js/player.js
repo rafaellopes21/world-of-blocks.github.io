@@ -24,7 +24,7 @@ function Player() {
     this.setFxVolume = function (value) { localStorage.setItem(fxVolume, value); };
 
     var totalStars = "total_stars";
-    this.getTotalStars = function () { return localStorage.getItem(totalStars) ? localStorage.getItem(totalStars) : 0; };
+    this.getTotalStars = function () { return localStorage.getItem(totalStars) ? parseInt(localStorage.getItem(totalStars)) : 0; };
     this.setTotalStars = function (value) { localStorage.setItem(totalStars, value); };
 
     var playerCoin = "player_coin";

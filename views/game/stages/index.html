@@ -190,7 +190,7 @@
             }
 
             //Check if the player has the unlockable start to play the current stage
-            if(level['unlockWith'] > 0 && PLAYER.getTotalStars() <= level['unlockWith']){
+            if(level['unlockWith'] > 0 && PLAYER.getTotalStars() < level['unlockWith']){
                 let levelBlocked = document.querySelector("#copy-block-stage-desc").innerHTML
                     .replaceAll("{{star-needed}}", PLAYER.getTotalStars()+"/"+level['unlockWith']);
                 document.querySelector(".content-"+nameCol).insertAdjacentHTML("beforeend", levelBlocked);
