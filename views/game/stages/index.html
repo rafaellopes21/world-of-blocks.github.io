@@ -203,8 +203,10 @@
                 let stageResultsLevel = getStageResults(level['level']);
                 let powerEnabled = level['powersEnable'] ? document.querySelector("#powers-enabled").innerText : document.querySelector("#powers-disabled").innerText
 
-                document.querySelector("#has-powers-"+level['level']).innerText = powerEnabled;
-                document.querySelector("#has-powers-"+level['level']).classList.add(level['powersEnable'] ? "bg-success" : "bg-danger");
+                if(document.querySelector("#has-powers-"+level['level'])){
+                    document.querySelector("#has-powers-"+level['level']).innerText = powerEnabled;
+                    document.querySelector("#has-powers-"+level['level']).classList.add(level['powersEnable'] ? "bg-success" : "bg-danger");
+                }
 
                 if(stageResultsLevel && stageResultsLevel['total_items']){
                     for(let s = 0; s < stageResultsLevel['stars']; s++){
@@ -229,7 +231,7 @@
                         document.querySelector(PLAYER.getLastStagePlayed()).scrollIntoView();
                     }, 250);
                 }
-            }, 50);
+            }, 150);
         });
     }
     buildLevels();

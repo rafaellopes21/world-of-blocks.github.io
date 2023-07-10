@@ -38,7 +38,7 @@ function includeFooter(returnToViewPage, removeFooterAfterBack = false){
             document.querySelector("#return-button").setAttribute(
                 "onclick", "loadView('"+returnToViewPage+"');");
         }
-    }, 250);
+    }, 500);
 }
 
 function removeFooterOnBack(){
