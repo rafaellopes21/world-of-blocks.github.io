@@ -49,7 +49,7 @@
 </div>
 
 <div class="d-flex align-items-center justify-content-center center-in-middle">
-    <div class="row border-purple border-rounded p-0 col-sm-12 col-md-7 col-lg-5" id="game-table" style="display: none !important;">
+    <div class="row border-purple border-rounded p-0 col-sm-12 col-md-7 col-lg-4 col-xl-5" id="game-table" style="display: none !important;">
         <input hidden id="results-in-game" value="">
 
         <div class="row text-center" style="margin: 0 auto; padding: 0">
@@ -93,10 +93,19 @@
             </div>
         </div>
 
+        <div class="message-overlay border-rounded" style="display: none">
+            <div class="message-content text-shadow" id="message-game">
+                <h2 class="p-0 mb-0" id="msg-gm"></h2>
+            </div>
+            <div hidden style="display: none">
+                <span id="msg-star">Star acquired!</span>
+                <span id="msg-error-square">Ooops!</span>
+            </div>
+        </div>
+
         <div class="" id="grid-game"></div>
 
         <hr class="mt-0 mb-1">
-
         <div class="row d-flex align-items-center justify-content-center align-to-center" id="game-powers" style="display: none !important;">
             <div class="alert bg-orange text-center mb-2 border-rounded" style="padding: 6px;">
                 <h3 class="mb-0 mt-0 text-shadow text-white">Activating powers in: <span id="time-to-power"></span></h3>

@@ -1,4 +1,11 @@
-<style>  .modal-body{ padding: 0; } </style>
+<style>
+    .modal-header{
+        padding: 2px;
+    }
+    .modal-body{
+        padding: 0;
+    }
+</style>
 <div class="row">
     <div class="col-6 text-center mb-3" style="margin: 0 auto">
         <div class="text-center bg-blue border-rounded text-shadow" style="padding: 12px 0">
@@ -18,7 +25,7 @@
             <div class="hoverEffect"><div></div></div>
         </button>
     </div>
-    <div class="col-12 text-center mb-3" style="margin: 0 auto">
+    <div class="col-12 text-center mb-2" style="margin: 0 auto">
         <div class="text-center bg-blue border-rounded text-shadow" style="padding: 12px 0">
             <h1 class="text-white mb-0">Score</h1>
             <h1 class="mb-0 mt-0 text-warning" id="showScore">-----</h1>
@@ -32,6 +39,16 @@
                 Time Left: <span id="showTime">--:--</span>
             </h2>
         </div>
+    </div>
+    <div class="col-12 row text-center mb-1" style="margin: 0 auto">
+        <div class="col-12"><span id="current-user-xp">-/-</span> XP</div>
+        <div class="col-10 p-0">
+            <div class="progress bg-smoke" style="height: 23px;">
+                <div class="progress-bar bg-success" id="xp-progressbar" role="progressbar" style="width: 0%;font-family: cursive;"
+                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+            </div>
+        </div>
+        <div class="col-2 p-0 bg-purple text-white text-shadow" id="player-result-level">-</div>
     </div>
 </div>
 
@@ -57,4 +74,7 @@
         document.querySelector("#star-result-"+(x+1)).classList.add("fa-solid");
         document.querySelector("#star-result-"+(x+1)).classList.add("text-warning");
     }
+
+    //Update the current XP bar
+    levelingXPUp();
 </script>

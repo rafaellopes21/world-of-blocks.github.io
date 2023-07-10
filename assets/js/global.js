@@ -37,6 +37,7 @@ function checkSavedPlayer(){
 function startGaming(){
     PLAYER.setName(document.querySelector("#nickname").value);
     include('menu/main-menu', '#main-content');
+    document.querySelector("#header-nav").style.display = "block";
 }
 
 function enableSfxButtonClicked(){
@@ -124,6 +125,9 @@ function headerUpdateData(){
     if(document.querySelector("#player-coins")){
         document.querySelector("#player-coins").innerText = PLAYER.getPlayerCoin().toString();
     }
+
+    //update the player level
+    levelingXPUp();
 }
 
 function closeOtherCollapses(isHome = false){

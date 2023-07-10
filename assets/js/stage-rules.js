@@ -22,6 +22,7 @@ function playStage(stageNumber) {
     stage.setRefreshGameTime(stageConfig['refreshGameTime']);
     stage.setMaxTime(stageConfig['maxTime']);
     stage.setTotalItems(stageConfig['totalItems']);
+    stage.setPowers(stageConfig['powersEnable']);
     stage.setItemsToSelect(stageConfig['itemsToSelect']);
 
     stage.setFirstStarTime(stageConfig['achievements'][0]['firstStarTime']);
@@ -35,6 +36,11 @@ function playStage(stageNumber) {
     stage.setThirdStarTime(stageConfig['achievements'][2]['thirdStarTime']);
     stage.setThirdStarHits(stageConfig['achievements'][2]['thirdStarHits']);
     stage.setThirdStarErrors(stageConfig['achievements'][2]['thirdStarErrors']);
+
+    //Store last stage played by player
+    if(stageNumber){
+        PLAYER.setLastStagePlayed('#stage-level-'+stageNumber);
+    }
 
     loadView('game/index');
 }
@@ -111,6 +117,7 @@ function getStageSettings(stageNumber = false, stageIndex = 'level') {
             'refreshGameTime': 5, //After X seconds, the game will refresh the grid
             'maxTime': 45, //Limit time to finish the game
             'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
                     'firstStarTime': 20,
@@ -131,7 +138,39 @@ function getStageSettings(stageNumber = false, stageIndex = 'level') {
             //Define all itens that will show in the grid to player in this stage
             'itemsToSelect': getItemsToTheLevel([1,2,5,6]),
         },
-        {   //Level Settings
+        {
+            'level': 2,
+            'unlockWith': 3,
+            'world': worldNames(1),
+            'stageIcon': stageIcons(1),
+            'stageTheme': stageSongs(1),
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 5,
+            'gridMaxMatchItems': 4,
+            'refreshGameTime': 6,
+            'maxTime': 60,
+            'totalItems': false,
+            'powersEnable': true,
+            'achievements': [
+                {
+                    'firstStarTime': 40,
+                    'firstStarHits': 15,
+                    'firstStarErrors': false,
+                },
+                {
+                    'secondStarTime': 50,
+                    'secondStarHits': 18,
+                    'secondStarErrors': false,
+                },
+                {
+                    'thirdStarTime': 60,
+                    'thirdStarHits': 20,
+                    'thirdStarErrors': false,
+                },
+            ],
+        },
+        /*{   //Level Settings
             'level': 2, //Number of the stage level
             'unlockWith': 2, //Define how many stars is needed to open the stage (0 is free)
             'world': worldNames(1), //Define the world name of the stage level
@@ -144,6 +183,7 @@ function getStageSettings(stageNumber = false, stageIndex = 'level') {
             'refreshGameTime': 5, //After X seconds, the game will refresh the grid
             'maxTime': 60, //Limit time to finish the game
             'totalItems': false, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
                     'firstStarTime': 50,
@@ -163,7 +203,7 @@ function getStageSettings(stageNumber = false, stageIndex = 'level') {
             ],
             //Define all itens that will show in the grid to player in this stage
             'itemsToSelect': getItemsToTheLevel(),
-        },
+        },*/
         {   //Level Settings
             'level': 999, //Number of the stage level
             'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
@@ -177,6 +217,7 @@ function getStageSettings(stageNumber = false, stageIndex = 'level') {
             'refreshGameTime': 4, //After X seconds, the game will refresh the grid
             'maxTime': 180, //Limit time to finish the game
             'totalItems': 200, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
                     'firstStarTime': 90,

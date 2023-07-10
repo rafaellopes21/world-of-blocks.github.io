@@ -79,6 +79,8 @@ function translateTo(lang = 'en') {
             translateTextContent('time.', '');
             translateTextContent('score', 'Placar');
             translateTextContent('hits', 'acertos');
+            translateTextContent('Star acquired!', 'Estrela Obtida!');
+            translateTextContent('Ooops!', 'Ooops!');
             translateTextContent('max errors: ', 'Máx erros: ');
             translateTextContent('errors', 'erros');
             translateTextContent('acceptable', 'aceitos');

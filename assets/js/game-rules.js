@@ -29,10 +29,16 @@ function sortItemGame(){
         if(countdownTime == 1){
             gameStart();
             document.querySelector("#game-table").removeAttribute("style");
-            document.querySelector("#game-powers").removeAttribute("style");
-            document.querySelectorAll(".power-divs").forEach(p => {
-               p.style.display = "none";
-            });
+
+            if(stage.getPowers()){
+                document.querySelector("#game-powers").removeAttribute("style");
+                document.querySelectorAll(".power-divs").forEach(p => {
+                    p.style.display = "none";
+                });
+            } else {
+                document.querySelector("#game-powers").setAttribute("hidden", "hidden");
+                document.querySelector("#game-powers").previousElementSibling.setAttribute("hidden", "hidden");
+            }
         }
 
         //When timer is in 0 seconds, then close the starting modal
@@ -162,6 +168,7 @@ function destroyCorrect(e){
         checkSessionSelectedItems();
     } else {
         //If is different, then it's wrong answer!
+        showMessage('#msg-error-square', 'text-danger');
         playSFX('zapsplat_multimedia_game_retro_musical_incorrect_fail_negative.mp3');
         e.classList.add("wrong");
         totalErrors++;
@@ -238,8 +245,7 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
             );
         }
     }, 250);
-
-    headerUpdateData();
+    //headerUpdateData();
 }
 
 function completedObjectives(){
@@ -272,6 +278,7 @@ function completedObjectives(){
 }
 function updateStar(starElement){
     if(starElement.classList.contains("fa-regular")){
+        showMessage('#msg-star', 'text-warning');
         starElement.classList.remove("fa-regular");
         starElement.classList.add("fa-solid");
         starElement.classList.add("text-warning");
@@ -279,6 +286,22 @@ function updateStar(starElement){
     }
 }
 
+function showMessage(messageElement, txtColor = "text-white") {
+    let messageOverlay = document.getElementById('message-game').parentElement;
+    messageOverlay.classList.add(txtColor);
+    messageOverlay.style.display = "block";
+    messageOverlay.style.width = gridGame.clientWidth+"px";
+    document.querySelector("#msg-gm").innerHTML = document.querySelector(messageElement).innerHTML;
+    setTimeout(function (){ hideMessage(txtColor); }, 1000);
+}
+
+function hideMessage(txtColor) {
+    let messageOverlay = document.getElementById('message-game').parentElement;
+    messageOverlay.classList.remove(txtColor);
+    messageOverlay.style.display = "none";
+    messageOverlay.style.width = "0px";
+    document.querySelector("#msg-gm").innerHTML = "";
+}
 
 function saveResults(){
     let totalStars = 0;
@@ -297,6 +320,9 @@ function saveResults(){
         'stars': totalStars,
         'combo': comboCounter,
     };
+
+    //Store the XP acquired and add the new level
+    PLAYER.setXp(Math.floor(PLAYER.getXp() + parseInt(playerScore) * 0.1));
 
     //Store how many coins the player got
     coinsObtained = Math.floor(((parseInt(playerScore) * 0.01) * 0.5) + (maxTime * 0.01) + (totalErrors * 0.3));

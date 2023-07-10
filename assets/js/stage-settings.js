@@ -41,6 +41,10 @@ function StageSettings(){
     this.getTotalItems = function () {return __totalItems;};
     this.setTotalItems = function (value) {__totalItems = value;};
 
+    var __setPowers = null;
+    this.getPowers = function () {return __setPowers;};
+    this.setPowers = function (value) {__setPowers = value;};
+
     var __firstStarTime = null;
     this.getFirstStarTime = function () {return __firstStarTime;};
     this.setFirstStarTime = function (value) {__firstStarTime = value;};
