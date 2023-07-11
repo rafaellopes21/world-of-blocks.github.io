@@ -46,6 +46,28 @@ function removeFooterOnBack(){
     document.querySelector('#game-footer').innerHTML = "";
 }
 
+function disableScroll() {
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + scrollPosition + 'px';
+    document.body.style.width = '100%';
+    window.addEventListener('keydown', preventDefaultScroll);
+}
+function enableScroll() {
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.removeEventListener('keydown', preventDefaultScroll);
+}
+function preventDefaultScroll(event) {
+    var keys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+    if (keys.indexOf(event.key) !== -1) {
+        event.preventDefault();
+    }
+}
+
 /*
 |-------------------------------------
 |   Show erros for the developer

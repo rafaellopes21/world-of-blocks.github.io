@@ -286,6 +286,8 @@ function updateStar(starElement){
 }
 
 function saveResults(){
+    enableScroll();
+
     let totalStars = 0;
     if(document.querySelector(".total-stars.fa-solid")){
         totalStars = document.querySelectorAll(".total-stars.fa-solid").length;
@@ -391,6 +393,8 @@ function clearAll(){
 
     //Stop and clear all sounds and sfx
     document.querySelector("#songTwo").pause();
+
+    enableScroll();
 }
 
 /*
@@ -434,13 +438,13 @@ function gamePaused(e){
     if(e.getAttribute('paused') == 'false'){
         e.setAttribute('paused', 'true');
         stopStartSong();
-
+        enableScroll()
         clearTimeout(refreshgridTime);
         clearInterval(timerClockInterval);
     } else {
         e.setAttribute('paused', 'false');
         stopStartSong();
-
+        disableScroll()
         timerClockInterval = setInterval(updatetimer, 1000);
         let remainingTime = refreshGameTime - (refreshGameTime - ((maxTime + 1) % refreshGameTime));
         refreshGrid(remainingTime);
@@ -492,6 +496,7 @@ function gameStart(){
 |-------------------------------------
 |
 |*/
+disableScroll();
 clearAll();
 calcGridSize(gridLength);
 sortItemGame();

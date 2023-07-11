@@ -535,7 +535,7 @@ function getAllLevels(){
         {   //Level Settings
             'level': 999, //Number of the stage level
             'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
-            'world': worldNames(2), //Define the world name of the stage level
+            'world': worldNames(6), //Define the world name of the stage level
             'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(2), //soundtrack that will be played in background
             'levelColor': stageColors(1), //False default | This is used to change the card color in level stage selection
