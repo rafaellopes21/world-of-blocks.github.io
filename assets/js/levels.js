@@ -550,17 +550,17 @@ function getAllLevels(){
                 {   //Star Number 1
                     'firstStarTime': 90,
                     'firstStarHits': 100, //false - define that the play can't miss any square
-                    'firstStarErrors': 14, //false will ignore this rule
+                    'firstStarErrors': false, //false will ignore this rule
                 },
                 {   //Star Number 2
                     'secondStarTime': 45,
                     'secondStarHits': 150, //false - define that the play can't miss any square
-                    'secondStarErrors': 7, //false - will ignore this rule
+                    'secondStarErrors': 10, //false - will ignore this rule
                 },
                 {   //Star Number 3
                     'thirdStarTime': 10,
                     'thirdStarHits': 200, //false - define that the play can't miss any square
-                    'thirdStarErrors': false, //false - will ignore this rule
+                    'thirdStarErrors': 5, //false - will ignore this rule
                 },
             ],
             //Define all itens that will show in the grid to player in this stage
