@@ -41,6 +41,7 @@ function translateTo(lang = 'en') {
             translateTextContent('by clicking here!', 'clicando aqui!');
             //all game translation
             translateTextContent('Welcome Back', 'Bem-Vindo de Volta');
+            translateTextContent('Game Settings', 'Ajustes de Jogo');
             translateTextContent('How to Play', 'Como Jogar');
             translateTextContent('Donate', 'Doe aqui');
             translateTextContent('Before Start', 'Antes de Começar');
@@ -60,7 +61,6 @@ function translateTo(lang = 'en') {
             translateTextContent('Start Game', 'Inicar Jogo');
             translateTextContent('Shopping', 'Loja');
             translateTextContent('Help', 'Ajuda');
-            translateTextContent('Settings', 'Ajustes');
             translateTextContent('Music', 'Música');
             translateTextContent('Volume', 'Volume');
             translateTextContent('Sound FX Volume', 'Volume SFX');
