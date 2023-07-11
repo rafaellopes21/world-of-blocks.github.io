@@ -49,6 +49,10 @@ function playStage(stageNumber) {
 function worldNames(worldIndex = false){
     let worlds = [ //start by array = 1, not ZERO!
         'World of Colors',
+        'World of Snow',
+        'World of Water',
+        'World of Space',
+        'World of Jungle',
         'Challenges',
     ];
     return worldIndex ? worlds[worldIndex - 1] : worlds;
