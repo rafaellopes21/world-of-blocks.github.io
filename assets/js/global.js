@@ -139,3 +139,29 @@ function closeOtherCollapses(isHome = false){
         }
     }
 }
+
+function showMessage(messageElement, txtColor = "text-white", timeout = 1, blockClick = true) {
+    let sizeDefine = document.querySelector("#grid-game") ? document.querySelector("#grid-game").clientWidth+"px" : "100%";
+    let messageOverlay = document.getElementById('message-game').parentElement;
+    messageOverlay.classList.add(txtColor);
+    messageOverlay.style.display = "block";
+    messageOverlay.style.width = sizeDefine;
+    document.querySelector("#msg-gm").innerHTML = document.querySelector(messageElement).innerHTML;
+
+    if(blockClick){
+        document.querySelector("#msg-gm").removeAttribute("style");
+    } else {
+        document.querySelector("#msg-gm").setAttribute("style", "pointer-events: initial !important;");
+    }
+
+    setTimeout(function (){ hideMessage(txtColor); }, timeout * 1000);
+}
+
+function hideMessage(txtColor) {
+    let messageOverlay = document.getElementById('message-game').parentElement;
+    messageOverlay.classList.remove(txtColor);
+    messageOverlay.style.display = "none";
+    messageOverlay.style.width = "0px";
+    document.querySelector("#item-earned").innerHTML = "";
+    document.querySelector("#msg-gm").innerHTML = "";
+}

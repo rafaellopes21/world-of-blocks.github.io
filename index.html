@@ -36,6 +36,35 @@
       Modals e Floating
     ---------------------->
     <div id="modalTemplateLoad"></div>
+    <div class="message-overlay border-rounded" style="display: none">
+        <div class="message-content text-shadow" id="message-game">
+            <h2 class="p-0 mb-0" id="msg-gm"></h2>
+        </div>
+        <div hidden style="display: none">
+            <span id="msg-star">Star acquired!</span>
+            <span id="msg-error-square">Ooops!</span>
+            <div id="msg-level-up">
+                <div class="bg-orange p-3 border-rounded">
+                    <h1 class="display-5 fw-bold mt-0 text-white bg-success border-rounded">Level Up!</h1>
+                    <p class="container text-center text-white">Congratulations, you managed to level up and as a reward you got the following item:</p>
+                    <div class="d-flex align-items-center justify-content-center row">
+                        <div class="col-sm-9 col-md-4" style="background: #cfcfcf4a;border-radius: 25px;">
+                            <a class="navbar-brand text-white" href="javascript:void(0);" style="margin: 0 auto;">
+                                <i class="fa-solid fa-coins text-warning" style="position: relative;top: 1px;font-size: 26px;margin-right: 0;"></i>
+                                <span id="item-earned" style="font-size: 20px;">-</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 col-sm-12 col-md-4 mx-auto mt-4">
+                        <button class="btn-game btn-green sfx-click btn-lg"
+                                type="button" onclick="hideMessage('text-primary')">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!---------------------
         HEADER OF GAME
@@ -85,7 +114,6 @@
     <script src="locale/translate/translations.js"></script>
     <script src="locale/languages.js"></script>
     <script>
-
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js')
                 .then(registration => {
@@ -95,7 +123,6 @@
                     console.log('Falha ao registrar o Service Worker:', error);
                 });
         }
-
         include('menu/header', '#game-header');
         include('start', '#main-content');
         //loadModal('partials/modal/index','Congratulations','Continue', 'menu/main-menu', 'game/result/index');

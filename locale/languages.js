@@ -38,10 +38,12 @@ function translateTo(lang = 'en') {
             translateTextContent('For more details, access the "Help" option in the game\'s main menu and have a good game!', 'Para mais detalhes, acesse no menu principal do jogo a opção "Ajuda" e tenha um bom jogo!');
             translateTextContent('This game was created just for fun, therefore it is not intended for profit or commercialization, it is literally a game made with love and dedication!', 'Este jogo foi criado apenas por diversão, portanto ele não tem a inteção de lucros ou de comercialização, sendo literalmente um jogo feito com amor e dedicação!');
             translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', 'Mas caso tenha gostado do jogo e quer ajudar o desenvolvedor que criou este projeto, você pode doar');
+            translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', 'Parabéns, você conseguiu subir de nível e como recompensa você ganhou o seguinte item:');
             translateTextContent('by clicking here!', 'clicando aqui!');
             //all game translation
             translateTextContent('Welcome Back', 'Bem-Vindo de Volta');
             translateTextContent('Game Settings', 'Ajustes de Jogo');
+            translateTextContent('Level Up!', 'Subiu de Nível!');
             translateTextContent('How to Play', 'Como Jogar');
             translateTextContent('Donate', 'Doe aqui');
             translateTextContent('Before Start', 'Antes de Começar');

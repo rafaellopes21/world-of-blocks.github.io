@@ -28,7 +28,7 @@ function Player() {
     this.setTotalStars = function (value) { localStorage.setItem(totalStars, value); };
 
     var playerCoin = "player_coin";
-    this.getPlayerCoin = function () { return localStorage.getItem(playerCoin) ? localStorage.getItem(playerCoin) : 0; };
+    this.getPlayerCoin = function () { return localStorage.getItem(playerCoin) ? parseInt(localStorage.getItem(playerCoin)) : 0; };
     this.setPlayerCoin = function (value) { localStorage.setItem(playerCoin, value); };
 
     var languageGame = "language_game";
@@ -98,6 +98,9 @@ function levelingXPUp(){
     if(currentXp >= totalLevelXp){
         PLAYER.setXp((currentXp - totalLevelXp));
         PLAYER.setPlayerLevel((PLAYER.getPlayerLevel() + 1));
+        showMessage('#msg-level-up', 'text-primary', 300, false);
+        PLAYER.setPlayerCoin(PLAYER.getPlayerCoin() + totalLevelXp * 0.1);
+        document.querySelector("#item-earned").innerHTML = (totalLevelXp * 0.1);
         levelingXPUp();
     }
 

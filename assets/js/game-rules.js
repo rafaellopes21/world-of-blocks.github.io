@@ -245,7 +245,6 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
             );
         }
     }, 250);
-    //headerUpdateData();
 }
 
 function completedObjectives(){
@@ -284,23 +283,6 @@ function updateStar(starElement){
         starElement.classList.add("text-warning");
         playSFX('zapsplat_multimedia_game_retro_musical_short_tone_001.mp3', '#soundFxTwo');
     }
-}
-
-function showMessage(messageElement, txtColor = "text-white") {
-    let messageOverlay = document.getElementById('message-game').parentElement;
-    messageOverlay.classList.add(txtColor);
-    messageOverlay.style.display = "block";
-    messageOverlay.style.width = gridGame.clientWidth+"px";
-    document.querySelector("#msg-gm").innerHTML = document.querySelector(messageElement).innerHTML;
-    setTimeout(function (){ hideMessage(txtColor); }, 1000);
-}
-
-function hideMessage(txtColor) {
-    let messageOverlay = document.getElementById('message-game').parentElement;
-    messageOverlay.classList.remove(txtColor);
-    messageOverlay.style.display = "none";
-    messageOverlay.style.width = "0px";
-    document.querySelector("#msg-gm").innerHTML = "";
 }
 
 function saveResults(){
