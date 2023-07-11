@@ -1,4 +1,38 @@
 function getAllLevels(){
+    /*{   //Level Settings
+            'level': 1, //Number of the stage level
+            'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 4, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 20, //Limit time to finish the game
+            'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 10,
+                    'firstStarHits': 10, //false - define that the play can't miss any square
+                    'firstStarErrors': false, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 7,
+                    'secondStarHits': 12, //false - define that the play can't miss any square
+                    'secondStarErrors': false, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 5,
+                    'thirdStarHits': 15, //false - define that the play can't miss any square
+                    'thirdStarErrors': false, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,5,6]),
+        },*/
     return [
         {   //Level Settings
             'level': 1, //Number of the stage level
@@ -81,7 +115,7 @@ function getAllLevels(){
             'refreshGameTime': 5, //After X seconds, the game will refresh the grid
             'maxTime': 15, //Limit time to finish the game
             'totalItems': 10, //false - The code will calc how many items should be selected or put any integer
-            'powersEnable': true, //True - to enable Powers in game.
+            'powersEnable': false, //True - to enable Powers in game.
             'achievements': [ //Start by the most simple to most difficult values
                 {   //Star Number 1
                     'firstStarTime': 11,
@@ -89,7 +123,7 @@ function getAllLevels(){
                     'firstStarErrors': false, //false will ignore this rule
                 },
                 {   //Star Number 2
-                    'secondStarTime': 8,
+                    'secondStarTime': 9,
                     'secondStarHits': 6, //false - define that the play can't miss any square
                     'secondStarErrors': false, //false - will ignore this rule
                 },
@@ -104,32 +138,32 @@ function getAllLevels(){
         },
         {   //Level Settings
             'level': 4,
-            'unlockWith': 6,
+            'unlockWith': 7,
             'world': worldNames(1), //Define the world name of the stage level
             'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(1), //soundtrack that will be played in background
             'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
             'description': false,
             'gridLength': 5,
-            'gridMaxMatchItems': 6,
-            'refreshGameTime': 6,
-            'maxTime': 35,
-            'totalItems': 15,
-            'powersEnable': true,
+            'gridMaxMatchItems': 4,
+            'refreshGameTime': 5,
+            'maxTime': 15,
+            'totalItems': 25,
+            'powersEnable': false,
             'achievements': [
                 {
-                    'firstStarTime': 20,
+                    'firstStarTime': 12,
                     'firstStarHits': 5,
                     'firstStarErrors': false,
                 },
                 {
-                    'secondStarTime': 15,
-                    'secondStarHits': 8,
+                    'secondStarTime': 9,
+                    'secondStarHits': 12,
                     'secondStarErrors': false,
                 },
                 {
-                    'thirdStarTime': 10,
-                    'thirdStarHits': false,
+                    'thirdStarTime': 5,
+                    'thirdStarHits': 20,
                     'thirdStarErrors': false,
                 },
             ],
@@ -137,192 +171,27 @@ function getAllLevels(){
         },
         {   //Level Settings
             'level': 5,
-            'unlockWith': 8,
+            'unlockWith': 10,
             'world': worldNames(1), //Define the world name of the stage level
             'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(1), //soundtrack that will be played in background
             'levelColor': stageColors(), //False default | This is used to change the card color in level stage selection
             'description': false,
             'gridLength': 5,
-            'gridMaxMatchItems': 5,
-            'refreshGameTime': 6,
-            'maxTime': 30,
-            'totalItems': 18,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 18,
-                    'firstStarHits': 7,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 15,
-                    'secondStarHits': 10,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 12,
-                    'thirdStarHits': false,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel(),
-        },
-        {   //Level Settings
-            'level': 6,
-            'unlockWith': 10,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 5,
-            'gridMaxMatchItems': 6,
-            'refreshGameTime': 6,
-            'maxTime': 25,
+            'gridMaxMatchItems': 4,
+            'refreshGameTime': 5,
+            'maxTime': 20,
             'totalItems': 20,
-            'powersEnable': true,
+            'powersEnable': false,
             'achievements': [
                 {
                     'firstStarTime': 16,
-                    'firstStarHits': 8,
+                    'firstStarHits': 5,
                     'firstStarErrors': false,
                 },
                 {
                     'secondStarTime': 12,
-                    'secondStarHits': 12,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 10,
-                    'thirdStarHits': false,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel(),
-        },
-        {   //Level Settings
-            'level': 7,
-            'unlockWith': 12,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 5,
-            'gridMaxMatchItems': 6,
-            'refreshGameTime': 6,
-            'maxTime': 25,
-            'totalItems': 22,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 15,
-                    'firstStarHits': 8,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 12,
-                    'secondStarHits': 12,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 10,
-                    'thirdStarHits': false,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel(),
-        },
-        {   //Level Settings
-            'level': 8,
-            'unlockWith': 14,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 6,
-            'gridMaxMatchItems': 7,
-            'refreshGameTime': 6,
-            'maxTime': 25,
-            'totalItems': 24,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 14,
-                    'firstStarHits': 10,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 11,
-                    'secondStarHits': 14,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 9,
-                    'thirdStarHits': false,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel(),
-        },
-        {   //Level Settings
-            'level': 9,
-            'unlockWith': 16,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 6,
-            'gridMaxMatchItems': 6,
-            'refreshGameTime': 6,
-            'maxTime': 25,
-            'totalItems': 26,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 13,
-                    'firstStarHits': 12,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 10,
-                    'secondStarHits': 16,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 8,
-                    'thirdStarHits': false,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel(),
-        },
-        {   //Level Settings
-            'level': 10,
-            'unlockWith': 18,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 6,
-            'gridMaxMatchItems': 7,
-            'refreshGameTime': 6,
-            'maxTime': 25,
-            'totalItems': 28,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 12,
-                    'firstStarHits': 14,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 9,
-                    'secondStarHits': 18,
+                    'secondStarHits': 10,
                     'secondStarErrors': false,
                 },
                 {
@@ -331,11 +200,44 @@ function getAllLevels(){
                     'thirdStarErrors': false,
                 },
             ],
+            'itemsToSelect': getItemsToTheLevel([1,5,2,6,7]),
+        },
+        {   //Level Settings
+            'level': 6,
+            'unlockWith': 13,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 5,
+            'gridMaxMatchItems': 5,
+            'refreshGameTime': 5,
+            'maxTime': 25,
+            'totalItems': 30,
+            'powersEnable': false,
+            'achievements': [
+                {
+                    'firstStarTime': 20,
+                    'firstStarHits': 6,
+                    'firstStarErrors': false,
+                },
+                {
+                    'secondStarTime': 15,
+                    'secondStarHits': 15,
+                    'secondStarErrors': false,
+                },
+                {
+                    'thirdStarTime': 10,
+                    'thirdStarHits': 25,
+                    'thirdStarErrors': 2,
+                },
+            ],
             'itemsToSelect': getItemsToTheLevel(),
         },
         {   //Level Settings
-            'level': 11,
-            'unlockWith': 20,
+            'level': 7,
+            'unlockWith': 16,
             'world': worldNames(1), //Define the world name of the stage level
             'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(1), //soundtrack that will be played in background
@@ -343,160 +245,292 @@ function getAllLevels(){
             'description': false,
             'gridLength': 6,
             'gridMaxMatchItems': 4,
-            'refreshGameTime': 6,
-            'maxTime': 90,
-            'totalItems': 36,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 60,
-                    'firstStarHits': 15,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 45,
-                    'secondStarHits': 20,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 30,
-                    'thirdStarHits': 25,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel([1, 2, 4, 7, 8, 9, 11]),
-        },
-        {   //Level Settings
-            'level': 12,
-            'unlockWith': 22,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 6,
-            'gridMaxMatchItems': 5,
             'refreshGameTime': 5,
-            'maxTime': 80,
-            'totalItems': 30,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 50,
-                    'firstStarHits': 12,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 40,
-                    'secondStarHits': 16,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 30,
-                    'thirdStarHits': 20,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel([3, 4, 6, 7, 10, 12]),
-        },
-        {   //Level Settings
-            'level': 13,
-            'unlockWith': 24,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 6,
-            'gridMaxMatchItems': 6,
-            'refreshGameTime': 5,
-            'maxTime': 70,
-            'totalItems': 40,
-            'powersEnable': true,
-            'achievements': [
-                {
-                    'firstStarTime': 45,
-                    'firstStarHits': 10,
-                    'firstStarErrors': false,
-                },
-                {
-                    'secondStarTime': 35,
-                    'secondStarHits': 14,
-                    'secondStarErrors': false,
-                },
-                {
-                    'thirdStarTime': 25,
-                    'thirdStarHits': 18,
-                    'thirdStarErrors': false,
-                },
-            ],
-            'itemsToSelect': getItemsToTheLevel([2, 3, 5, 8, 11, 13, 14]),
-        },
-        {   //Level Settings
-            'level': 14,
-            'unlockWith': 26,
-            'world': worldNames(1), //Define the world name of the stage level
-            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(1), //soundtrack that will be played in background
-            'levelColor': stageColors(),
-            'description': false,
-            'gridLength': 6,
-            'gridMaxMatchItems': 5,
-            'refreshGameTime': 4,
-            'maxTime': 60,
+            'maxTime': 30,
             'totalItems': 35,
-            'powersEnable': true,
+            'powersEnable': false,
             'achievements': [
                 {
-                    'firstStarTime': 40,
+                    'firstStarTime': 22,
                     'firstStarHits': 8,
                     'firstStarErrors': false,
                 },
                 {
-                    'secondStarTime': 30,
-                    'secondStarHits': 12,
+                    'secondStarTime': 18,
+                    'secondStarHits': 18,
                     'secondStarErrors': false,
                 },
                 {
-                    'thirdStarTime': 20,
-                    'thirdStarHits': 16,
-                    'thirdStarErrors': false,
+                    'thirdStarTime': 12,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 2,
                 },
             ],
-            'itemsToSelect': getItemsToTheLevel([1, 3, 6, 9, 11, 12, 15]),
+            'itemsToSelect': getItemsToTheLevel(),
         },
-        {  //Level Settings
-            'level': 15,
+        {   //Level Settings
+            'level': 8,
+            'unlockWith': 19,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 6,
+            'gridMaxMatchItems': 4,
+            'refreshGameTime': 5,
+            'maxTime': 30,
+            'totalItems': 35,
+            'powersEnable': false,
+            'achievements': [
+                {
+                    'firstStarTime': 22,
+                    'firstStarHits': 9,
+                    'firstStarErrors': false,
+                },
+                {
+                    'secondStarTime': 17,
+                    'secondStarHits': 16,
+                    'secondStarErrors': 3,
+                },
+                {
+                    'thirdStarTime': 8,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 2,
+                },
+            ],
+            'itemsToSelect': getItemsToTheLevel(),
+        },
+        {   //Level Settings
+            'level': 9,
+            'unlockWith': 21,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 6,
+            'gridMaxMatchItems': 3,
+            'refreshGameTime': 5,
+            'maxTime': 35,
+            'totalItems': 40,
+            'powersEnable': false,
+            'achievements': [
+                {
+                    'firstStarTime': 22,
+                    'firstStarHits': 10,
+                    'firstStarErrors': false,
+                },
+                {
+                    'secondStarTime': 15,
+                    'secondStarHits': 20,
+                    'secondStarErrors': 8,
+                },
+                {
+                    'thirdStarTime': 5,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 4,
+                },
+            ],
+            'itemsToSelect': getItemsToTheLevel(),
+        },
+        {   //Level Settings
+            'level': 10,
+            'unlockWith': 23,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 7,
+            'gridMaxMatchItems': 4,
+            'refreshGameTime': 5,
+            'maxTime': 35,
+            'totalItems': 42,
+            'powersEnable': false,
+            'achievements': [
+                {
+                    'firstStarTime': 23,
+                    'firstStarHits': 11,
+                    'firstStarErrors': false,
+                },
+                {
+                    'secondStarTime': 19,
+                    'secondStarHits': 22,
+                    'secondStarErrors': 7,
+                },
+                {
+                    'thirdStarTime': 13,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 2,
+                },
+            ],
+            'itemsToSelect': getItemsToTheLevel(),
+        },
+        {   //Level Settings
+            'level': 11,
             'unlockWith': 28,
             'world': worldNames(1), //Define the world name of the stage level
             'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
             'stageTheme': stageSongs(1), //soundtrack that will be played in background
             'levelColor': stageColors(),
             'description': false,
-            'gridLength': 6,
-            'gridMaxMatchItems': 6,
-            'refreshGameTime': 4,
-            'maxTime': 50,
-            'totalItems': 35,
-            'powersEnable': true,
+            'gridLength': 7,
+            'gridMaxMatchItems': 5,
+            'refreshGameTime': 5,
+            'maxTime': 45,
+            'totalItems': 50,
+            'powersEnable': false,
             'achievements': [
                 {
-                    'firstStarTime': 40,
-                    'firstStarHits': 8,
+                    'firstStarTime': 35,
+                    'firstStarHits': 15,
                     'firstStarErrors': false,
                 },
                 {
-                    'secondStarTime': 30,
-                    'secondStarHits': 12,
-                    'secondStarErrors': false,
+                    'secondStarTime': 28,
+                    'secondStarHits': 25,
+                    'secondStarErrors': 6,
                 },
                 {
-                    'thirdStarTime': 20,
-                    'thirdStarHits': 16,
-                    'thirdStarErrors': false,
+                    'thirdStarTime': 15,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 4,
                 },
             ],
-            'itemsToSelect': getItemsToTheLevel([1, 3, 6, 9, 11, 12, 15]),
+            'itemsToSelect': getItemsToTheLevel(),
+        },
+        {   //Level Settings
+            'level': 12,
+            'unlockWith': 30,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 7,
+            'gridMaxMatchItems': 3,
+            'refreshGameTime': 5,
+            'maxTime': 30,
+            'totalItems': 40,
+            'powersEnable': false,
+            'achievements': [
+                {
+                    'firstStarTime': 20,
+                    'firstStarHits': 10,
+                    'firstStarErrors': 3,
+                },
+                {
+                    'secondStarTime': 10,
+                    'secondStarHits': 23,
+                    'secondStarErrors': 5,
+                },
+                {
+                    'thirdStarTime': 5,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 3,
+                },
+            ],
+            'itemsToSelect': getItemsToTheLevel([3, 4, 6, 7, 1, 2]),
+        },
+        {   //Level Settings
+            'level': 13,
+            'unlockWith': 32,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 8,
+            'gridMaxMatchItems': 2,
+            'refreshGameTime': 5,
+            'maxTime': 30,
+            'totalItems': 30,
+            'powersEnable': true,
+            'achievements': [
+                {
+                    'firstStarTime': 15,
+                    'firstStarHits': 12,
+                    'firstStarErrors': 4,
+                },
+                {
+                    'secondStarTime': 10,
+                    'secondStarHits': 18,
+                    'secondStarErrors': 3,
+                },
+                {
+                    'thirdStarTime': 5,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 2,
+                },
+            ],
+            'itemsToSelect': getItemsToTheLevel(),
+        },
+        {   //Level Settings
+            'level': 14,
+            'unlockWith': 38,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 8,
+            'gridMaxMatchItems': 3,
+            'refreshGameTime': 5,
+            'maxTime': 10,
+            'totalItems': 50,
+            'powersEnable': true,
+            'achievements': [
+                {
+                    'firstStarTime': 31,
+                    'firstStarHits': 15,
+                    'firstStarErrors': false,
+                },
+                {
+                    'secondStarTime': 19,
+                    'secondStarHits': 25,
+                    'secondStarErrors': 8,
+                },
+                {
+                    'thirdStarTime': 7,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 2,
+                },
+            ],
+            'itemsToSelect': getItemsToTheLevel(),
+        },
+        {  //Level Settings
+            'level': 15,
+            'unlockWith': 41,
+            'world': worldNames(1), //Define the world name of the stage level
+            'stageIcon': stageIcons(1), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(1), //soundtrack that will be played in background
+            'levelColor': stageColors(),
+            'description': false,
+            'gridLength': 8,
+            'gridMaxMatchItems': 8,
+            'refreshGameTime': 5,
+            'maxTime': 25,
+            'totalItems': 50,
+            'powersEnable': true,
+            'achievements': [
+                {
+                    'firstStarTime': 10,
+                    'firstStarHits': 20,
+                    'firstStarErrors': 8,
+                },
+                {
+                    'secondStarTime': 6,
+                    'secondStarHits': 35,
+                    'secondStarErrors': 6,
+                },
+                {
+                    'thirdStarTime': 2,
+                    'thirdStarHits': false,
+                    'thirdStarErrors': 0,
+                },
+            ],
+            'itemsToSelect': getItemsToTheLevel(),
         },
         {   //Level Settings
             'level': 999, //Number of the stage level

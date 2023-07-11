@@ -30,6 +30,7 @@ function include(viewPath, elementToPut = '#main-content'){
 
 function includeFooter(returnToViewPage, removeFooterAfterBack = false){
     include('menu/footer', '#game-footer');
+
     setTimeout(function (){
         if(removeFooterAfterBack){
             document.querySelector("#return-button").setAttribute(
@@ -38,7 +39,7 @@ function includeFooter(returnToViewPage, removeFooterAfterBack = false){
             document.querySelector("#return-button").setAttribute(
                 "onclick", "loadView('"+returnToViewPage+"');");
         }
-    }, 500);
+    }, 2500);
 }
 
 function removeFooterOnBack(){

@@ -49,11 +49,11 @@
 </div>
 
 <div class="d-flex align-items-center justify-content-center center-in-middle">
-    <div class="row border-purple border-rounded p-0 col-sm-12 col-md-7 col-lg-4 col-xl-5" id="game-table" style="display: none !important;">
+    <div class="row border-rounded p-0 col-sm-12 col-md-7 col-lg-4 col-xl-5" id="game-table" style="display: none !important;">
         <input hidden id="results-in-game" value="">
 
         <div class="row text-center" style="margin: 0 auto; padding: 0">
-            <div class="col-12 bg-purple text-shadow text-white" style="padding: 0 16px;border-radius: 15px 15px 0 0;">
+            <div id="background-game" class="col-12 text-shadow text-white" style="padding: 0 16px;border-radius: 15px 15px 0 0;">
                 <div class="row">
                     <div class="col-5 p-0">
                         <h4 class="text-left float-start" style="position: relative;top: 8px;left: 8px;">
@@ -79,13 +79,13 @@
                 </div>
             </div>
 
-            <div class="text-shadow col-12 bg-smoke row" style="margin: 0 auto; padding: 0; border-radius: 0 0 25px 25px; border: 3px solid #743eb9">
+            <div class="text-shadow col-12 bg-smoke row" id="score-div-points" style="margin: 0 auto; padding: 0; border-radius: 0 0 25px 25px; border-width: 3px; border-style: solid;">
                 <div id="sort-item" class="text-center col-5 p-1"></div>
                 <div class="col-7 p-0">
                     <h2 class="mb-0 mt-0 text-white">
                         Score: <span id="score-numbers" class="mb-0">00000</span>
                     </h2>
-                    <div class="row bg-purple border-rounded" style="margin: 0 auto; width: 85%;padding: 0 18px;">
+                    <div class="row border-rounded" id="tot-items-finish" style="margin: 0 auto; width: 85%;padding: 0 18px;">
                         <h3 class="col-7 mb-0 text-start text-white" style="padding: 2px 0;"><span id="hits-counter">0</span>/<span id="max-itens-select"></span></h3>
                         <h3 class="col-5 mb-0 text-end text-white" style="padding: 2px 0;"><span id="max-combo">0</span>x</h3>
                     </div>

@@ -12,6 +12,9 @@ playSong(stage.getThemeStageSong()); //Theme song of stage
 var sortedItem = document.querySelector("#sort-item");
 var itemMatch = false;
 var gridGame = document.querySelector("#grid-game");
+var backgroundGridGame = document.querySelector("#background-game");
+var gameTable = document.querySelector("#game-table");
+var scorePointsDiv = document.querySelector("#score-div-points");
 var refreshgridTime = false;
 var gridLength = stage.getgridLength(); //Define the size of the grid
 var gridMaxMatchItems = stage.getMaxMatchItems(); //Define how many match itens will be present in a session

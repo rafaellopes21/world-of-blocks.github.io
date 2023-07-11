@@ -495,6 +495,13 @@ function gameStart(){
     timerClockInterval = setInterval(updatetimer, 1000);
     startingPowers();
     setTimeout( function (){populategrid(gridLength, gridMaxMatchItems, refreshGameTime);}, 1000);
+
+    //Set the colors of the game
+    let stageColor = stage.getStageColor() ? stage.getStageColor().split("-")[stage.getStageColor().split("-").length - 1] : 'purple';
+    backgroundGridGame.classList.add("bg-"+stageColor);
+    document.querySelector("#tot-items-finish").classList.add("bg-"+stageColor);
+    gameTable.classList.add("border-"+stageColor);
+    scorePointsDiv.style.borderColor = getComputedStyle(backgroundGridGame).backgroundColor;
 }
 
 /*
@@ -506,4 +513,3 @@ function gameStart(){
 clearAll();
 calcGridSize(gridLength);
 sortItemGame();
-//setTimeout( function (){ gameStart(); }, 5000);
