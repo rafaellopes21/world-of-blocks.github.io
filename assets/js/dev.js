@@ -47,7 +47,7 @@ function removeFooterOnBack(){
 }
 
 function disableScroll() {
-    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    let scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
@@ -68,7 +68,16 @@ function enableScroll() {
 function preventDefaultScroll(event) {
     event.preventDefault();
 }
-
+window.onresize = function(event) {
+    if(!document.querySelector("#main-div")){
+        return false;
+    }
+    if(window.innerWidth <= 768){
+        document.querySelector("#main-div").classList.remove("center-in-middle");
+    } else {
+        document.querySelector("#main-div").classList.add("center-in-middle");
+    }
+};
 /*
 |-------------------------------------
 |   Show erros for the developer
