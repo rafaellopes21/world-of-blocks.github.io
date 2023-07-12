@@ -49,23 +49,24 @@ function removeFooterOnBack(){
 function disableScroll() {
     var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
     document.body.style.top = '-' + scrollPosition + 'px';
     document.body.style.width = '100%';
-    window.addEventListener('keydown', preventDefaultScroll);
+    window.addEventListener('touchmove', preventDefaultScroll, { passive: false });
 }
+
+// Habilitar o scroll da página
 function enableScroll() {
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
-    window.removeEventListener('keydown', preventDefaultScroll);
+    window.removeEventListener('touchmove', preventDefaultScroll);
 }
 function preventDefaultScroll(event) {
-    var keys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
-    if (keys.indexOf(event.key) !== -1) {
-        event.preventDefault();
-    }
+    event.preventDefault();
 }
 
 /*
