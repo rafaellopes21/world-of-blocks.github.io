@@ -68,7 +68,7 @@ function enableScroll() {
 function preventDefaultScroll(event) {
     event.preventDefault();
 }
-window.onresize = function(event) {
+/*window.onresize = function(event) {
     if(!document.querySelector("#main-div")){
         return false;
     }
@@ -77,7 +77,7 @@ window.onresize = function(event) {
     } else {
         document.querySelector("#main-div").classList.add("center-in-middle");
     }
-};
+};*/
 /*
 |-------------------------------------
 |   Show erros for the developer
