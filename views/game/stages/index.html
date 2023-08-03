@@ -100,7 +100,7 @@
             <div class="col-12 text-center"></div>
             <div class="col-12 text-center">
                 <h3 class="mt-2 mb-2">
-                    <i class="fa-solid fa-lock fa-2x"></i><hr>
+                    <i class="fa-solid fa-lock fa-2x"></i><br>{{level-locked}}<hr class="mt-1 mb-1">
                     Needed: <span>{{star-needed}}</span> <i class="fa-solid fa-star"></i>
                 </h3>
             </div>
@@ -195,7 +195,8 @@
             //Check if the player has the unlockable start to play the current stage
             if(level['unlockWith'] > 0 && PLAYER.getTotalStars() < level['unlockWith']){
                 let levelBlocked = document.querySelector("#copy-block-stage-desc").innerHTML
-                    .replaceAll("{{star-needed}}", PLAYER.getTotalStars()+"/"+level['unlockWith']);
+                    .replaceAll("{{star-needed}}", PLAYER.getTotalStars()+"/"+level['unlockWith'])
+                    .replaceAll("{{level-locked}}", "Level: "+level['level']);
                 document.querySelector(".content-"+nameCol).insertAdjacentHTML("beforeend", levelBlocked);
             } else {
                 document.querySelector(".content-"+nameCol).insertAdjacentHTML("beforeend", copyTemplateStage);
