@@ -182,6 +182,9 @@
                 if(!document.querySelector('#'+nameCol)){
                     let defineSpace = worldNum > 0 ? "mt-2" : "";
                     let defineColor = worldName == "Challenges" ? "bg-orange text-white" : "btn-purple";
+                    if(worldName != "Challenges" ){
+                        defineColor = level['levelColor'] ? 'btn-'+level['levelColor'].replace("bg-card-", "") : defineColor;
+                    }
                     document.querySelector("#stages-list").insertAdjacentHTML("beforeend",
                         '<button class="btn-game '+defineColor+' sfx-click '+defineSpace+'" type="button" id="button-'+nameCol+'" data-bs-toggle="collapse" data-bs-target="#'+nameCol+'" aria-expanded="false" aria-controls="'+nameCol+'" onclick="closeOtherCollapses()"><i class="'+level['stageIcon']+'"></i>'+worldName+'</button>' +
                         '<div class="collapse row content-'+nameCol+' btn-stages-collapses border-rounded bg-smoke" id="'+nameCol+'" style="margin: 0 auto;padding: 5px 0 8px 0;"></div>'

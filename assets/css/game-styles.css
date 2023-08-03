@@ -103,6 +103,23 @@ input.gameslider {
     box-shadow: 0px 10px 10px rgb(55 213 106) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(26 159 56) inset;
 }
 
+.btn-white {
+    background-color: darkgrey;
+    color: rgb(255 255 255);
+}
+
+.btn-blue {
+    background-color: rgba(29, 140, 248, 1);
+    color: white;
+    box-shadow: 0px 10px 10px rgb(210, 187, 253) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgba(20, 75, 148, 0.6) inset;
+}
+
+.btn-red {
+    background-color: rgba(255, 64, 64, 1);
+    color: white;
+    box-shadow: 0px 10px 10px rgb(210, 187, 253) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgba(169, 0, 0, 0.6) inset;
+}
+
 /*-------------------
     BUTTONS DETAILS
  -------------------*/
@@ -160,7 +177,7 @@ input.gameslider {
     padding: 0.325rem 1rem;
 }
 .border-blue {
-    background: linear-gradient(rgb(255 255 255 / 93%), rgb(239 239 239 / 96%)) padding-box, linear-gradient(to top, rgba(0, 41, 127, 1), rgba(151, 95, 255, 1)) border-box;
+    background: linear-gradient(rgb(255 255 255 / 93%), rgb(239 239 239 / 96%)) padding-box, linear-gradient(to top, rgba(0, 41, 127, 1), rgb(27, 142, 204)) border-box;
     border: 4px solid transparent;
     padding: 0.325rem 1rem;
 }
@@ -189,13 +206,19 @@ input.gameslider {
     border: 4px solid transparent;
     padding: 0.325rem 1rem;
 }
-.border-gray {
+.border-gray, .border-white {
     background: linear-gradient(rgb(255 255 255 / 93%), rgb(239 239 239 / 96%)) padding-box, linear-gradient(to top, rgba(128, 128, 128, 1), rgba(207, 207, 207, 1)) border-box;
     border: 4px solid transparent;
     padding: 0.325rem 1rem;
+    color: black;
 }
 .border-brown {
     background: linear-gradient(rgb(255 255 255 / 93%), rgb(239 239 239 / 96%)) padding-box, linear-gradient(to top, rgba(127, 63, 0, 1), rgba(191, 127, 63, 1)) border-box;
+    border: 4px solid transparent;
+    padding: 0.325rem 1rem;
+}
+.border-dark {
+    background: linear-gradient(rgb(255 255 255 / 93%), rgb(239 239 239 / 96%)) padding-box, linear-gradient(to top, rgba(0, 0, 0, 1), rgba(63, 63, 63, 1)) border-box;
     border: 4px solid transparent;
     padding: 0.325rem 1rem;
 }
@@ -297,6 +320,24 @@ input.gameslider {
 .bg-card-yellow:hover:before {
     background-image: linear-gradient(180deg, rgb(92, 204, 58), rgb(61, 120, 197));
 }
+.bg-card-green {
+    background: #8dd45f;
+}
+.bg-card-green::before {
+    background-image: linear-gradient(180deg, rgb(61, 173, 64), rgb(143, 210, 69));
+}
+.bg-card-green:hover::before {
+    background-image: linear-gradient(180deg, rgb(33, 150, 83), rgb(65, 207, 139));
+}
+.bg-card-blue {
+    background: #4aa0e8;
+}
+.bg-card-blue::before {
+    background-image: linear-gradient(180deg, rgb(19, 93, 204), rgb(58, 160, 232));
+}
+.bg-card-blue:hover::before {
+    background-image: linear-gradient(180deg, rgb(6, 61, 128), rgb(26, 120, 230));
+}
 
 /*-------------------------
      BACKGROUND COLORS
@@ -339,6 +380,133 @@ input.gameslider {
 
 .bg-brown {
     background: rgb(127 63 0);
+}
+
+.bg-white {
+    background: rgb(180, 180, 180) !important;
+}
+
+/*-------------------------
+   SQUARES BGS IN GAME
+ -------------------------*/
+.set-icon-bg{
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.snow-icon{
+    background-image: url("../../images/icons/snow-icon.png");
+    background-color: #80c0c9 !important;
+}
+.snowball-icon{
+    background-image: url("../../images/icons/snowball-icon.png");
+    background-color: #9ab0b3 !important;
+}
+.snowman-icon{
+    background-image: url("../../images/icons/snowman-icon.png");
+    background-color: #437991 !important;
+}
+.goggles-icon{
+    background-image: url("../../images/icons/goggles-icon.png");
+    background-color: #1b8fc3 !important;
+}
+.thermometer-icon{
+    background-image: url("../../images/icons/thermometer-icon.png");
+    background-color: #3d565b !important;
+}
+.cube-icon{
+    background-image: url("../../images/icons/cube-icon.png");
+    background-color: #7b8283 !important;
+}
+.wind-icon{
+    background-image: url("../../images/icons/wind-icon.png");
+    background-color: #74b3d5 !important;
+}
+
+.bottle-icon{
+    background-image: url("../../images/icons/bottle-icon.png");
+    background-color: #3d61bd !important;
+}
+.cup-icon{
+    background-image: url("../../images/icons/cup-icon.png");
+    background-color: #6483d1 !important;
+}
+.drop-icon{
+    background-image: url("../../images/icons/drop-icon.png");
+    background-color: #2962f3 !important;
+}
+.faucet-icon{
+    background-image: url("../../images/icons/faucet-icon.png");
+    background-color: #5d82e1 !important;
+}
+.rain-icon{
+    background-image: url("../../images/icons/rain-icon.png");
+    background-color: #3d45ff !important;
+}
+.sea-icon{
+    background-image: url("../../images/icons/sea-icon.png");
+    background-color: #6067fb !important;
+}
+.waterfall-icon{
+    background-image: url("../../images/icons/waterfall-icon.png");
+    background-color: #777ced !important;
+}
+
+.alien-icon{
+    background-image: url("../../images/icons/alien-icon.png");
+    background-color: #5c656f !important;
+}
+.astronaut-icon{
+    background-image: url("../../images/icons/astronaut-icon.png");
+    background-color: #83888d !important;
+}
+.comet-icon{
+    background-image: url("../../images/icons/comet-icon.png");
+    background-color: #797c86 !important;
+}
+.moon-icon{
+    background-image: url("../../images/icons/moon-icon.png");
+    background-color: #4b4a4a !important;
+}
+.planet-icon{
+    background-image: url("../../images/icons/planet-icon.png");
+    background-color: #232222 !important;
+}
+.satellite-icon{
+    background-image: url("../../images/icons/satellite-icon.png");
+    background-color: #a1a1a1 !important;
+}
+.ship-icon{
+    background-image: url("../../images/icons/ship-icon.png");
+    background-color: #777676 !important;
+}
+
+.fruit-icon{
+    background-image: url("../../images/icons/fruit-icon.png");
+    background-color: #1c671e !important;
+}
+.geo-icon{
+    background-image: url("../../images/icons/geo-icon.png");
+    background-color: #66bb23 !important;
+}
+.mask-icon{
+    background-image: url("../../images/icons/mask-icon.png");
+    background-color: #7c917c !important;
+}
+.oke-icon{
+    background-image: url("../../images/icons/oke-icon.png");
+    background-color: #639653 !important;
+}
+.paw-icon{
+    background-image: url("../../images/icons/paw-icon.png");
+    background-color: #083d08 !important;
+}
+.plant-icon{
+    background-image: url("../../images/icons/plant-icon.png");
+    background-color: #4d7f4e !important;
+}
+.tree-icon{
+    background-image: url("../../images/icons/tree-icon.png");
+    background-color: #249126 !important;
 }
 /*-------------------------
        POWER STYLES

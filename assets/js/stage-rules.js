@@ -59,10 +59,38 @@ function worldNames(worldIndex = false){
 }
 
 //Create the itens to select for the stage levels
-function getItemsToTheLevel(itemsInArray = []){
+function getItemsToTheLevel(itemsInArray = [], world = 1){
+    //level 1
     let items = [ //start by array = 1, not ZERO!
         "bg-danger", "bg-primary", "bg-dark", "bg-info", "bg-success", "bg-warning", "bg-secondary",
     ];
+
+    if(world > 1){
+        if(world == 2){
+            items = buildIconsInLevel(
+                ['snow-icon', 'snowball-icon', 'snowman-icon', 'goggles-icon', 'thermometer-icon', 'cube-icon', 'wind-icon'],
+                itemsInArray, items
+            );
+        }
+        if(world == 3){
+            items = buildIconsInLevel(
+                ['bottle-icon', 'cup-icon', 'drop-icon', 'faucet-icon', 'rain-icon', 'sea-icon', 'waterfall-icon'],
+                itemsInArray, items
+            );
+        }
+        if(world == 4){
+            items = buildIconsInLevel(
+                ['ship-icon', 'satellite-icon', 'planet-icon', 'moon-icon', 'comet-icon', 'astronaut-icon', 'alien-icon'],
+                itemsInArray, items
+            );
+        }
+        if(world == 5){
+            items = buildIconsInLevel(
+                ['fruit-icon', 'plant-icon', 'tree-icon', 'paw-icon', 'oke-icon', 'mask-icon', 'geo-icon'],
+                itemsInArray, items
+            );
+        }
+    }
 
     //make a look in the array itens to return
     if(itemsInArray && itemsInArray.length > 0){
@@ -74,14 +102,24 @@ function getItemsToTheLevel(itemsInArray = []){
     return items;
 }
 
+function buildIconsInLevel(icons, itemsInArray, allItems){
+    itemsInArray.forEach(iconIndex => {
+        iconIndex = iconIndex - 1;
+        allItems[iconIndex] = allItems[iconIndex]+" "+icons[iconIndex]+" set-icon-bg";
+    });
+    return allItems;
+}
+
 //Create the stage songs for the stage levels
 function stageSongs(songIndex = false){
     let songs = [ //start by array = 1, not ZERO!
         'memo.mp3',
-        'hard_puzzle.mp3',
+        'wonderland.mp3',
         'paradise.mp3',
-        'boba-date.mp3',
+        'sweet-cafe.mp3',
         'funny.mp3',
+        'hard_puzzle.mp3',
+        'boba-date.mp3',
     ];
     return songIndex ? songs[songIndex - 1] : songs;
 }
@@ -89,10 +127,12 @@ function stageSongs(songIndex = false){
 //Create the stage colors for the stage levels
 function stageColors(colorIndex = false){
     let colors = [ //start by array = 1, not ZERO!
-        'bg-card-red',
         'bg-card-yellow',
-        'bg-card-dark',
         'bg-card-white',
+        'bg-card-blue',
+        'bg-card-dark',
+        'bg-card-green',
+        'bg-card-red',
     ];
     return colorIndex ? colors[colorIndex - 1] : false;
 }
@@ -101,6 +141,10 @@ function stageColors(colorIndex = false){
 function stageIcons(iconsIndex = false){
     let icons = [ //start by array = 1, not ZERO!
         'fa-solid fa-palette',
+        'fa-solid fa-snowflake',
+        'fa-solid fa-droplet',
+        'fa-solid fa-moon',
+        'fa-solid fa-tree',
         'fa-solid fa-trophy',
     ];
     return iconsIndex ? icons[iconsIndex - 1] : '';

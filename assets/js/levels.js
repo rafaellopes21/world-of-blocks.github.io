@@ -34,6 +34,7 @@ function getAllLevels(){
             'itemsToSelect': getItemsToTheLevel([1,2,5,6]),
         },*/
     return [
+        //World Of Colors
         {   //Level Settings
             'level': 1, //Number of the stage level
             'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
@@ -532,13 +533,533 @@ function getAllLevels(){
             ],
             'itemsToSelect': getItemsToTheLevel(),
         },
+
+        //World Of Snow
+        {   //Level Settings
+            'level': 16, //Number of the stage level
+            'unlockWith': 44, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 5, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 15, //Limit time to finish the game
+            'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 8,
+                    'firstStarHits': 10, //false - define that the play can't miss any square
+                    'firstStarErrors': false, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 5,
+                    'secondStarHits': 13, //false - define that the play can't miss any square
+                    'secondStarErrors': false, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 3,
+                    'thirdStarHits': 17, //false - define that the play can't miss any square
+                    'thirdStarErrors': false, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,3,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 17, //Number of the stage level
+            'unlockWith': 47, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 4, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 22, //Limit time to finish the game
+            'totalItems': 23, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 12,
+                    'firstStarHits': 8, //false - define that the play can't miss any square
+                    'firstStarErrors': false, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 8,
+                    'secondStarHits': 12, //false - define that the play can't miss any square
+                    'secondStarErrors': false, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 4,
+                    'thirdStarHits': 20, //false - define that the play can't miss any square
+                    'thirdStarErrors': false, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,3,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 18, //Number of the stage level
+            'unlockWith': 50, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 4, //Length of squares in grid
+            'gridMaxMatchItems': 3, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 35, //Limit time to finish the game
+            'totalItems': 42, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 25,
+                    'firstStarHits': 25, //false - define that the play can't miss any square
+                    'firstStarErrors': 7, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 18,
+                    'secondStarHits': 35, //false - define that the play can't miss any square
+                    'secondStarErrors': 5, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 12,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 3, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([3,4,5,2], 2),
+        },
+        {   //Level Settings
+            'level': 19, //Number of the stage level
+            'unlockWith': 52, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 5, //Length of squares in grid
+            'gridMaxMatchItems': 3, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 38, //Limit time to finish the game
+            'totalItems': 45, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 25,
+                    'firstStarHits': 15, //false - define that the play can't miss any square
+                    'firstStarErrors': 5, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 15,
+                    'secondStarHits': 30, //false - define that the play can't miss any square
+                    'secondStarErrors': 3, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 12,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 1, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5], 2),
+        },
+        {   //Level Settings
+            'level': 20, //Number of the stage level
+            'unlockWith': 55, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 5, //Length of squares in grid
+            'gridMaxMatchItems': 4, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 45, //Limit time to finish the game
+            'totalItems': 52, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 36,
+                    'firstStarHits': 12, //false - define that the play can't miss any square
+                    'firstStarErrors': 6, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 24,
+                    'secondStarHits': 30, //false - define that the play can't miss any square
+                    'secondStarErrors': 4, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 10,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 2, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5], 2),
+        },
+        {   //Level Settings
+            'level': 21, //Number of the stage level
+            'unlockWith': 58, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 5, //Length of squares in grid
+            'gridMaxMatchItems': 4, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 40, //Limit time to finish the game
+            'totalItems': 50, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 30,
+                    'firstStarHits': 15, //false - define that the play can't miss any square
+                    'firstStarErrors': 5, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 20,
+                    'secondStarHits': 30, //false - define that the play can't miss any square
+                    'secondStarErrors': 2, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 10,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 1, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 22, //Number of the stage level
+            'unlockWith': 60, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 6, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 60, //Limit time to finish the game
+            'totalItems': 75, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 45,
+                    'firstStarHits': 25, //false - define that the play can't miss any square
+                    'firstStarErrors': 7, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 30,
+                    'secondStarHits': 50, //false - define that the play can't miss any square
+                    'secondStarErrors': 5, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 15,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 2, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 23, //Number of the stage level
+            'unlockWith': 62, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 6, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 55, //Limit time to finish the game
+            'totalItems': 70, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 45,
+                    'firstStarHits': 23, //false - define that the play can't miss any square
+                    'firstStarErrors': 6, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 30,
+                    'secondStarHits': 48, //false - define that the play can't miss any square
+                    'secondStarErrors': 4, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 15,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 2, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 24, //Number of the stage level
+            'unlockWith': 64, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 7, //Length of squares in grid
+            'gridMaxMatchItems': 4, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 50, //Limit time to finish the game
+            'totalItems': 50, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 40,
+                    'firstStarHits': 12, //false - define that the play can't miss any square
+                    'firstStarErrors': 5, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 25,
+                    'secondStarHits': 32, //false - define that the play can't miss any square
+                    'secondStarErrors': 4, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 8,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 1, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 25, //Number of the stage level
+            'unlockWith': 68, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 7, //Length of squares in grid
+            'gridMaxMatchItems': 4, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 45, //Limit time to finish the game
+            'totalItems': 50, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 37,
+                    'firstStarHits': 12, //false - define that the play can't miss any square
+                    'firstStarErrors': 4, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 21,
+                    'secondStarHits': 32, //false - define that the play can't miss any square
+                    'secondStarErrors': 3, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 8,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 1, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 26, //Number of the stage level
+            'unlockWith': 71, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 8, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 75, //Limit time to finish the game
+            'totalItems': 100, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 60,
+                    'firstStarHits': 20, //false - define that the play can't miss any square
+                    'firstStarErrors': 4, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 30,
+                    'secondStarHits': 60, //false - define that the play can't miss any square
+                    'secondStarErrors': 3, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 10,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 0, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5,6,7], 2),
+        },
+        {   //Level Settings
+            'level': 27, //Number of the stage level
+            'unlockWith': 73, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(2), //Define the world name of the stage level
+            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(2), //soundtrack that will be played in background
+            'levelColor': stageColors(2), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 8, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 70, //Limit time to finish the game
+            'totalItems': 95, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': true, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 58,
+                    'firstStarHits': 23, //false - define that the play can't miss any square
+                    'firstStarErrors': 6, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 27,
+                    'secondStarHits': 62, //false - define that the play can't miss any square
+                    'secondStarErrors': 4, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 12,
+                    'thirdStarHits': false, //false - define that the play can't miss any square
+                    'thirdStarErrors': 0, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,2,3,4,5,6,7], 2),
+        },
+
+        //World Of Water
+        {   //Level Settings
+            'level': 28, //Number of the stage level
+            'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(3), //Define the world name of the stage level
+            'stageIcon': stageIcons(3), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(3), //soundtrack that will be played in background
+            'levelColor': stageColors(3), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 4, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 20, //Limit time to finish the game
+            'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 10,
+                    'firstStarHits': 10, //false - define that the play can't miss any square
+                    'firstStarErrors': false, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 7,
+                    'secondStarHits': 12, //false - define that the play can't miss any square
+                    'secondStarErrors': false, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 5,
+                    'thirdStarHits': 15, //false - define that the play can't miss any square
+                    'thirdStarErrors': false, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([5,6,7], 3),
+        },
+
+        //World Of Space
+        {   //Level Settings
+            'level': 300, //Number of the stage level
+            'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(4), //Define the world name of the stage level
+            'stageIcon': stageIcons(4), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(4), //soundtrack that will be played in background
+            'levelColor': stageColors(4), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 4, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 20, //Limit time to finish the game
+            'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 10,
+                    'firstStarHits': 10, //false - define that the play can't miss any square
+                    'firstStarErrors': false, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 7,
+                    'secondStarHits': 12, //false - define that the play can't miss any square
+                    'secondStarErrors': false, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 5,
+                    'thirdStarHits': 15, //false - define that the play can't miss any square
+                    'thirdStarErrors': false, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([5,6,7], 4),
+        },
+
+        //World Of Jungle
+        {   //Level Settings
+            'level': 400, //Number of the stage level
+            'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
+            'world': worldNames(5), //Define the world name of the stage level
+            'stageIcon': stageIcons(5), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(5), //soundtrack that will be played in background
+            'levelColor': stageColors(5), //False default | This is used to change the card color in level stage selection
+            'description': false, //False - Let the code builed this description | simple Description about this level
+            'gridLength': 4, //Length of squares in grid
+            'gridMaxMatchItems': 5, //Number of how many match squares will be present at each roll
+            'refreshGameTime': 5, //After X seconds, the game will refresh the grid
+            'maxTime': 20, //Limit time to finish the game
+            'totalItems': 20, //false - The code will calc how many items should be selected or put any integer
+            'powersEnable': false, //True - to enable Powers in game.
+            'achievements': [ //Start by the most simple to most difficult values
+                {   //Star Number 1
+                    'firstStarTime': 10,
+                    'firstStarHits': 10, //false - define that the play can't miss any square
+                    'firstStarErrors': false, //false will ignore this rule
+                },
+                {   //Star Number 2
+                    'secondStarTime': 7,
+                    'secondStarHits': 12, //false - define that the play can't miss any square
+                    'secondStarErrors': false, //false - will ignore this rule
+                },
+                {   //Star Number 3
+                    'thirdStarTime': 5,
+                    'thirdStarHits': 15, //false - define that the play can't miss any square
+                    'thirdStarErrors': false, //false - will ignore this rule
+                },
+            ],
+            //Define all itens that will show in the grid to player in this stage
+            'itemsToSelect': getItemsToTheLevel([1,3,7], 5),
+        },
+
+        //Challenges Levels
         {   //Level Settings
             'level': 999, //Number of the stage level
             'unlockWith': 0, //Define how many stars is needed to open the stage (0 is free)
             'world': worldNames(6), //Define the world name of the stage level
-            'stageIcon': stageIcons(2), //Define if the stage has an icon to show in level selection
-            'stageTheme': stageSongs(2), //soundtrack that will be played in background
-            'levelColor': stageColors(1), //False default | This is used to change the card color in level stage selection
+            'stageIcon': stageIcons(6), //Define if the stage has an icon to show in level selection
+            'stageTheme': stageSongs(6), //soundtrack that will be played in background
+            'levelColor': stageColors(6), //False default | This is used to change the card color in level stage selection
             'description': 'Do your best time and score in this mode!', //False - Let the code builed this description | simple Description about this level
             'gridLength': 10, //Length of squares in grid
             'gridMaxMatchItems': 10, //Number of how many match squares will be present at each roll
