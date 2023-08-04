@@ -5,10 +5,27 @@ window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
     deferredPrompt = event;
     // Exibe o botão de instalação
-    document.getElementById('installButton').style.display = 'block';
+    if(document.getElementById('installButton')){
+        document.getElementById('installButton').style.display = 'block';
+    }
+    if(document.getElementById('installBtn')){
+        document.getElementById('installBtn').style.display = 'block';
+    }
 });
 
-document.getElementById('installButton').addEventListener('click', () => {
+if(document.getElementById('installBtn')){
+    document.getElementById('installBtn').addEventListener('click', () => {
+        installGame();
+    });
+}
+
+if(document.getElementById('installButton')) {
+    document.getElementById('installButton').addEventListener('click', () => {
+        installGame();
+    });
+}
+
+function installGame(){
     // Mostra o prompt de instalação quando o usuário clica no botão
     if (deferredPrompt) {
         deferredPrompt.prompt();
@@ -21,4 +38,4 @@ document.getElementById('installButton').addEventListener('click', () => {
             deferredPrompt = null;
         });
     }
-});
+}
