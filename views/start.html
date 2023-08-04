@@ -60,6 +60,9 @@
             </div>
             <div class="modal-footer">
                 <span id="start-game-continue" hidden>continue</span>
+                <button class="btn-game btn-blue sfx-click" id="installButton" style="display: none">
+                    <i class="fa-solid fa-download"></i> Install
+                </button>
                 <button class="btn-game btn-purple sfx-click" type="button" data-bs-dismiss="modal"
                         id="start-game" onclick="startGaming()" disabled>Save
                 </button>
@@ -68,6 +71,7 @@
     </div>
 </div>
 
+<script src="assets/js/install-game.js"></script>
 <script>
     document.querySelector("#beginModalBtn").click();
     function validateNickName(e){
@@ -84,7 +88,6 @@
     }
     $(document).ready(function(){
         include('partials/languages/index', '#select-lang');
-
         document.querySelector("#header-nav").style.display = "none";
     });
 </script>
