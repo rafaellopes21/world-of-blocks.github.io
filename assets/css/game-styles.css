@@ -392,6 +392,7 @@ input.gameslider {
 .set-icon-bg{
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: contain;
 }
 .snow-icon{
     background-image: url("../../images/icons/snow-icon.png");
