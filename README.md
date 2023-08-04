@@ -1,11 +1,5 @@
-## Manual
-Play Here / Jogue Aqui: https://rafaellopes21.github.io/world-of-blocks.github.io
-
-### Como o jogo deverá funcionar
-- O Jogo irá apresentar uma fruta, objeto ou algo para que o jogador encontre e clique nele para cada tipo de mundo.
-- Criar um sistema de "bomba", pois caso o usuário clicar nesta bomba, o tempo é decrementado em X segundos.
-
 # World of Blocks
+- Play Here / Jogue Aqui: https://rafaellopes21.github.io/world-of-blocks.github.io
 
 ## English
 

@@ -13,6 +13,10 @@
 | and add your lang in the select
 | option id='lang-game'!
 |
+| ---- ATENTION! ----
+| Some bugs may occur during translation,
+| if this happen, try move the translateTextContent()
+| content to another place in your language array!
 |*/
 function translateTo(lang = 'en') {
     switch (lang) {
@@ -26,6 +30,7 @@ translateTextContent('If the match is hard, use this to auto select all the squa
 translateTextContent('Cooldown', '');
 translateTextContent('Effect', '');
 translateTextContent('Buy', '');
+translateTextContent('Type Here', '')
 
 //tutorial home page translate
 translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', '');
@@ -37,6 +42,42 @@ translateTextContent('This game was created just for fun, therefore it is not in
 translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', '');
 translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', '');
 translateTextContent('by clicking here!', '');
+
+translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', '');
+translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', '');
+translateTextContent('Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.', '');
+translateTextContent('The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you. in the challenges you will encounter!', '');
+translateTextContent('Frames/Objects', '');
+translateTextContent('The game is based on frames/objects for selection, so when starting each level, the game will generate an item that you must select to advance in the game', '');
+translateTextContent('You can select objects like the ones shown below as an example:', '');
+translateTextContent('Timers and Items', '');
+translateTextContent('Each level of the game has time to complete, so be aware of the remaining time to complete your goals to unlock other levels and also to be able to select all items!', '');
+translateTextContent('Game Levels', '');
+translateTextContent('The game has several levels that are divided into "worlds" so that you can free them and find new challenges.', '');
+translateTextContent('Each "world" has its own levels with their goals and styles and in addition, each level requires a specific number of stars to unlock it. So always focus on getting as many stars as possible!', '');
+translateTextContent('The game also shows you the total score as well as the completed objectives before starting the level, as well as after completing it, so you can know how your result was in each level of the game.', '');
+translateTextContent('NOTE: Keep in mind that the game has levels that enable powers and other levels that disable your powers!', '');
+translateTextContent('Each game level has 3 different objectives that are represented by stars! Each level has a different difficulty, so pay attention to the objectives before starting the level!', '');
+translateTextContent('Goals', '');
+translateTextContent('Powers', '');
+translateTextContent('To help you on your journey, the game has a system of powers to help you during the game levels that you feel difficult, so you can use the powers that are displayed at the bottom of the screen of each game level after the game activates the powers!', '');
+translateTextContent('But be careful, your powers have a use limit and also have a cooldown to be triggered again, so use them wisely!', '');
+translateTextContent("You can buy new powers whenever you need them, as long as you have money by accessing the store through the game's main menu.", '');
+translateTextContent('Money and Player Level', '');
+translateTextContent('The game has a progression and money system, so you can acquire coins to buy new powers.', '');
+translateTextContent('Always at the end of each game level, you will be able to see your results and scores that will automatically be computed the experience gained from the player, as well as the total coins obtained during the game.', '');
+translateTextContent('The higher your score and goals achieved, the better the earnings you get at the end of each level. In addition, making mistakes often also influences the final gains!', '');
+translateTextContent('You can view your game experience, acquired coins and total stars in the main menu at the top of the screen.', '');
+translateTextContent('General Settings', '');
+translateTextContent('Whenever you open the game, you can enter your name as well as choose the desired language for the game.', '');
+translateTextContent('NOTE: The game was made only by ONE BRAZILIAN PERSON, so forgive the developer if your language is not in the translation list as well as the spelling errors that may occur!', '');
+translateTextContent('You can also pause your game any time you want, as well as change music volume settings and special effects. And remember, that it will always be possible to DELETE ALL GAME DATA if you want to start all over again.', '');
+translateTextContent('Final Considerations', '');
+translateTextContent('The game was made by someone who loves technology, programming and also games, in which he always had the desire to build his own game, so in case of errors or bugs, forgive the developer, because the game was created completely in an amateur way and by fun!', '');
+translateTextContent('In addition, the game has no profit intentions, being a 100% free game to be played anywhere.', '');
+translateTextContent('If you liked this project and want to help the developer, please consider making a donation', '');
+translateTextContent('Also access the', '');
+translateTextContent('Project on GitHub 100% Free!', '');
 
 //all game translation
 translateTextContent('Welcome Back', '');
@@ -63,6 +104,7 @@ translateTextContent('Language', '');
 translateTextContent('Start Game', '');
 translateTextContent('Shopping', '');
 translateTextContent('Help', '');
+translateTextContent('Settings', '');
 translateTextContent('Music', '');
 translateTextContent('Volume', '');
 translateTextContent('Sound FX Volume', '');
@@ -109,6 +151,7 @@ translateTextContent('New Best', '');
             translateTextContent('Cooldown', 'Tiempo de espera');
             translateTextContent('Effect', 'Efecto');
             translateTextContent('Buy', 'Comprar');
+            translateTextContent('Type Here', 'Escriba aquí')
             //tutorial home page translate
             translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'El juego se basa en desafiar al jugador en niveles cada vez más difíciles, centrándose en la velocidad y la precisión.');
             translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Tu objetivo es encontrar todos los cuadros/objetos que se dibujarán aleatoriamente en cada nivel dentro de un límite de tiempo estipulado.');
@@ -119,6 +162,42 @@ translateTextContent('New Best', '');
             translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', 'Pero si te gusta el juego y quieres ayudar al desarrollador que creó este proyecto, puedes donar');
             translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', 'Felicitaciones, lograste subir de nivel y como recompensa obtuviste el siguiente objeto:');
             translateTextContent('by clicking here!', '¡haciendo clic aquí!');
+            translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'El juego se basa en desafiar al jugador en niveles cada vez más difíciles, enfocándose en velocidad y precisión.');
+            translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Tu objetivo es encontrar todos los marcos/objetos que serán dibujados al azar en cada nivel dentro de un límite de tiempo estipulado.');
+            translateTextContent('Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.', 'Además, el juego restablecerá la posición de los marcos de vez en cuando, obligando al jugador a ser preciso y atento al seleccionar cada marco.');
+            translateTextContent('The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you in the challenges you will encounter!', 'El juego también tiene la posibilidad de completar objetivos que se muestran mediante estrellas, lo que te permite avanzar en los niveles existentes dentro del juego, además de recompensarte con una cantidad ficticia de dinero para que puedas comprar objetos en la tienda para ayudarte en los desafíos que encontrarás!');
+            translateTextContent('Frames/Objects', 'Marcos/Objetos');
+            translateTextContent('The game is based on frames/objects for selection, so when starting each level, the game will generate an item that you must select to advance in the game.', 'El juego se basa en marcos/objetos para la selección, por lo que al comenzar cada nivel, el juego generará un elemento que debes seleccionar para avanzar en el juego.');
+            translateTextContent('You can select objects like the ones shown below as an example:', 'Puedes seleccionar objetos como los que se muestran a continuación como ejemplo:');
+            translateTextContent('Timers and Items', 'Temporizadores e Ítems');
+            translateTextContent('Each level of the game has time to complete, so be aware of the remaining time to complete your goals to unlock other levels and also to be able to select all items!', 'Cada nivel del juego tiene un tiempo para completar, así que ten en cuenta el tiempo restante para completar tus objetivos y desbloquear otros niveles, ¡y también para poder seleccionar todos los ítems!');
+            translateTextContent('Game Levels', 'Niveles del Juego');
+            translateTextContent('The game has several levels that are divided into "worlds" so that you can free them and find new challenges.', 'El juego tiene varios niveles que se dividen en "mundos" para que puedas desbloquearlos y encontrar nuevos desafíos.');
+            translateTextContent('Each "world" has its own levels with their goals and styles and in addition, each level requires a specific number of stars to unlock it. So always focus on getting as many stars as possible!', 'Cada "mundo" tiene sus propios niveles con sus objetivos y estilos, y además, cada nivel requiere un número específico de estrellas para desbloquearlo. ¡Así que siempre concéntrate en obtener la mayor cantidad de estrellas posible!');
+            translateTextContent('The game also shows you the total score as well as the completed objectives before starting the level, as well as after completing it, so you can know how your result was in each level of the game.', 'El juego también te muestra la puntuación total, así como los objetivos completados antes de comenzar el nivel y después de completarlo, para que puedas saber cómo fue tu resultado en cada nivel del juego.');
+            translateTextContent('NOTE: Keep in mind that the game has levels that enable powers and other levels that disable your powers!', 'NOTA: ¡Ten en cuenta que el juego tiene niveles que activan los poderes y otros niveles que desactivan tus poderes!');
+            translateTextContent('Each game level has 3 different objectives that are represented by stars! Each level has a different difficulty, so pay attention to the objectives before starting the level!', '¡Cada nivel del juego tiene 3 objetivos diferentes representados por estrellas! Cada nivel tiene una dificultad diferente, así que presta atención a los objetivos antes de comenzar el nivel.');
+            translateTextContent('Goals', 'Objetivos');
+            translateTextContent('Powers', 'Poderes');
+            translateTextContent('To help you on your journey, the game has a system of powers to help you during the game levels that you feel difficult, so you can use the powers that are displayed at the bottom of the screen of each game level after the game activates the powers!', 'Para ayudarte en tu camino, el juego cuenta con un sistema de poderes para ayudarte durante los niveles del juego que encuentres difíciles, para que puedas usar los poderes que se muestran en la parte inferior de la pantalla de cada nivel del juego después de que el juego active los poderes.');
+            translateTextContent('But be careful, your powers have a use limit and also have a cooldown to be triggered again, so use them wisely!', '¡Pero ten cuidado, tus poderes tienen un límite de uso y también un tiempo de enfriamiento para ser activados nuevamente, así que úsalos con prudencia!');
+            translateTextContent("You can buy new powers whenever you need them, as long as you have money by accessing the store through the game's main menu.", 'Puedes comprar nuevos poderes siempre que los necesites, siempre y cuando tengas dinero accediendo a la tienda a través del menú principal del juego.');
+            translateTextContent('Money and Player Level', 'Dinero y Nivel del Jugador');
+            translateTextContent('The game has a progression and money system, so you can acquire coins to buy new powers.', 'El juego cuenta con un sistema de progresión y dinero, para que puedas adquirir monedas para comprar nuevos poderes.');
+            translateTextContent('Always at the end of each game level, you will be able to see your results and scores that will automatically be computed the experience gained from the player, as well as the total coins obtained during the game.', 'Siempre al final de cada nivel del juego, podrás ver tus resultados y puntuaciones que serán automáticamente calculados desde la experiencia obtenida por el jugador, así como las monedas totales obtenidas durante el juego.');
+            translateTextContent('The higher your score and goals achieved, the better the earnings you get at the end of each level. In addition, making mistakes often also influences the final gains!', 'Cuanto más alta sea tu puntuación y los objetivos alcanzados, mejores serán las ganancias al final de cada nivel. Además, cometer errores a menudo también influye en las ganancias finales.');
+            translateTextContent('You can view your game experience, acquired coins and total stars in the main menu at the top of the screen.', 'Puedes ver tu experiencia de juego, monedas adquiridas y estrellas totales en el menú principal en la parte superior de la pantalla.');
+            translateTextContent('General Settings', 'Configuraciones Generales');
+            translateTextContent('Whenever you open the game, you can enter your name as well as choose the desired language for the game.', 'Cada vez que abras el juego, podrás ingresar tu nombre y elegir el idioma deseado para el juego.');
+            translateTextContent('NOTE: The game was made only by ONE BRAZILIAN PERSON, so forgive the developer if your language is not in the translation list as well as the spelling errors that may occur!', 'NOTA: El juego fue hecho solo por UNA PERSONA BRASILEÑA, así que perdona al desarrollador si tu idioma no está en la lista de traducciones, así como los errores ortográficos que puedan ocurrir.');
+            translateTextContent('You can also pause your game any time you want, as well as change music volume settings and special effects. And remember, that it will always be possible to DELETE ALL GAME DATA if you want to start all over again.', 'También puedes pausar tu juego en cualquier momento que desees, así como cambiar la configuración del volumen de la música y los efectos especiales. Y recuerda que siempre será posible BORRAR TODOS LOS DATOS DEL JUEGO si deseas comenzar desde el principio de nuevo.');
+            translateTextContent('Final Considerations', 'Consideraciones Finales');
+            translateTextContent('The game was made by someone who loves technology, programming and also games, in which he always had the desire to build his own game, so in case of errors or bugs, forgive the developer, because the game was created completely in an amateur way and by fun!', 'El juego fue hecho por alguien que ama la tecnología, la programación y también los juegos, en los cuales siempre tuvo el deseo de construir su propio juego, así que en caso de errores o problemas, perdona al desarrollador, porque el juego fue creado completamente de forma amateur y por diversión.');
+            translateTextContent('In addition, the game has no profit intentions, being a 100% free game to be played anywhere.', 'Además, el juego no tiene intenciones de lucro, siendo un juego 100% gratuito para jugar en cualquier lugar.');
+            translateTextContent('If you liked this project and want to help the developer, please consider making a donation', 'Si te gustó este proyecto y deseas ayudar al desarrollador, por favor considera hacer una donación');
+            translateTextContent('Also access the', 'También accede al');
+            translateTextContent('Project on GitHub 100% Free!', '¡Proyecto en GitHub 100% Gratis!');
+
             //all game translation
             translateTextContent('Welcome Back', 'Bienvenido de nuevo');
             translateTextContent('Game Settings', 'Configuración del juego');
@@ -144,6 +223,7 @@ translateTextContent('New Best', '');
             translateTextContent('Start Game', 'Comenzar juego');
             translateTextContent('Shopping', 'Tienda');
             translateTextContent('Help', 'Ayuda');
+            translateTextContent('Settings', 'Ajustes');
             translateTextContent('Music', 'Música');
             translateTextContent('Volume', 'Volumen');
             translateTextContent('Sound FX Volume', 'Volumen de efectos de sonido');
@@ -190,6 +270,7 @@ translateTextContent('New Best', '');
             translateTextContent('Cooldown', 'Abklingzeit');
             translateTextContent('Effect', 'Effekt');
             translateTextContent('Buy', 'Kaufen');
+            translateTextContent('Type Here', 'Hier eingeben')
             //tutorial home page translate
             translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Das Spiel basiert auf der Herausforderung des Spielers in immer schwierigeren Levels und konzentriert sich auf Geschwindigkeit und Präzision.');
             translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Ihr Ziel ist es, alle Rahmen/Objekte zu finden, die in jedem Level zufällig gezeichnet werden, innerhalb einer festgelegten Zeitgrenze.');
@@ -200,6 +281,42 @@ translateTextContent('New Best', '');
             translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', 'Aber wenn Ihnen das Spiel gefallen hat und Sie dem Entwickler, der dieses Projekt erstellt hat, helfen möchten, können Sie spenden');
             translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', 'Herzlichen Glückwunsch, Sie haben es geschafft, einen Level aufzusteigen, und als Belohnung haben Sie den folgenden Gegenstand erhalten:');
             translateTextContent('by clicking here!', 'hier klicken!');
+            translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Das Spiel basiert darauf, den Spieler in immer schwierigeren Leveln herauszufordern und legt dabei Wert auf Geschwindigkeit und Präzision.');
+            translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Ihr Ziel ist es, alle Rahmen/Objekte zu finden, die in jedem Level zufällig gezeichnet werden, innerhalb einer festgelegten Zeitvorgabe.');
+            translateTextContent('Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.', 'Außerdem wird das Spiel gelegentlich die Position der Rahmen zurücksetzen und zwingt den Spieler so, präzise und aufmerksam beim Auswählen jedes Rahmens zu sein.');
+            translateTextContent('The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you in the challenges you will encounter!', 'Das Spiel bietet auch die Möglichkeit, Ziele zu erreichen, die durch Sterne dargestellt werden. Dadurch können Sie in den vorhandenen Levels des Spiels vorankommen und werden mit einer fiktiven Geldmenge belohnt, mit der Sie Gegenstände im Laden kaufen können, um Ihnen bei den Herausforderungen zu helfen, die Sie erwarten!');
+            translateTextContent('Frames/Objects', 'Rahmen/Objekte');
+            translateTextContent('The game is based on frames/objects for selection, so when starting each level, the game will generate an item that you must select to advance in the game.', 'Das Spiel basiert auf Rahmen/Objekten zur Auswahl, sodass das Spiel beim Starten jedes Levels ein Element erzeugt, das Sie auswählen müssen, um im Spiel voranzukommen.');
+            translateTextContent('You can select objects like the ones shown below as an example:', 'Sie können Objekte wie die unten gezeigten auswählen:');
+            translateTextContent('Timers and Items', 'Timer und Gegenstände');
+            translateTextContent('Each level of the game has time to complete, so be aware of the remaining time to complete your goals to unlock other levels and also to be able to select all items!', 'Jedes Level des Spiels hat eine vorgegebene Zeit, um abgeschlossen zu werden. Achten Sie daher auf die verbleibende Zeit, um Ihre Ziele zu erreichen, andere Level freizuschalten und auch alle Gegenstände auswählen zu können!');
+            translateTextContent('Game Levels', 'Spiel-Level');
+            translateTextContent('The game has several levels that are divided into "worlds" so that you can free them and find new challenges.', 'Das Spiel hat mehrere Level, die in "Welten" unterteilt sind, damit Sie sie freischalten und neue Herausforderungen finden können.');
+            translateTextContent('Each "world" has its own levels with their goals and styles and in addition, each level requires a specific number of stars to unlock it. So always focus on getting as many stars as possible!', 'Jede "Welt" hat ihre eigenen Level mit ihren Zielen und Stilen. Außerdem erfordert jedes Level eine bestimmte Anzahl von Sternen, um es freizuschalten. Konzentrieren Sie sich also immer darauf, so viele Sterne wie möglich zu erhalten!');
+            translateTextContent('The game also shows you the total score as well as the completed objectives before starting the level, as well as after completing it, so you can know how your result was in each level of the game.', 'Das Spiel zeigt Ihnen auch die Gesamtpunktzahl sowie die abgeschlossenen Ziele vor dem Start des Levels sowie nach dem Abschluss an, sodass Sie wissen können, wie Ihr Ergebnis in jedem Level des Spiels war.');
+            translateTextContent('NOTE: Keep in mind that the game has levels that enable powers and other levels that disable your powers!', 'Hinweis: Beachten Sie, dass das Spiel Level hat, die Kräfte aktivieren, und andere Level, die Ihre Kräfte deaktivieren!');
+            translateTextContent('Each game level has 3 different objectives that are represented by stars! Each level has a different difficulty, so pay attention to the objectives before starting the level!', 'Jedes Level des Spiels hat 3 verschiedene Ziele, die durch Sterne dargestellt werden! Jedes Level hat einen anderen Schwierigkeitsgrad, achten Sie also auf die Ziele, bevor Sie das Level beginnen!');
+            translateTextContent('Goals', 'Ziele');
+            translateTextContent('Powers', 'Kräfte');
+            translateTextContent('To help you on your journey, the game has a system of powers to help you during the game levels that you feel difficult, so you can use the powers that are displayed at the bottom of the screen of each game level after the game activates the powers!', 'Um Ihnen auf Ihrer Reise zu helfen, verfügt das Spiel über ein Kräftesystem, das Ihnen während der schwierigen Level des Spiels hilft. Sie können also die Kräfte verwenden, die am unteren Bildschirmrand jedes Levels angezeigt werden, nachdem das Spiel die Kräfte aktiviert hat!');
+            translateTextContent('But be careful, your powers have a use limit and also have a cooldown to be triggered again, so use them wisely!', 'Aber Vorsicht, Ihre Kräfte haben eine Verwendungsgrenze und eine Abklingzeit, um erneut ausgelöst zu werden. Verwenden Sie sie also klug!');
+            translateTextContent("You can buy new powers whenever you need them, as long as you have money by accessing the store through the game's main menu.", 'Sie können neue Kräfte kaufen, wann immer Sie sie benötigen, solange Sie Geld haben, indem Sie auf den Laden über das Hauptmenü des Spiels zugreifen.');
+            translateTextContent('Money and Player Level', 'Geld und Spielerlevel');
+            translateTextContent('The game has a progression and money system, so you can acquire coins to buy new powers.', 'Das Spiel verfügt über ein Fortschritts- und Geldsystem, sodass Sie Münzen sammeln können, um neue Kräfte zu kaufen.');
+            translateTextContent('Always at the end of each game level, you will be able to see your results and scores that will automatically be computed the experience gained from the player, as well as the total coins obtained during the game.', 'Am Ende jedes Spiel-Levels können Sie immer Ihre Ergebnisse und Punktzahlen sehen, die automatisch die vom Spieler gewonnene Erfahrung sowie die insgesamt erhaltenen Münzen im Spiel berechnen werden.');
+            translateTextContent('The higher your score and goals achieved, the better the earnings you get at the end of each level. In addition, making mistakes often also influences the final gains!', 'Je höher Ihre Punktzahl und erreichten Ziele sind, desto besser sind Ihre Einnahmen am Ende jedes Levels. Außerdem beeinflussen häufige Fehler auch die endgültigen Gewinne!');
+            translateTextContent('You can view your game experience, acquired coins and total stars in the main menu at the top of the screen.', 'Sie können Ihre Spielerfahrung, erworbenen Münzen und Gesamtsterne im Hauptmenü oben auf dem Bildschirm einsehen.');
+            translateTextContent('General Settings', 'Allgemeine Einstellungen');
+            translateTextContent('Whenever you open the game, you can enter your name as well as choose the desired language for the game.', 'Immer wenn Sie das Spiel öffnen, können Sie Ihren Namen eingeben und die gewünschte Sprache für das Spiel auswählen.');
+            translateTextContent('NOTE: The game was made only by ONE BRAZILIAN PERSON, so forgive the developer if your language is not in the translation list as well as the spelling errors that may occur!', 'HINWEIS: Das Spiel wurde nur von EINER BRASILIANISCHEN PERSON erstellt, daher verzeihen Sie dem Entwickler, wenn Ihre Sprache nicht in der Übersetzungsliste enthalten ist, sowie mögliche Rechtschreibfehler!');
+            translateTextContent('You can also pause your game any time you want, as well as change music volume settings and special effects. And remember, that it will always be possible to DELETE ALL GAME DATA if you want to start all over again.', 'Sie können das Spiel jederzeit pausieren und die Musiklautstärke sowie spezielle Effekte ändern. Und denken Sie daran, dass es immer möglich sein wird, ALLE SPIELDATEN ZU LÖSCHEN, wenn Sie von vorne beginnen möchten.');
+            translateTextContent('Final Considerations', 'Abschließende Überlegungen');
+            translateTextContent('The game was made by someone who loves technology, programming and also games, in which he always had the desire to build his own game, so in case of errors or bugs, forgive the developer, because the game was created completely in an amateur way and by fun!', 'Das Spiel wurde von jemandem erstellt, der Technologie, Programmierung und auch Spiele liebt, in dem er immer den Wunsch hatte, sein eigenes Spiel zu entwickeln. Verzeihen Sie daher dem Entwickler im Falle von Fehlern oder Problemen, da das Spiel komplett auf amateurhafte Weise und aus Spaß erstellt wurde!');
+            translateTextContent('In addition, the game has no profit intentions, being a 100% free game to be played anywhere.', 'Außerdem verfolgt das Spiel keine Profitabsichten und ist ein 100% kostenloses Spiel, das überall gespielt werden kann.');
+            translateTextContent('If you liked this project and want to help the developer, please consider making a donation', 'Wenn Ihnen dieses Projekt gefallen hat und Sie dem Entwickler helfen möchten, erwägen Sie bitte eine Spende');
+            translateTextContent('Also access the', 'Besuchen Sie auch das');
+            translateTextContent('Project on GitHub 100% Free!', 'Projekt auf GitHub 100% kostenlos!');
+
             //all game translation
             translateTextContent('Welcome Back', 'Willkommen zurück');
             translateTextContent('Game Settings', 'Spiel Einstellungen');
@@ -225,6 +342,7 @@ translateTextContent('New Best', '');
             translateTextContent('Start Game', 'Spiel starten');
             translateTextContent('Shopping', 'Einkaufen');
             translateTextContent('Help', 'Hilfe');
+            translateTextContent('Settings', 'Einstellungen');
             translateTextContent('Music', 'Musik');
             translateTextContent('Volume', 'Lautstärke');
             translateTextContent('Sound FX Volume', 'Soundeffekt Lautstärke');
@@ -271,6 +389,7 @@ translateTextContent('New Best', '');
             translateTextContent('Cooldown', 'Temps de recharge');
             translateTextContent('Effect', 'Effet');
             translateTextContent('Buy', 'Acheter');
+            translateTextContent('Type Here', 'Tapez ici')
             //tutorial home page translate
             translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Le jeu est basé sur le défi du joueur dans des niveaux de plus en plus difficiles, en mettant l\'accent sur la vitesse et la précision.');
             translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Votre objectif est de trouver tous les cadres/objets qui seront tirés au hasard à chaque niveau dans une limite de temps stipulée.');
@@ -281,6 +400,42 @@ translateTextContent('New Best', '');
             translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', 'Mais si vous avez aimé le jeu et que vous voulez aider le développeur qui a créé ce projet, vous pouvez faire un don');
             translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', 'Félicitations, vous avez réussi à passer au niveau supérieur et en récompense, vous avez obtenu l\'objet suivant:');
             translateTextContent('by clicking here!', 'en cliquant ici!');
+            translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Le jeu est basé sur le défi du joueur dans des niveaux de plus en plus difficiles, en mettant l\'accent sur la vitesse et la précision.');
+            translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Votre objectif est de trouver tous les cadres/objets qui seront dessinés aléatoirement à chaque niveau dans un délai fixé.');
+            translateTextContent('Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.', 'De plus, le jeu réinitialisera occasionnellement la position des cadres, obligeant le joueur à être précis et attentif lors de la sélection de chaque cadre.');
+            translateTextContent('The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you in the challenges you will encounter!', 'Le jeu offre également la possibilité de remplir des objectifs représentés par des étoiles, ce qui vous permet de progresser dans les niveaux existants du jeu, ainsi que de vous récompenser avec une somme fictive d\'argent pour acheter des objets dans le magasin qui vous aideront dans les défis auxquels vous serez confronté!');
+            translateTextContent('Frames/Objects', 'Cadres/Objets');
+            translateTextContent('The game is based on frames/objects for selection, so when starting each level, the game will generate an item that you must select to advance in the game', 'Le jeu est basé sur des cadres/objets à sélectionner, donc lorsque vous démarrez chaque niveau, le jeu générera un élément que vous devez sélectionner pour avancer dans le jeu.');
+            translateTextContent('You can select objects like the ones shown below as an example:', 'Vous pouvez sélectionner des objets comme ceux montrés ci-dessous à titre d\'exemple:');
+            translateTextContent('Timers and Items', 'Minuteries et Objets');
+            translateTextContent('Each level of the game has time to complete, so be aware of the remaining time to complete your goals to unlock other levels and also to be able to select all items!', 'Chaque niveau du jeu a un temps pour être complété, alors soyez conscient du temps restant pour atteindre vos objectifs afin de débloquer d\'autres niveaux et aussi de pouvoir sélectionner tous les objets!');
+            translateTextContent('Game Levels', 'Niveaux du Jeu');
+            translateTextContent('The game has several levels that are divided into "worlds" so that you can free them and find new challenges.', 'Le jeu comporte plusieurs niveaux divisés en "mondes" pour que vous puissiez les débloquer et trouver de nouveaux défis.');
+            translateTextContent('Each "world" has its own levels with their goals and styles and in addition, each level requires a specific number of stars to unlock it. So always focus on getting as many stars as possible!', 'Chaque "monde" a ses propres niveaux avec leurs objectifs et styles, et en plus, chaque niveau nécessite un nombre spécifique d\'étoiles pour être débloqué. Donc, concentrez-vous toujours sur l\'obtention du plus grand nombre d\'étoiles possible!');
+            translateTextContent('The game also shows you the total score as well as the completed objectives before starting the level, as well as after completing it, so you can know how your result was in each level of the game.', 'Le jeu vous montre également le score total ainsi que les objectifs terminés avant de commencer le niveau, ainsi qu\'après l\'avoir terminé, vous permettant ainsi de savoir comment était votre résultat dans chaque niveau du jeu.');
+            translateTextContent('NOTE: Keep in mind that the game has levels that enable powers and other levels that disable your powers!', 'REMARQUE: Gardez à l\'esprit que le jeu possède des niveaux qui activent les pouvoirs et d\'autres niveaux qui désactivent vos pouvoirs!');
+            translateTextContent('Each game level has 3 different objectives that are represented by stars! Each level has a different difficulty, so pay attention to the objectives before starting the level!', 'Chaque niveau du jeu a 3 objectifs différents représentés par des étoiles! Chaque niveau a une difficulté différente, alors prêtez attention aux objectifs avant de commencer le niveau!');
+            translateTextContent('Goals', 'Objectifs');
+            translateTextContent('Powers', 'Pouvoirs');
+            translateTextContent('To help you on your journey, the game has a system of powers to help you during the game levels that you feel difficult, so you can use the powers that are displayed at the bottom of the screen of each game level after the game activates the powers!', 'Pour vous aider dans votre parcours, le jeu dispose d\'un système de pouvoirs pour vous aider pendant les niveaux du jeu que vous trouvez difficiles, vous permettant ainsi d\'utiliser les pouvoirs qui sont affichés en bas de l\'écran de chaque niveau du jeu après l\'activation des pouvoirs par le jeu!');
+            translateTextContent('But be careful, your powers have a use limit and also have a cooldown to be triggered again, so use them wisely!', 'Mais attention, vos pouvoirs ont une limite d\'utilisation et ils ont également un temps de recharge pour être déclenchés à nouveau, alors utilisez-les judicieusement!');
+            translateTextContent('You can buy new powers whenever you need them, as long as you have money by accessing the store through the game\'s main menu.', 'Vous pouvez acheter de nouveaux pouvoirs chaque fois que vous en avez besoin, tant que vous avez de l\'argent en accédant au magasin via le menu principal du jeu.');
+            translateTextContent('Money and Player Level', 'Argent et Niveau du Joueur');
+            translateTextContent('The game has a progression and money system, so you can acquire coins to buy new powers.', 'Le jeu dispose d\'un système de progression et d\'argent, vous pouvez donc acquérir des pièces pour acheter de nouveaux pouvoirs.');
+            translateTextContent('Always at the end of each game level, you will be able to see your results and scores that will automatically be computed the experience gained from the player, as well as the total coins obtained during the game.', 'À la fin de chaque niveau du jeu, vous pourrez toujours voir vos résultats et scores qui seront automatiquement calculés selon l\'expérience gagnée par le joueur, ainsi que les pièces totales obtenues pendant le jeu.');
+            translateTextContent('The higher your score and goals achieved, the better the earnings you get at the end of each level. In addition, making mistakes often also influences the final gains!', 'Plus votre score et vos objectifs atteints sont élevés, meilleures seront les récompenses que vous obtiendrez à la fin de chaque niveau. De plus, faire souvent des erreurs influence également les gains finaux!');
+            translateTextContent('You can view your game experience, acquired coins and total stars in the main menu at the top of the screen.', 'Vous pouvez consulter votre expérience de jeu, les pièces acquises et les étoiles totales dans le menu principal en haut de l\'écran.');
+            translateTextContent('General Settings', 'Paramètres Généraux');
+            translateTextContent('Whenever you open the game, you can enter your name as well as choose the desired language for the game.', 'Chaque fois que vous ouvrez le jeu, vous pouvez entrer votre nom et choisir la langue souhaitée pour le jeu.');
+            translateTextContent('NOTE: The game was made only by ONE BRAZILIAN PERSON, so forgive the developer if your language is not in the translation list as well as the spelling errors that may occur!', 'REMARQUE: Le jeu a été créé uniquement par UNE SEULE PERSONNE BRÉSILIENNE, pardonnez donc au développeur si votre langue n\'est pas dans la liste de traduction ainsi que les fautes d\'orthographe qui pourraient survenir!');
+            translateTextContent('You can also pause your game any time you want, as well as change music volume settings and special effects. And remember, that it will always be possible to DELETE ALL GAME DATA if you want to start all over again.', 'Vous pouvez également mettre en pause votre jeu à tout moment, ainsi que modifier les paramètres de volume de la musique et des effets spéciaux. Et n\'oubliez pas qu\'il sera toujours possible de SUPPRIMER TOUTES LES DONNÉES DE JEU si vous souhaitez recommencer depuis le début.');
+            translateTextContent('Final Considerations', 'Considérations Finales');
+            translateTextContent('The game was made by someone who loves technology, programming and also games, in which he always had the desire to build his own game, so in case of errors or bugs, forgive the developer, because the game was created completely in an amateur way and by fun!', 'Le jeu a été créé par quelqu\'un qui aime la technologie, la programmation et aussi les jeux, dans lequel il a toujours eu le désir de créer son propre jeu, donc en cas d\'erreurs ou de bugs, pardonnez le développeur, car le jeu a été créé complètement de manière amateur et pour s\'amuser!');
+            translateTextContent('In addition, the game has no profit intentions, being a 100% free game to be played anywhere.', 'De plus, le jeu n\'a aucune intention de réaliser des bénéfices, étant un jeu 100% gratuit pouvant être joué n\'importe où.');
+            translateTextContent('If you liked this project and want to help the developer, please consider making a donation', 'Si vous avez aimé ce projet et que vous souhaitez aider le développeur, envisagez de faire un don');
+            translateTextContent('Also access the', 'Accédez également au');
+            translateTextContent('Project on GitHub 100% Free!', 'Projet sur GitHub 100% gratuit!');
+
             //all game translation
             translateTextContent('Welcome Back', 'Bienvenue');
             translateTextContent('Game Settings', 'Paramètres du jeu');
@@ -306,6 +461,7 @@ translateTextContent('New Best', '');
             translateTextContent('Start Game', 'Démarrer le jeu');
             translateTextContent('Shopping', 'Achats');
             translateTextContent('Help', 'Aide');
+            translateTextContent('Settings', 'Paramètres');
             translateTextContent('Music', 'Musique');
             translateTextContent('Volume', 'Volume');
             translateTextContent('Sound FX Volume', 'Volume des effets sonores');
@@ -352,6 +508,7 @@ translateTextContent('New Best', '');
             translateTextContent('Cooldown', 'Tempo di recupero');
             translateTextContent('Effect', 'Effetto');
             translateTextContent('Buy', 'Acquista');
+            translateTextContent('Type Here', 'Digita qui')
             //tutorial home page translate
             translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Il gioco si basa sulla sfida del giocatore in livelli sempre più difficili, concentrandosi sulla velocità e la precisione.');
             translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Il tuo obiettivo è trovare tutti i frame/oggetti che saranno disegnati casualmente in ogni livello entro un limite di tempo prestabilito.');
@@ -362,6 +519,42 @@ translateTextContent('New Best', '');
             translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', 'Ma se ti è piaciuto il gioco e vuoi aiutare lo sviluppatore che ha creato questo progetto, puoi fare una donazione');
             translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', 'Congratulazioni, sei riuscito a salire di livello e come ricompensa hai ottenuto il seguente oggetto:');
             translateTextContent('by clicking here!', 'cliccando qui!');
+            translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Il gioco si basa sulla sfida del giocatore in livelli sempre più difficili, concentrandosi sulla velocità e la precisione.');
+            translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Il tuo obiettivo è trovare tutti i fotogrammi/oggetti che saranno disegnati casualmente in ogni livello entro un limite di tempo stabilito.');
+            translateTextContent('Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.', 'Inoltre, il gioco reimposterà occasionalmente la posizione dei fotogrammi, costringendo il giocatore a essere preciso e attento nella selezione di ciascun fotogramma.');
+            translateTextContent('The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you in the challenges you will encounter!', 'Il gioco offre anche la possibilità di completare gli obiettivi che vengono mostrati tramite stelle, il che ti consente di avanzare nei livelli esistenti all\'interno del gioco, oltre a ricompensarti con una quantità fittizia di denaro in modo da poter acquistare oggetti nel negozio per aiutarti nelle sfide che incontrerai!');
+            translateTextContent('Frames/Objects', 'Fotogrammi/Oggetti');
+            translateTextContent('The game is based on frames/objects for selection, so when starting each level, the game will generate an item that you must select to advance in the game', 'Il gioco si basa su fotogrammi/oggetti da selezionare, quindi all\'inizio di ogni livello, il gioco genererà un elemento che devi selezionare per avanzare nel gioco');
+            translateTextContent('You can select objects like the ones shown below as an example:', 'Puoi selezionare oggetti come quelli mostrati di seguito come esempio:');
+            translateTextContent('Timers and Items', 'Timer e Oggetti');
+            translateTextContent('Each level of the game has time to complete, so be aware of the remaining time to complete your goals to unlock other levels and also to be able to select all items!', 'Ogni livello del gioco ha un tempo per essere completato, quindi stai attento al tempo rimanente per completare i tuoi obiettivi, sbloccare altri livelli e anche per poter selezionare tutti gli oggetti!');
+            translateTextContent('Game Levels', 'Livelli di Gioco');
+            translateTextContent('The game has several levels that are divided into "worlds" so that you can free them and find new challenges.', 'Il gioco ha diversi livelli divisi in "mondi" in modo che tu possa liberarli e trovare nuove sfide.');
+            translateTextContent('Each "world" has its own levels with their goals and styles and in addition, each level requires a specific number of stars to unlock it. So always focus on getting as many stars as possible!', 'Ogni "mondo" ha i suoi livelli con i relativi obiettivi e stili e, inoltre, ogni livello richiede un numero specifico di stelle per essere sbloccato. Quindi concentrati sempre nel ottenere il maggior numero possibile di stelle!');
+            translateTextContent('The game also shows you the total score as well as the completed objectives before starting the level, as well as after completing it, so you can know how your result was in each level of the game.', 'Il gioco ti mostra anche il punteggio totale e gli obiettivi completati prima di iniziare il livello, così come dopo averlo completato, in modo da sapere come è stato il tuo risultato in ogni livello del gioco.');
+            translateTextContent('NOTE: Keep in mind that the game has levels that enable powers and other levels that disable your powers!', 'NOTA: Tieni presente che il gioco ha livelli che abilitano poteri e altri livelli che disabilitano i tuoi poteri!');
+            translateTextContent('Each game level has 3 different objectives that are represented by stars! Each level has a different difficulty, so pay attention to the objectives before starting the level!', 'Ogni livello di gioco ha 3 diversi obiettivi rappresentati da stelle! Ogni livello ha una difficoltà diversa, quindi presta attenzione agli obiettivi prima di iniziare il livello!');
+            translateTextContent('Goals', 'Obiettivi');
+            translateTextContent('Powers', 'Poteri');
+            translateTextContent('To help you on your journey, the game has a system of powers to help you during the game levels that you feel difficult, so you can use the powers that are displayed at the bottom of the screen of each game level after the game activates the powers!', 'Per aiutarti nel tuo viaggio, il gioco ha un sistema di poteri per aiutarti durante i livelli di gioco che trovi difficili, in modo da poter utilizzare i poteri che vengono visualizzati in basso sullo schermo di ogni livello di gioco dopo che il gioco attiva i poteri!');
+            translateTextContent('But be careful, your powers have a use limit and also have a cooldown to be triggered again, so use them wisely!', 'Ma fai attenzione, i tuoi poteri hanno un limite di utilizzo e hanno anche un tempo di recupero per essere attivati di nuovo, quindi usali saggiamente!');
+            translateTextContent('You can buy new powers whenever you need them, as long as you have money by accessing the store through the game\'s main menu.', 'Puoi acquistare nuovi poteri ogni volta che ne hai bisogno, purché tu abbia denaro accedendo al negozio attraverso il menu principale del gioco.');
+            translateTextContent('Money and Player Level', 'Soldi e Livello del Giocatore');
+            translateTextContent('The game has a progression and money system, so you can acquire coins to buy new powers.', 'Il gioco ha un sistema di progressione e denaro, quindi puoi acquisire monete per acquistare nuovi poteri.');
+            translateTextContent('Always at the end of each game level, you will be able to see your results and scores that will automatically be computed the experience gained from the player, as well as the total coins obtained during the game.', 'Sempre alla fine di ogni livello di gioco, potrai vedere i tuoi risultati e punteggi che verranno calcolati automaticamente l\'esperienza acquisita dal giocatore, così come le monete totali ottenute durante il gioco.');
+            translateTextContent('The higher your score and goals achieved, the better the earnings you get at the end of each level. In addition, making mistakes often also influences the final gains!', 'Più alto è il tuo punteggio e gli obiettivi raggiunti, maggiori sono i guadagni che ottieni alla fine di ogni livello. Inoltre, fare spesso errori influenza anche i guadagni finali!');
+            translateTextContent('You can view your game experience, acquired coins and total stars in the main menu at the top of the screen.', 'Puoi visualizzare la tua esperienza di gioco, le monete acquisite e le stelle totali nel menu principale in alto dello schermo.');
+            translateTextContent('General Settings', 'Impostazioni Generali');
+            translateTextContent('Whenever you open the game, you can enter your name as well as choose the desired language for the game.', 'Ogni volta che apri il gioco, puoi inserire il tuo nome e scegliere la lingua desiderata per il gioco.');
+            translateTextContent('NOTE: The game was made only by ONE BRAZILIAN PERSON, so forgive the developer if your language is not in the translation list as well as the spelling errors that may occur!', 'NOTA: Il gioco è stato realizzato solo da UNA PERSONA BRASILIANA, perdonare quindi lo sviluppatore se la tua lingua non è nella lista delle traduzioni e gli errori di ortografia che possono verificarsi!');
+            translateTextContent('You can also pause your game any time you want, as well as change music volume settings and special effects. And remember, that it will always be possible to DELETE ALL GAME DATA if you want to start all over again.', 'Puoi anche mettere in pausa il gioco quando vuoi, oltre a modificare le impostazioni del volume della musica e degli effetti speciali. E ricorda che sarà sempre possibile ELIMINARE TUTTI I DATI DI GIOCO se vuoi ricominciare da capo.');
+            translateTextContent('Final Considerations', 'Considerazioni Finali');
+            translateTextContent('The game was made by someone who loves technology, programming and also games, in which he always had the desire to build his own game, so in case of errors or bugs, forgive the developer, because the game was created completely in an amateur way and by fun!', 'Il gioco è stato realizzato da una persona che ama la tecnologia, la programmazione e anche i giochi, nella quale ha sempre avuto il desiderio di creare il proprio gioco, quindi in caso di errori o bug, perdonare lo sviluppatore, perché il gioco è stato creato completamente in modo amatoriale e per divertimento!');
+            translateTextContent('In addition, the game has no profit intentions, being a 100% free game to be played anywhere.', 'Inoltre, il gioco non ha intenzioni di lucro, essendo un gioco 100% gratuito che può essere giocato ovunque.');
+            translateTextContent('If you liked this project and want to help the developer, please consider making a donation', 'Se ti è piaciuto questo progetto e vuoi aiutare lo sviluppatore, considera di fare una donazione');
+            translateTextContent('Also access the', 'Accedi anche al');
+            translateTextContent('Project on GitHub 100% Free!', 'Progetto su GitHub 100% gratuito!');
+
             //all game translation
             translateTextContent('Welcome Back', 'Benvenuto');
             translateTextContent('Game Settings', 'Impostazioni di gioco');
@@ -387,6 +580,7 @@ translateTextContent('New Best', '');
             translateTextContent('Start Game', 'Avvia gioco');
             translateTextContent('Shopping', 'Negozio');
             translateTextContent('Help', 'Aiuto');
+            translateTextContent('Settings', 'Impostazioni');
             translateTextContent('Music', 'Musica');
             translateTextContent('Volume', 'Volume');
             translateTextContent('Sound FX Volume', 'Volume effetti sonori');
@@ -433,6 +627,7 @@ translateTextContent('New Best', '');
             translateTextContent('Cooldown', 'Czas odnowienia');
             translateTextContent('Effect', 'Efekt');
             translateTextContent('Buy', 'Kup');
+            translateTextContent('Type Here', 'Wpisz tutaj')
             //tutorial home page translate
             translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Gra polega na wyzwaniu gracza w coraz trudniejszych poziomach, skupiając się na szybkości i precyzji.');
             translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Twoim celem jest znalezienie wszystkich ramek/obiektów, które będą losowo rysowane na każdym poziomie w określonym czasie.');
@@ -443,6 +638,42 @@ translateTextContent('New Best', '');
             translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', 'Ale jeśli spodobała ci się gra i chcesz pomóc twórcy tego projektu, możesz dokonać darowizny');
             translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', 'Gratulacje, udało ci się zdobyć kolejny poziom, a jako nagrodę otrzymujesz następujący przedmiot:');
             translateTextContent('by clicking here!', 'klikając tutaj!');
+            translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'Gra opiera się na wyzwaniu gracza w coraz trudniejszych poziomach, skupiając się na prędkości i precyzji.');
+            translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Twoim celem jest znalezienie wszystkich ramek/obiektów, które będą losowo rysowane na każdym poziomie w określonym limicie czasu.');
+            translateTextContent('Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.', 'Gra czasami zresetuje pozycję ramek, zmuszając gracza do precyzyjnego i uważnego wybierania każdej ramki.');
+            translateTextContent('The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you in the challenges you will encounter!', 'Gra ma również możliwość ukończenia celów, które są pokazane gwiazdkami, co pozwala ci na awans w istniejących poziomach w grze, a także nagradza cię zmyśloną ilością pieniędzy, dzięki którym możesz kupić przedmioty w sklepie, które pomogą ci w napotkanych wyzwaniach!');
+            translateTextContent('Frames/Objects', 'Ramki/Obiekty');
+            translateTextContent('The game is based on frames/objects for selection, so when starting each level, the game will generate an item that you must select to advance in the game', 'Gra opiera się na ramkach/obiektach do wyboru, więc na początku każdego poziomu gra wygeneruje przedmiot, który musisz wybrać, aby przejść do kolejnego poziomu');
+            translateTextContent('You can select objects like the ones shown below as an example:', 'Możesz wybierać obiekty takie jak te pokazane poniżej jako przykład:');
+            translateTextContent('Timers and Items', 'Timery i Przedmioty');
+            translateTextContent('Each level of the game has time to complete, so be aware of the remaining time to complete your goals to unlock other levels and also to be able to select all items!', 'Każdy poziom gry ma określony czas na ukończenie, więc zwracaj uwagę na pozostały czas, aby osiągnąć cele, odblokować inne poziomy i wybrać wszystkie przedmioty!');
+            translateTextContent('Game Levels', 'Poziomy Gry');
+            translateTextContent('The game has several levels that are divided into "worlds" so that you can free them and find new challenges.', 'Gra ma wiele poziomów, które są podzielone na "światy", dzięki czemu możesz je odblokować i znaleźć nowe wyzwania.');
+            translateTextContent('Each "world" has its own levels with their goals and styles and in addition, each level requires a specific number of stars to unlock it. So always focus on getting as many stars as possible!', 'Każdy "świat" ma swoje własne poziomy z ich celami i stylami, a ponadto każdy poziom wymaga określonej liczby gwiazdek do odblokowania. Skup się więc zawsze na zdobyciu jak największej liczby gwiazdek!');
+            translateTextContent('The game also shows you the total score as well as the completed objectives before starting the level, as well as after completing it, so you can know how your result was in each level of the game.', 'Gra pokazuje także całkowity wynik oraz ukończone cele przed rozpoczęciem poziomu, a także po jego ukończeniu, dzięki czemu możesz dowiedzieć się, jaki był twój wynik na każdym poziomie gry.');
+            translateTextContent('NOTE: Keep in mind that the game has levels that enable powers and other levels that disable your powers!', 'UWAGA: Pamiętaj, że gra ma poziomy, które aktywują moce i inne poziomy, które dezaktywują twoje moce!');
+            translateTextContent('Each game level has 3 different objectives that are represented by stars! Each level has a different difficulty, so pay attention to the objectives before starting the level!', 'Każdy poziom gry ma 3 różne cele, które są reprezentowane przez gwiazdki! Każdy poziom ma różną trudność, więc zwróć uwagę na cele przed rozpoczęciem poziomu!');
+            translateTextContent('Goals', 'Cele');
+            translateTextContent('Powers', 'Mocne Strony');
+            translateTextContent('To help you on your journey, the game has a system of powers to help you during the game levels that you feel difficult, so you can use the powers that are displayed at the bottom of the screen of each game level after the game activates the powers!', 'Aby pomóc ci w podróży, gra ma system mocy, który pomoże ci w trudnych poziomach gry, więc możesz korzystać z mocy, które są wyświetlane na dole ekranu każdego poziomu gry po aktywowaniu mocy przez grę!');
+            translateTextContent('But be careful, your powers have a use limit and also have a cooldown to be triggered again, so use them wisely!', 'Ale bądź ostrożny, twoje moce mają limit używania i czas odnowienia, więc używaj ich mądrze!');
+            translateTextContent('You can buy new powers whenever you need them, as long as you have money by accessing the store through the game\'s main menu.', 'Możesz kupować nowe moce, kiedy tylko ich potrzebujesz, o ile masz pieniądze, korzystając ze sklepu za pośrednictwem głównego menu gry.');
+            translateTextContent('Money and Player Level', 'Pieniądze i Poziom Gracza');
+            translateTextContent('The game has a progression and money system, so you can acquire coins to buy new powers.', 'Gra ma system postępu i pieniędzy, dzięki czemu możesz zdobywać monety, aby kupować nowe moce.');
+            translateTextContent('Always at the end of each game level, you will be able to see your results and scores that will automatically be computed the experience gained from the player, as well as the total coins obtained during the game.', 'Zawsze na końcu każdego poziomu gry będziesz mógł zobaczyć swoje wyniki i punktację, które zostaną automatycznie obliczone na podstawie zdobytego doświadczenia przez gracza, a także całkowitej liczby monet zdobytych podczas gry.');
+            translateTextContent('The higher your score and goals achieved, the better the earnings you get at the end of each level. In addition, making mistakes often also influences the final gains!', 'Im wyższy wynik i cele osiągnięte, tym lepsze zarobki otrzymujesz na końcu każdego poziomu. Ponadto, częste popełnianie błędów wpływa także na ostateczne zyski!');
+            translateTextContent('You can view your game experience, acquired coins and total stars in the main menu at the top of the screen.', 'Możesz zobaczyć swoje doświadczenie w grze, zdobyte monety i całkowitą liczbę gwiazdek w głównym menu na górze ekranu.');
+            translateTextContent('General Settings', 'Ustawienia Ogólne');
+            translateTextContent('Whenever you open the game, you can enter your name as well as choose the desired language for the game.', 'Zawsze gdy otwierasz grę, możesz wpisać swoje imię oraz wybrać pożądany język dla gry.');
+            translateTextContent('NOTE: The game was made only by ONE BRAZILIAN PERSON, so forgive the developer if your language is not in the translation list as well as the spelling errors that may occur!', 'UWAGA: Gra została stworzona tylko przez JEDNĄ OSOBĘ Z BRAZYLII, więc wybacz twórcy, jeśli twój język nie znajduje się na liście tłumaczeń, jak również błędy ortograficzne, które mogą się pojawić!');
+            translateTextContent('You can also pause your game any time you want, as well as change music volume settings and special effects. And remember, that it will always be possible to DELETE ALL GAME DATA if you want to start all over again.', 'Możesz również w dowolnym momencie wstrzymać grę, a także zmienić ustawienia głośności muzyki i efektów specjalnych. I pamiętaj, że zawsze będzie możliwe USUNIĘCIE WSZYSTKICH DANYCH GRY, jeśli chcesz rozpocząć od nowa.');
+            translateTextContent('Final Considerations', 'Ostateczne Uwagi');
+            translateTextContent('The game was made by someone who loves technology, programming and also games, in which he always had the desire to build his own game, so in case of errors or bugs, forgive the developer, because the game was created completely in an amateur way and by fun!', 'Gra została stworzona przez osobę, która kocha technologię, programowanie oraz gry, w których zawsze miała pragnienie zbudowania swojej własnej gry, więc w przypadku błędów lub problemów, wybacz twórcy, ponieważ gra została stworzona całkowicie w amatorski sposób i dla zabawy!');
+            translateTextContent('In addition, the game has no profit intentions, being a 100% free game to be played anywhere.', 'Ponadto, gra nie ma zamiaru osiągnięcia zysku, jest to gra w 100% darmowa, którą można grać wszędzie.');
+            translateTextContent('If you liked this project and want to help the developer, please consider making a donation', 'Jeśli spodobał ci się ten projekt i chcesz pomóc twórcy, rozważ dokonanie dotacji');
+            translateTextContent('Also access the', 'Odwiedź także');
+            translateTextContent('Project on GitHub 100% Free!', 'Projekt na GitHubie 100% Darmowy!');
+
             //all game translation
             translateTextContent('Welcome Back', 'Witamy z powrotem');
             translateTextContent('Game Settings', 'Ustawienia gry');
@@ -468,6 +699,7 @@ translateTextContent('New Best', '');
             translateTextContent('Start Game', 'Rozpocznij grę');
             translateTextContent('Shopping', 'Sklep');
             translateTextContent('Help', 'Pomoc');
+            translateTextContent('Settings', 'Ustawienia');
             translateTextContent('Music', 'Muzyka');
             translateTextContent('Volume', 'Głośność');
             translateTextContent('Sound FX Volume', 'Głośność dźwięków');
@@ -511,9 +743,7 @@ translateTextContent('New Best', '');
             translateTextContent('Freeze the time to obtain more squares and points.', 'Congele o tempo para conseguir mais quadros e pontos.');
             translateTextContent('Double your score points and money!', 'Dobre sua pontuação e dinheiro!');
             translateTextContent('If the match is hard, use this to auto select all the squares.', 'Se estiver difícil, ative para selecionar todos os quadros automaticamente.');
-            translateTextContent('Cooldown', 'Recarga');
-            translateTextContent('Effect', 'Efeito');
-            translateTextContent('Buy', 'Comprar');
+            translateTextContent('Type Here', 'Digite Aqui');
             //tutorial home page translate
             translateTextContent('The game is based on challenging the player in increasingly difficult Nívels, focusing on speed and precision.', 'O jogo baseia-se em desafiar o jogador em níveis cada vez mais dificeis, focando na velocidade e precisão.');
             translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Seu objetivo, é encontrar todos os quadros/objetos que serão sorteados aleatoriamentes em cada nível dentro de um limite de tempo estipulado.');
@@ -524,6 +754,40 @@ translateTextContent('New Best', '');
             translateTextContent('But if you liked the game and want to help the developer who created this project, you can donate', 'Mas caso tenha gostado do jogo e quer ajudar o desenvolvedor que criou este projeto, você pode doar');
             translateTextContent('Congratulations, you managed to level up and as a reward you got the following item:', 'Parabéns, você conseguiu subir de nível e como recompensa você ganhou o seguinte item:');
             translateTextContent('by clicking here!', 'clicando aqui!');
+
+            translateTextContent('The game is based on challenging the player in increasingly difficult levels, focusing on speed and precision.', 'O jogo é baseado em desafiar o jogador em níveis cada vez mais difíceis, focando na velocidade e precisão.');
+            translateTextContent('To help you on your journey, the game has a system of powers to help you during the game levels that you feel difficult, so you can use the powers that are displayed at the bottom of the screen of each game level after the game activates the powers!', 'Para ajudá-lo em sua jornada, o jogo tem um sistema de poderes para ajudá-lo durante os níveis do jogo que você considera difíceis, para que você possa usar os poderes que são exibidos na parte inferior da tela de cada nível do jogo depois que o jogo ativa os poderes!');
+            translateTextContent('Your objective is to find all the frames/objects that will be drawn randomly in each level within a stipulated time limit.', 'Seu objetivo é encontrar todas as molduras/objetos que serão desenhados aleatoriamente em cada nível dentro de um limite de tempo estipulado.');
+            translateTextContent('Also, the game will reset the position of the frames from time to time, forcing the player to be precise and attentive when selecting each frame.', 'Além disso, o jogo irá redefinir a posição das molduras de tempos em tempos, forçando o jogador a ser preciso e atento ao selecionar cada moldura.');
+            translateTextContent('The game also has the possibility of completing objectives that are shown by stars, which allows you to advance in the existing levels within the game, as well as rewarding you with a fictitious amount of money so that you can buy items in the store to help you in the challenges you will encounter!', 'O jogo também tem a possibilidade de completar objetivos que são mostrados por estrelas, o que permite avançar nos níveis existentes dentro do jogo, além de recompensá-lo com uma quantidade fictícia de dinheiro para que você possa comprar itens na loja para ajudá-lo nos desafios que encontrará!');
+            translateTextContent('The game is based on frames/objects for selection, so when starting each level, the game will generate an item that you must select to advance in the game', 'O jogo é baseado em molduras/objetos para seleção, então ao iniciar cada nível, o jogo irá gerar um item que você deve selecionar para avançar no jogo.');
+            translateTextContent('You can select objects like the ones shown below as an example:', 'Você pode selecionar objetos como os mostrados abaixo como exemplo:');
+            translateTextContent('Timers and Items', 'Temporizadores e Itens');
+            translateTextContent('Each level of the game has time to complete, so be aware of the remaining time to complete your goals to unlock other levels and also to be able to select all items!', 'Cada nível do jogo tem um tempo para ser concluído, portanto, esteja ciente do tempo restante para completar seus objetivos, desbloquear outros níveis e também para poder selecionar todos os itens!');
+            translateTextContent('Game Levels', 'Níveis do Jogo');
+            translateTextContent('The game has several levels that are divided into "worlds" so that you can free them and find new challenges.', 'O jogo possui vários níveis que são divididos em "mundos" para que você possa desbloqueá-los e encontrar novos desafios.');
+            translateTextContent('Each "world" has its own levels with their goals and styles and in addition, each level requires a specific number of stars to unlock it. So always focus on getting as many stars as possible!', 'Cada "mundo" possui seus próprios níveis com seus objetivos e estilos e, além disso, cada nível requer um número específico de estrelas para ser desbloqueado. Portanto, sempre concentre-se em obter o máximo de estrelas possível!');
+            translateTextContent('The game also shows you the total score as well as the completed objectives before starting the level, as well as after completing it, so you can know how your result was in each level of the game.', 'O jogo também mostra a você a pontuação total, bem como os objetivos concluídos antes de iniciar o nível e após completá-lo, para que você possa saber como foi seu resultado em cada nível do jogo.');
+            translateTextContent('NOTE: Keep in mind that the game has levels that enable powers and other levels that disable your powers!', 'NOTA: Tenha em mente que o jogo tem níveis que habilitam poderes e outros níveis que desabilitam seus poderes!');
+            translateTextContent('Each game level has 3 different objectives that are represented by stars! Each level has a different difficulty, so pay attention to the objectives before starting the level!', 'Cada nível do jogo tem 3 objetivos diferentes que são representados por estrelas! Cada nível tem uma dificuldade diferente, portanto, preste atenção nos objetivos antes de iniciar o nível!');
+            translateTextContent('But be careful, your powers have a use limit and also have a cooldown to be triggered again, so use them wisely!', 'Mas tenha cuidado, seus poderes têm um limite de uso e também têm um tempo de recarga para serem ativados novamente, portanto, use-os com sabedoria!');
+            translateTextContent('You can buy new powers whenever you need them, as long as you have money by accessing the store through the game\'s main menu.', 'Você pode comprar novos poderes sempre que precisar, desde que tenha dinheiro acessando a loja através do menu principal do jogo.');
+            translateTextContent('Money and Player Level', 'Dinheiro e Nível do Jogador');
+            translateTextContent('The game has a progression and money system, so you can acquire coins to buy new powers.', 'O jogo possui um sistema de progressão e dinheiro, para que você possa adquirir moedas para comprar novos poderes.');
+            translateTextContent('Always at the end of each game level, you will be able to see your results and scores that will automatically be computed the experience gained from the player, as well as the total coins obtained during the game.', 'Sempre no final de cada nível do jogo, você poderá ver seus resultados e pontuações que serão automaticamente computados pelo experiência ganha pelo jogador, bem como as moedas totais obtidas durante o jogo.');
+            translateTextContent('The higher your score and goals achieved, the better the earnings you get at the end of each level. In addition, making mistakes often also influences the final gains!', 'Quanto maior a sua pontuação e os objetivos alcançados, melhores serão os ganhos no final de cada nível. Além disso, cometer erros com frequência também influencia os ganhos finais!');
+            translateTextContent('You can view your game experience, acquired coins and total stars in the main menu at the top of the screen.', 'Você pode ver sua experiência de jogo, moedas adquiridas e estrelas totais no menu principal na parte superior da tela.');
+            translateTextContent('General Settings', 'Configurações Gerais');
+            translateTextContent('Whenever you open the game, you can enter your name as well as choose the desired language for the game.', 'Sempre que você abre o jogo, você pode inserir seu nome e escolher o idioma desejado para o jogo.');
+            translateTextContent('NOTE: The game was made only by ONE BRAZILIAN PERSON, so forgive the developer if your language is not in the translation list as well as the spelling errors that may occur!', 'NOTA: O jogo foi feito apenas por UMA PESSOA BRASILEIRA, portanto, perdoe o desenvolvedor se o seu idioma não estiver na lista de traduções, assim como os erros de ortografia que possam ocorrer!');
+            translateTextContent('You can also pause your game any time you want, as well as change music volume settings and special effects. And remember, that it will always be possible to DELETE ALL GAME DATA if you want to start all over again.', 'Você também pode pausar o jogo a qualquer momento que desejar, além de alterar as configurações de volume da música e efeitos especiais. E lembre-se de que sempre será possível EXCLUIR TODOS OS DADOS DO JOGO se você quiser começar tudo de novo.');
+            translateTextContent('Final Considerations', 'Considerações Finais');
+            translateTextContent('The game was made by someone who loves technology, programming and also games, in which he always had the desire to build his own game, so in case of errors or bugs, forgive the developer, because the game was created completely in an amateur way and by fun!', 'O jogo foi feito por alguém que ama tecnologia, programação e também jogos, no qual sempre teve o desejo de construir seu próprio jogo, então em caso de erros ou bugs, perdoe o desenvolvedor, pois o jogo foi criado completamente de maneira amadora e por diversão!');
+            translateTextContent('In addition, the game has no profit intentions, being a 100% free game to be played anywhere.', 'Além disso, o jogo não tem intenções lucrativas, sendo um jogo 100% gratuito para ser jogado em qualquer lugar.');
+            translateTextContent('If you liked this project and want to help the developer, please consider making a donation', 'Se você gostou deste projeto e deseja ajudar o desenvolvedor, considere fazer uma doação');
+            translateTextContent('Also access the', 'Acesse também o');
+            translateTextContent('Project on GitHub 100% Free!', 'Projeto no GitHub 100% Gratuito!');
+
             //all game translation
             translateTextContent('Welcome Back', 'Bem-Vindo de Volta');
             translateTextContent('Game Settings', 'Ajustes de Jogo');
@@ -548,7 +812,7 @@ translateTextContent('New Best', '');
             translateTextContent('Language', 'Idioma');
             translateTextContent('Start Game', 'Inicar Jogo');
             translateTextContent('Shopping', 'Loja');
-            translateTextContent('Help', 'Ajuda');
+            translateTextContent('Settings', 'Ajustes');
             translateTextContent('Music', 'Música');
             translateTextContent('Volume', 'Volume');
             translateTextContent('Sound FX Volume', 'Volume SFX');
@@ -585,6 +849,13 @@ translateTextContent('New Best', '');
             translateTextContent('Up to ', 'Acima de ');
             translateTextContent('Left: ', 'Restante: ');
             translateTextContent('New Best', 'Recorde');
+            translateTextContent('Cooldown', 'Recarga');
+            translateTextContent('Effect', 'Efeito');
+            translateTextContent('Buy', 'Comprar');
+            translateTextContent('Goals', 'Objetivos');
+            translateTextContent('Powers', 'Poderes');
+            translateTextContent('Frames/Objects', 'Quadros/Objetos');
+            translateTextContent('Help', 'Ajuda');
             break;
         default:
             return true;

@@ -5,26 +5,26 @@ var ID_PERFECT_ROLL = 4;
 
 var POWER_UPS = [
     {
-        'id': ID_MORE_TIME, //Id to identify the power
-        'name': 'More Time', //Power's name
-        'bg-color': 'rgba(158, 109, 250, 1)', //Background color of the powerup in game
-        'icon': 'images/powers/more-time.png', //Icon to display the power
-        'cooldown': 15, //Time to reload the power and use again
-        'price': 300, //How many it will cost in the shop
-        'effect': 5, //What is the effect of this power (in this case add seconds to the game)
-        'sfx': 'zapsplat_multimedia_game_retro_musical_ascend_advance_001.mp3', //Sound FX to be played when the button is clicked in game
-        'description': 'Add more time to your game.' //Description of the power
-    },
-    {
         'id': ID_TIME_FREEZE, //Id to identify the power
         'name': 'Time Freeze', //Power's name
         'bg-color': 'rgb(11,127,171)', //Background color of the powerup in game
         'icon': 'images/powers/time-freeze.png', //Icon to display the power
         'cooldown': 25, //Time to reload the power and use again
-        'price': 160, //How many it will cost in the shop
+        'price': 20, //How many it will cost in the shop
         'effect': 7, //What is the effect of this power (in this case pause the game in seconds)
         'sfx': 'time-freeze.wav', //Sound FX to be played when the button is clicked in game
         'description': 'Freeze the time to obtain more squares and points.' //Description of the power
+    },
+    {
+        'id': ID_MORE_TIME, //Id to identify the power
+        'name': 'More Time', //Power's name
+        'bg-color': 'rgba(158, 109, 250, 1)', //Background color of the powerup in game
+        'icon': 'images/powers/more-time.png', //Icon to display the power
+        'cooldown': 15, //Time to reload the power and use again
+        'price': 30, //How many it will cost in the shop
+        'effect': 5, //What is the effect of this power (in this case add seconds to the game)
+        'sfx': 'zapsplat_multimedia_game_retro_musical_ascend_advance_001.mp3', //Sound FX to be played when the button is clicked in game
+        'description': 'Add more time to your game.' //Description of the power
     },
     {
         'id': ID_DOUBLE_POINTS, //Id to identify the power
@@ -32,7 +32,7 @@ var POWER_UPS = [
         'bg-color': 'rgb(39 113 16)', //Background color of the powerup in game
         'icon': 'images/powers/double-points.png', //Icon to display the power
         'cooldown': 30, //Time to reload the power and use again
-        'price': 200, //How many it will cost in the shop
+        'price': 40, //How many it will cost in the shop
         'effect': 5, //What is the effect of this power (duration of multiplier of the score point in the game)
         'sfx': 'glitch.wav', //Sound FX to be played when the button is clicked in game
         'description': 'Double your score points and money!' //Description of the power
@@ -43,7 +43,7 @@ var POWER_UPS = [
         'bg-color': 'rgb(225 112 28)', //Background color of the powerup in game
         'icon': 'images/powers/perfect-roll.png', //Icon to display the power
         'cooldown': 50, //Time to reload the power and use again
-        'price': 600, //How many it will cost in the shop
+        'price': 60, //How many it will cost in the shop
         'effect': 2, //What is the effect of this power (in this case the power will work in seconds in game)
         'sfx': 'zapsplat_multimedia_game_retro_musical_alert_001.mp3', //Sound FX to be played when the button is clicked in game
         'description': 'If the match is hard, use this to auto select all the squares.' //Description of the power

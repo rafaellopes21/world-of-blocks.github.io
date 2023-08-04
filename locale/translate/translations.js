@@ -1,10 +1,7 @@
 function translateTextContent(searchWord, replacementWord) {
     const unwantedTags = ['script', 'link', 'title', 'meta', 'style', 'i'];
-    Array.from(document.querySelectorAll('*')).forEach(element => {
-        if(element.tagName && !unwantedTags.includes(element.tagName.toLowerCase())){
-            traverseAndReplaceTextNodes(element, searchWord, replacementWord);
-        }
-    });
+    const element = document.querySelector(':not(' + unwantedTags.join(', ') + ')');
+    traverseAndReplaceTextNodes(element, searchWord, replacementWord);
 }
 
 function traverseAndReplaceTextNodes(node, searchWord, replacementWord) {
@@ -12,9 +9,9 @@ function traverseAndReplaceTextNodes(node, searchWord, replacementWord) {
         let updatedText = node.textContent.replace(new RegExp(searchWord, 'gi'), replacementWord);
         node.textContent = updatedText;
     } else {
-        node.childNodes.forEach(childNode => {
+        for (const childNode of node.childNodes) {
             traverseAndReplaceTextNodes(childNode, searchWord, replacementWord);
-        });
+        }
     }
 }
 
