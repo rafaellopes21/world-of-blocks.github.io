@@ -478,7 +478,7 @@ function getAllLevels(){
             'gridLength': 8,
             'gridMaxMatchItems': 3,
             'refreshGameTime': 5,
-            'maxTime': 10,
+            'maxTime': 40,
             'totalItems': 50,
             'powersEnable': true,
             'achievements': [
