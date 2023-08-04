@@ -56,7 +56,17 @@ function Powers() {
     };
 
     this.perfectRollDestroy = function (){
-        let itemsFound = document.querySelectorAll(".square-item."+itemMatch)
+        let itemsName = "";
+        let itemsSelectable = itemMatch.split(" ");
+        if(itemsSelectable.length > 0){
+            itemsSelectable.forEach(i => {
+                itemsName = itemsName+"."+i;
+            });
+        } else {
+            itemsName = itemsSelectable;
+        }
+
+        let itemsFound = document.querySelectorAll(".square-item"+itemsName);
         if(itemsFound && itemsFound.length > 0){
             itemsFound.forEach(item => {
                 item.click();
