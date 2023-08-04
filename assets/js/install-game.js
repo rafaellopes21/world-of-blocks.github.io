@@ -1,10 +1,8 @@
 var deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (event) => {
-    // Armazena o evento para usá-lo posteriormente
     event.preventDefault();
     deferredPrompt = event;
-    // Exibe o botão de instalação
     if(document.getElementById('installButton')){
         document.getElementById('installButton').style.display = 'block';
     }
@@ -26,7 +24,6 @@ if(document.getElementById('installButton')) {
 }
 
 function installGame(){
-    // Mostra o prompt de instalação quando o usuário clica no botão
     if (deferredPrompt) {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
