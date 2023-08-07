@@ -36,11 +36,15 @@
             </div>
             <div class="modal-footer p-0" style="margin: 0 auto">
                 <button class="btn-game btn-danger sfx-click float-end" type="button" data-bs-dismiss="modal"
-                        onclick="clearAll(); loadView('game/stages/index');">
+                        onclick="clearAll(); loadView('game/stages/index');" style="padding: 0.45rem 0.5rem;">
                     <i class='fa-solid fa-arrow-left fix-icon-btn'></i> Exit
                 </button>
+                <button class="btn-game btn-green sfx-click float-end" type="button" data-bs-dismiss="modal"
+                        onclick="retryLevel();" style="padding: 0.45rem 0.5rem;">
+                    <i class="fa-solid fa-rotate-right fix-icon-btn"></i> Retry
+                </button>
                 <button class="btn-game btn-purple sfx-click" type="button" data-bs-dismiss="modal"
-                        onclick="gamePaused(document.querySelector('#pauseModalbtnGm'))">
+                        onclick="gamePaused(document.querySelector('#pauseModalbtnGm'))" style="padding: 0.45rem 0.5rem;">
                     <i class="fa-solid fa-play"></i> Play
                 </button>
             </div>

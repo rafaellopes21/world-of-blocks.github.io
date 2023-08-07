@@ -451,6 +451,12 @@ function gamePaused(e){
     }
 }
 
+function retryLevel(){
+    clearAll();
+    stopStartSong();
+    playStage(stage.getLevelNumber());
+}
+
 function startingPowers(){
     //then, put a countdown to show the powers
     let powerCountTime = 10;

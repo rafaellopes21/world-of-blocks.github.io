@@ -142,6 +142,7 @@ translateTextContent('Up to ', '');
 translateTextContent('Left: ', '');
 translateTextContent('New Best', '');
 translateTextContent(' Install', '');
+translateTextContent(' Retry', '');
            break;*/ //That's it! Simple Like That!
         case 'es':
             //powers translations
@@ -262,6 +263,7 @@ translateTextContent(' Install', '');
             translateTextContent('Left: ', 'Restante: ');
             translateTextContent('New Best', 'Nuevo récord');
             translateTextContent(' Install', 'Instalar');
+            translateTextContent(' Retry', 'Reintentar');
             break;
         case 'de':
             //powers translations
@@ -382,6 +384,7 @@ translateTextContent(' Install', '');
             translateTextContent('Left: ', 'Übrig: ');
             translateTextContent('New Best', 'Neuer Rekord');
             translateTextContent(' Install', 'Installieren');
+            translateTextContent(' Retry', 'Erneut versuchen');
             break;
         case 'fr':
             //powers translations
@@ -502,6 +505,7 @@ translateTextContent(' Install', '');
             translateTextContent('Left: ', 'Restant: ');
             translateTextContent('New Best', 'Nouveau Meilleur');
             translateTextContent(' Install', 'Installer');
+            translateTextContent(' Retry', 'Réessayer');
             break;
         case 'it':
             //powers translations
@@ -622,6 +626,7 @@ translateTextContent(' Install', '');
             translateTextContent('Left: ', 'Rimasti: ');
             translateTextContent('New Best', 'Nuovo Record');
             translateTextContent(' Install', 'Installare');
+            translateTextContent(' Retry', 'Riprova');
             break;
         case 'pl':
             //powers translations
@@ -742,6 +747,7 @@ translateTextContent(' Install', '');
             translateTextContent('Left: ', 'Pozostało: ');
             translateTextContent('New Best', 'Nowy rekord');
             translateTextContent(' Install', 'Zainstaluj');
+            translateTextContent(' Retry', 'Ponów');
             break;
         case 'pt':
             //powers translations
@@ -863,6 +869,7 @@ translateTextContent(' Install', '');
             translateTextContent('Frames/Objects', 'Quadros/Objetos');
             translateTextContent('Help', 'Ajuda');
             translateTextContent(' Install', 'Instalar');
+            translateTextContent(' Retry', 'Repetir');
             break;
         default:
             return true;
