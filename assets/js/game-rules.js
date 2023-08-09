@@ -250,8 +250,10 @@ function finishGame(endSong = 'zapsplat_multimedia_game_retro_musical_level_comp
 function completedObjectives(){
     //get the first star
     if(maxTime >= firstStarTime && totalHits >= firstStarHits){
-        if(firstStarErrors && totalErrors <= firstStarErrors){
-            updateStar(starOne);
+        if(firstStarErrors){
+            if(totalErrors <= firstStarErrors){
+                updateStar(starOne);
+            }
         } else {
             updateStar(starOne);
         }
@@ -259,8 +261,10 @@ function completedObjectives(){
 
     //get the second star
     if(maxTime >= secondStarTime && totalHits >= secondStarHits){
-        if(secondStarErrors && totalErrors <= secondStarErrors){
-            updateStar(starTwo);
+        if(secondStarErrors){
+            if(totalErrors <= secondStarErrors){
+                updateStar(starTwo);
+            }
         } else {
             updateStar(starTwo);
         }
@@ -268,8 +272,10 @@ function completedObjectives(){
 
     //get the third star
     if(maxTime >= thirdStarTime && totalHits >= thirdStarHits){
-        if(thirdStarErrors && totalErrors <= thirdStarErrors){
-            updateStar(starThree);
+        if(thirdStarErrors){
+            if(totalErrors <= thirdStarErrors){
+                updateStar(starThree);
+            }
         } else {
             updateStar(starThree);
         }

@@ -148,7 +148,7 @@ function getAllLevels(){
             'gridLength': 5,
             'gridMaxMatchItems': 4,
             'refreshGameTime': 5,
-            'maxTime': 15,
+            'maxTime': 17,
             'totalItems': 25,
             'powersEnable': false,
             'achievements': [
@@ -476,9 +476,9 @@ function getAllLevels(){
             'levelColor': stageColors(),
             'description': false,
             'gridLength': 8,
-            'gridMaxMatchItems': 3,
+            'gridMaxMatchItems': 4,
             'refreshGameTime': 5,
-            'maxTime': 40,
+            'maxTime': 43,
             'totalItems': 50,
             'powersEnable': true,
             'achievements': [
