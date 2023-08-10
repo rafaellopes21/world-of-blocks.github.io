@@ -47,23 +47,16 @@ function removeFooterOnBack(){
 }
 
 function disableScroll() {
-    let scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = '-' + scrollPosition + 'px';
-    document.body.style.width = '100%';
     window.addEventListener('touchmove', preventDefaultScroll, { passive: false });
+    document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
 }
 
-// Habilitar o scroll da página
 function enableScroll() {
     document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
     window.removeEventListener('touchmove', preventDefaultScroll);
+    window.removeEventListener('touchstart', preventDefaultScroll);
+    document.body.removeEventListener('touchstart', preventDefaultScroll);
 }
 function preventDefaultScroll(event) {
     event.preventDefault();

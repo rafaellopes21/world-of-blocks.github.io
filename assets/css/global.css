@@ -48,6 +48,7 @@ body{
     font-family: 'Guava Candy', cursive, sans-serif;
     background: var(--simple-tones-2);
     cursor: url("../cursors/cur116.cur"), auto !important;
+    position: relative;
 }
 
 a, button{
